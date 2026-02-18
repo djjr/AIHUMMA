@@ -10,7 +10,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["machine-learning", "humanities", "classification", "regression", "topic-modeling", "pretrained-models", "deep-learning", "python", "model-selection", "human-intelligence"]
+    "keywords": ["machine-learning", "humanities",  "python",  "human-intelligence"]
   },
   {
     "title": "Introduction to Computational Methods for the Humanities",
@@ -23,7 +23,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["humanities", "python", "command-line", "experimental-design", "hypothesis-testing", "empirical-research", "data-analysis", "computational-methods", "beginner-friendly"]
+    "keywords": ["humanities", "python",  "experimental-design", "hypothesis-testing", "empirical-research", "data-analysis"]
   },
   {
     "title": "Language, Media, and AI Lab (LAMA Lab)",
@@ -36,7 +36,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["lab", "ethnography", "qualitative-methods", "language", "media-studies", "ai", "workshops", "reading-group", "interfaces", "archives", "translation", "oral-history"]
+    "keywords": ["lab", "ethnography", "qualitative-methods",   "translation", "oral-history"]
   },
   {
     "title": "AI: Utopias, Dystopias, and Everything in Between",
@@ -49,7 +49,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["ai", "ethnography", "social-media", "large-language-models", "healthcare", "startups", "labor-rights", "surveillance", "automation", "human-exceptionalism", "legal-frameworks", "technology-society"]
+    "keywords": ["ethnography", "social-media",  "healthcare", "startups", "labor-rights", "surveillance", "automation", "human-exceptionalism", "legal-frameworks", "technology-society"]
   },
   {
     "title": "Practical Mathematics for AI",
@@ -75,7 +75,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["philosophy", "ai", "healthcare", "ethics", "responsibility", "debates", "beginner-friendly"]
+    "keywords": ["philosophy",  "healthcare", "ethics", "responsibility"]
   },
   {
     "title": "Directed Improvisation with AI",
@@ -88,7 +88,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "PhD seminar (as described).",
-    "keywords": ["phd-seminar", "research-practice", "human-ai-collaboration", "co-creation", "prompting", "creative-process", "ai-history", "ai-debates", "methods", "improvisation"]
+    "keywords": ["phd-seminar", "research-practice", "human-ai-collaboration",  "creative-process", "ai-history", "methods", "improvisation"]
   },
   {
     "title": "AI and Democracy",
@@ -101,7 +101,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["democracy", "governance", "policy", "large-language-models", "bias", "safety", "ai-agents", "institutions", "employment", "values"]
+    "keywords": ["democracy", "governance", "policy",  "bias", "safety",  "institutions",  "values"]
   },
   {
     "title": "SOUL: AI and Society - Navigating a Changing Landscape",
@@ -114,7 +114,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["ai", "society", "humanities", "history", "critical-reflection", "ethics", "bias", "privacy", "deepfakes", "recommendation-systems", "environmental-impact", "accountability"]
+    "keywords": ["ai", "society", "humanities", "history",  "ethics", "bias", "privacy", "recommendation-systems", "environmental-impact", "accountability"]
   },
   {
     "title": "Learning Sex and Gender: AI, Algorithms, Automatons",
@@ -127,7 +127,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["sex", "gender", "feminist-theory", "cybertechnology", "generative-ai", "robots", "film-and-media", "ethnography", "power", "marginalization", "intimacy", "ethics"]
+    "keywords": ["sex", "gender", "feminist-theory", "cybertechnology", "robots", "film-and-media", "ethnography",  "ethics"]
   },
   {
     "title": "AI and the U.S. Intelligence Community",
@@ -140,7 +140,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["national-security", "intelligence-community", "intelligence-analysis", "ai-history", "ethics", "policy", "defense", "applications", "human-ai-interface"]
+    "keywords": ["national-security", "intelligence-community", "intelligence-analysis", "ai-history", "ethics", "policy",  "human-ai-interface"]
   },
   {
     "title": "Storytelling with Data and AI",
@@ -153,7 +153,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "Prerequisites listed.",
-    "keywords": ["data-journalism", "storytelling", "data-sourcing", "verification", "visualization", "ai-tools", "misinformation", "bias", "science-writing", "narrative", "data-literacy"]
+    "keywords": ["data-journalism", "storytelling",  "visualization", "misinformation", "bias", "science-writing", "narrative"]
   },
   {
     "title": "Responsible AI",
@@ -362,7 +362,7 @@ window.COURSES = [
     "term": "",
     "campus": "",
     "notes": "",
-    "keywords": ["explainable-ai", "interpretability", "human-ai-interaction", "human-centered-design", "trustworthy-ai", "case-studies", "affordances", "ml-design", "group-project", "evaluation"]
+    "keywords": ["explainability", "interpretability", "human-ai-interaction", "human-centered-design", "trustworthy-ai", "case-studies", "affordances", "ml-design", "group-project", "evaluation"]
   },
   {
     "title": "AI for Public Health in Python",
@@ -838,4 +838,19 @@ window.COURSES = [
     "notes": "Duplicate course number appears with different instructor; source also mentions ePortfolio assignments.",
     "keywords": ["ai-ethics", "automation", "values-based-design", "safety", "bias", "explainability", "privacy", "regulation", "synthetic-life", "future-of-work", "case-studies", "eportfolio"]
   }
+,
+
+{
+  "course_number": "AS.300.615",
+  "school": "KSAS",
+  "title": "How to Pay Attention and Why",
+  "units": [""],
+  "instructors": [""],
+  "description": "It is not uncommon to hear two closely related concerns in discussions of our present social predicament. On the one hand is the sense that humanity is facing a series of unprecedented threats, including climate change, the proliferation of nuclear weapons, the rise of AI, and growing economic and social inequalities. These challenges and the solutions they require are extraordinarily complex. On the other hand, there is increasing concern that our capacity to pay attention to such complex issues is being eroded by a culture that values and foments distraction and superficiality. The internet, social media, gaming, dopamine addiction, commodification, and the entertainment industry have all been said to be responsible for a reductive political discourse interested more in ratings and outrage than substantive debate and solutions. This course examines the merits of these concerns and asks what alternatives may be available. In the first part, we will look at academic and popular accounts of our attention economy and the dangers it entails. In the second part we will examine one of the most powerful tools the humanities offer against superficiality and distraction: the practice of close reading as a way of attending to the world.",
+  "credits": "",
+  "term": "",
+  "campus": "",
+  "notes": "",
+  "keywords": [""]
+}
 ]
