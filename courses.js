@@ -851,6 +851,6 @@ window.COURSES = [
   "term": "",
   "campus": "",
   "notes": "",
-  "keywords": [""]
+  "keywords": ["attention","social media", "critique"]
 }
 ]
