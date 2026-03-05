@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course Tag Viewer</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 18px; }
+    header { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    h1 { font-size: 18px; margin: 0 12px 0 0; }
+
+    button { padding: 6px 10px; border: 1px solid #bbb; background: #f6f6f6; border-radius: 8px; cursor: pointer; }
+    button.toggled { border-color:#333; background:#e8e8e8; }
+    .small { font-size: 12px; color:#666; }
+
+    .layout { display:grid; grid-template-columns: 320px 1fr; gap: 18px; margin-top: 14px; }
+    @media (max-width: 920px) { .layout { grid-template-columns: 1fr; } }
+
+    .panel { border: 1px solid #ddd; border-radius: 12px; padding: 12px; }
+    .divider { height:1px; background:#eee; margin: 10px 0; }
+
+    input[type="search"] { padding: 6px 10px; border: 1px solid #bbb; border-radius: 10px; width: 100%; }
+    .searchRow { display:flex; gap:10px; flex-wrap:wrap; align-items:center; width: 100%; }
+    .searchRow .searchWrap { flex: 1 1 320px; }
+
+    .tags { display:flex; flex-wrap:wrap; gap:6px; }
+
+    .tag {
+      font-size: 11px; padding: 3px 7px; border: 1px solid #ccc;
+      border-radius: 999px; cursor:pointer; user-select:none; background:#fafafa;
+      display:inline-flex; align-items:center; gap:6px;
+    }
+    .tag.selected { border-color:#333; background:#eaeaea; }
+    .tag:hover { border-color:#777; }
+    .tag .count { font-size: 10px; color:#666; }
+
+    .activeBar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; width: 100%; margin-top:10px; }
+    .activeLabel { font-size: 12px; color:#666; margin-right: 2px; }
+
+    .chip {
+      font-size: 11px; padding: 3px 8px; border: 1px solid #999;
+      border-radius: 999px; user-select:none; background:#f3f3f3;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .chipBody { cursor:pointer; }
+    .chipX {
+      cursor:pointer; padding: 0 4px; border-radius: 6px;
+      border: 1px solid transparent;
+    }
+    .chipX:hover { border-color:#777; }
+
+    .course { border: 1px solid #e0e0e0; border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+    .course h3 { margin:0 0 6px 0; font-size: 14px; }
+    .course .meta { font-size: 12px; color:#666; margin-bottom: 8px; }
+    .course p { margin:0; font-size: 13px; white-space: pre-wrap; }
+    .course .tagrow { margin-top: 10px; }
+
+    .empty { font-size: 13px; color:#666; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Hopkins courses — keyword filter</h1>
+
+    <button id="orBtn" title="Toggle OR mode">OR</button>
+    <button id="clearBtn">Clear</button>
+
+    <span class="small" id="modeLabel">Mode: AND</span>
+    <span class="small" id="counts"></span>
+  </header>
+
+  <div class="activeBar">
+    <span class="activeLabel">Active tags:</span>
+    <div id="activeTags" class="tags"></div>
+  </div>
+
+  <div class="layout">
+    <aside class="panel">
+      <div class="small"><b>Tag picker</b></div>
+      <div class="divider"></div>
+
+      <div class="searchRow">
+        <div class="searchWrap">
+          <input id="tagSearch" type="search" placeholder="Search tags…" />
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div id="tagList" class="tags"></div>
+    </aside>
+
+    <main class="panel">
+      <div class="small"><b>Courses</b></div>
+      <div class="divider"></div>
+
+      <div class="searchRow">
+        <div class="searchWrap">
+          <input id="textSearch" type="search" placeholder="Search title / description / school…" />
+        </div>
+        <span class="small" id="searchHint"></span>
+      </div>
+
+      <div class="divider"></div>
+      <div id="results"></div>
+    </main>
+  </div>
+
+  <!-- load data first -->
+  <script src="courses.js"></script>
+
+  <script>
+    /** ----- data ----- **/
+    const COURSES = window.COURSES || [];
+
+    /** ----- helpers ----- **/
+    const normTag = t => String(t || "").trim().toLowerCase();
+    const uniqSorted = arr => Array.from(new Set(arr)).sort((a,b)=>a.localeCompare(b));
+    const escapeHtml = s => String(s ?? "")
+      .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+
+    function courseSearchBlob(c) {
+      return [c.title, c.course_number, c.school, c.instructor, c.description]
+        .map(x => String(x || "")).join(" ").toLowerCase();
+    }
+
+    /** ----- state ----- **/
+    let selected = new Set();
+    let useOR = false;
+    let textQuery = "";
+
+    /** ----- derived ----- **/
+    const allTags = (() => {
+      const tags = [];
+      for (const c of COURSES) for (const k of (c.keywords || [])) tags.push(normTag(k));
+      return uniqSorted(tags.filter(Boolean));
+    })();
+    const searchBlobs = COURSES.map(courseSearchBlob);
+
+    /** ----- DOM ----- **/
+    const tagListEl = document.getElementById("tagList");
+    const tagSearchEl = document.getElementById("tagSearch");
+    const textSearchEl = document.getElementById("textSearch");
+    const resultsEl = document.getElementById("results");
+    const countsEl = document.getElementById("counts");
+    const modeLabelEl = document.getElementById("modeLabel");
+    const orBtn = document.getElementById("orBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const activeTagsEl = document.getElementById("activeTags");
+    const searchHintEl = document.getElementById("searchHint");
+
+    /** ----- selection toggling ----- **/
+    function toggleTag(t) {
+      const tag = normTag(t);
+      if (!tag) return;
+      if (selected.has(tag)) selected.delete(tag);
+      else selected.add(tag);
+      renderAll();
+    }
+    function removeTag(t) {
+      const tag = normTag(t);
+      if (selected.delete(tag)) renderAll();
+    }
+
+    /** ----- filters ----- **/
+    function matchesText(i) {
+      if (!textQuery) return true;
+      return searchBlobs[i].includes(textQuery);
+    }
+
+    function matchesTagsWithSet(course, setForMatch) {
+      const sel = Array.from(setForMatch);
+      if (sel.length === 0) return true;
+
+      const courseTags = new Set((course.keywords || []).map(normTag));
+      return useOR
+        ? sel.some(t => courseTags.has(t))
+        : sel.every(t => courseTags.has(t));
+    }
+
+    function courseMatches(course, idx) {
+      return matchesText(idx) && matchesTagsWithSet(course, selected);
+    }
+
+    /** ----- tag counts (predictive) ----- **/
+    // Counts show: if you CLICK this tag now (toggle it ON if currently off),
+    // how many courses would match under current textQuery + mode + other selected tags?
+    function computeTagCounts(visibleTags) {
+      const counts = new Map();
+      for (const t of visibleTags) counts.set(t, 0);
+
+      // Precompute base selections for "if tag added"
+      // If already selected, the count reflects current results (no change).
+      const selArr = Array.from(selected);
+
+      // For speed/readability: do one pass over courses and increment counts where applicable
+      // We compute per-tag by checking course membership against hypothetical selection set.
+      for (let i = 0; i < COURSES.length; i++) {
+        if (!matchesText(i)) continue;
+        const c = COURSES[i];
+        const courseTags = new Set((c.keywords || []).map(normTag));
+
+        for (const t of visibleTags) {
+          const isSelected = selected.has(t);
+          // Hypothetical set:
+          // - if selected already, keep as-is
+          // - if not selected, add t
+          let ok;
+          if (useOR) {
+            // OR: if selected already, course must match any selected;
+            // if not selected, course must match any selected OR t
+            if (selected.size === 0 && !isSelected) {
+              ok = courseTags.has(t);
+            } else {
+              ok = selArr.some(x => courseTags.has(x)) || (!isSelected && courseTags.has(t));
+            }
+          } else {
+            // AND: if selected already, must include all selected;
+            // if not selected, must include all selected plus t
+            ok = selArr.every(x => courseTags.has(x)) && (isSelected || courseTags.has(t));
+          }
+
+          if (ok) counts.set(t, counts.get(t) + 1);
+        }
+      }
+      return counts;
+    }
+
+    /** ----- render active tags bar ----- **/
+    function renderActiveTags() {
+      const tags = Array.from(selected).sort((a,b)=>a.localeCompare(b));
+      if (tags.length === 0) {
+        activeTagsEl.innerHTML = `<span class="small">none</span>`;
+        return;
+      }
+
+      activeTagsEl.innerHTML = tags.map(t => `
+        <span class="chip" data-chip="${escapeHtml(t)}" title="Click chip to toggle AND/OR; click ✕ to remove">
+          <span class="chipBody" data-chip-body="${escapeHtml(t)}">${escapeHtml(t)}</span>
+          <span class="chipX" data-chip-x="${escapeHtml(t)}">✕</span>
+        </span>
+      `).join(" ");
+
+      activeTagsEl.onclick = (e) => {
+        const x = e.target.closest("[data-chip-x]");
+        if (x) { removeTag(x.getAttribute("data-chip-x")); return; }
+
+        const body = e.target.closest("[data-chip-body]");
+        if (body) {
+          useOR = !useOR;          // chip click toggles mode
+          renderAll();
+          return;
+        }
+      };
+    }
+
+    /** ----- render tag panel (left) ----- **/
+    function renderTagPanel() {
+      const q = normTag(tagSearchEl.value);
+      const visible = q ? allTags.filter(t => t.includes(q)) : allTags;
+
+      const counts = computeTagCounts(visible);
+
+      tagListEl.innerHTML = "";
+      for (const t of visible) {
+        const el = document.createElement("span");
+        el.className = "tag" + (selected.has(t) ? " selected" : "");
+        el.title = "Click to toggle filter";
+        el.innerHTML = `${escapeHtml(t)} <span class="count">(${counts.get(t) ?? 0})</span>`;
+        el.addEventListener("click", () => toggleTag(t));
+        tagListEl.appendChild(el);
+      }
+    }
+
+    /** ----- render results ----- **/
+    function renderResults() {
+      const rows = [];
+      for (let i = 0; i < COURSES.length; i++) {
+        const c = COURSES[i];
+        if (courseMatches(c, i)) rows.push({ c, i });
+      }
+
+      countsEl.textContent = `Showing ${rows.length} / ${COURSES.length}`;
+      searchHintEl.textContent = textQuery ? `Text filter: “${textQuery}”` : "";
+
+      if (!rows.length) {
+        resultsEl.innerHTML = `<div class="empty">No courses match the current filter.</div>`;
+        return;
+      }
+
+      resultsEl.innerHTML = rows.map(({ c, i }) => {
+        const title = escapeHtml(c.title || "(untitled)");
+        const num = escapeHtml(c.course_number || "");
+        const header = num ? `${title} (${num})` : title;
+
+        const school = (c.school || "").trim();
+        const instructor = (c.instructor || "").trim();
+        const metaParts = [];
+        if (school) metaParts.push(escapeHtml(school));
+        if (instructor) metaParts.push(escapeHtml(instructor));
+        const meta = metaParts.length ? metaParts.join(" · ") : "";
+
+        const desc = escapeHtml(c.description || "");
+        const kws = (c.keywords || []).map(normTag).filter(Boolean);
+
+        const tagHtml = kws.length
+          ? kws.map(t => `<span class="tag ${selected.has(t) ? "selected" : ""}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`).join(" ")
+          : `<span class="small">No tags</span>`;
+
+        return `
+          <div class="course" data-course-index="${i}">
+            <h3>${header}</h3>
+            ${meta ? `<div class="meta">${meta}</div>` : ``}
+            <p>${desc}</p>
+            <div class="tagrow tags">${tagHtml}</div>
+          </div>
+        `;
+      }).join("");
+
+      resultsEl.onclick = (e) => {
+        const tagEl = e.target.closest("[data-tag]");
+        if (!tagEl) return;
+        toggleTag(tagEl.getAttribute("data-tag"));
+      };
+    }
+
+    /** ----- controls ----- **/
+    function renderMode() {
+      modeLabelEl.textContent = `Mode: ${useOR ? "OR" : "AND"}`;
+      orBtn.classList.toggle("toggled", useOR);
+    }
+
+    orBtn.addEventListener("click", () => { useOR = !useOR; renderAll(); });
+
+    clearBtn.addEventListener("click", () => {
+      selected.clear();
+      textSearchEl.value = "";
+      textQuery = "";
+      tagSearchEl.value = "";
+      renderAll();
+    });
+
+    tagSearchEl.addEventListener("input", renderTagPanel);
+
+    textSearchEl.addEventListener("input", () => {
+      textQuery = String(textSearchEl.value || "").trim().toLowerCase();
+      // text filter affects: results + tag counts (so rerender all)
+      renderAll();
+    });
+
+    /** ----- render all ----- **/
+    function renderAll() {
+      renderMode();
+      renderActiveTags();
+      renderTagPanel();
+      renderResults();
+    }
+
+    /** ----- init ----- **/
+    renderAll();
+  </script>
+</body>
+</html>

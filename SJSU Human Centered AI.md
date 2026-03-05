@@ -1,0 +1,11 @@
+#HCAI #programs #courses #AIHUMMA 
+Human-Centered AI is a methodology for building AI systems that prioritizes human well-being and autonomy, ensuring that technology empowers rather than replaces or diminishes individuals. The Certificate in Human-Centered Artificial Intelligence (HCAI), offered by the [School of Information](https://catalog.sjsu.edu/preview_entity.php?catoid=17&ent_oid=2331), offers students a fundamental overview of AI technologies, focusing on practical applications, ethics and governance, and policy. The program is designed to equip students with the skills to critically assess AI’s societal implications while providing them with hands-on experience in the tools and techniques essential to human-centered AI development.
+
+### ISDA 80 - Introduction to Human-Centered Artificial Intelligence
+Provides an interdisciplinary introduction to the foundational AI concepts, the qualities and use cases of human-centered artificial intelligence (HCAI) applications, and their potential impacts on culture and society in various sectors, including education, business, and medicine.
+### ISDA 81 - Ethics of AI
+Provides a comprehensive introduction to the ethics of artificial intelligence based in established methods of applied ethics. Topics include: AI ethics frameworks; algorithmic bias and due process, AI and transparency, accountability; explainable AI (XAI) and records, automation and knowledge work (including information professions); AI and data privacy; legal liability and whistleblowing, generative AI and intellectual property; anthropomorphic AI; AI Governance and global issues.
+### ISDA 180 - Responsible Human-AI Interaction
+Course covers the emerging field of responsible human-AI Interaction (HAII), which seeks to evaluate, design, and create AI systems that are user-centered, ethical, transparent, and beneficial for humans. Students will gain theoretical knowledge and practical experience in the fundamental aspects of human perception, cognition, and learning related to the design, implementation, and evaluation of AI interfaces.
+### ISDA 181 - AI and Knowledge Management
+Examines artificial intelligence through the human-centric framework of knowledge management. Addresses concepts of knowledge and how knowledge management contributes to and benefits from AI.
