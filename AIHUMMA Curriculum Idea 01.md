@@ -1,5 +1,11 @@
 #AIHUMMA 
 (A research summary produced by Claude under direction of Dan Ryan 2/26)
+(Revised by Dan Ryan 3/26)
+
+| Foundation Layer    |                                                                            |                                                           |                                                           |
+| ------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| How AI Systems Work | Institutions, Governance, <br>and the Regulation of <br>Risky Technologies | Ethics, Values, and <br>AI: From Philosophy <br>to Policy | Writing for Policy: <br>Genre, Audience, <br>and Argument |
+
 ## Foundation Layer: Four Core Courses
 Everyone takes these regardless of track. They build the shared language of the cohort and ensure every graduate can function credibly in any of the target orgs.
 ### AIHUMMA-F1 · How AI Systems Work (For People Who Don't Build Them)
