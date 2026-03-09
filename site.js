@@ -75,6 +75,15 @@ function buildNav(currentSlug) {
   `).join('');
 }
 
+// ── Path encoding helper ──────────────────────────────────────────────────────
+// encodeURIComponent encodes '/' as '%2F', breaking directory paths.
+// This helper encodes each segment separately so subdirectory slugs like
+// 'outcomes/TL-02' become 'outcomes/TL-02' (not 'outcomes%2FTL-02').
+
+function encodePathSlug(s) {
+  return s.split('/').map(encodeURIComponent).join('/');
+}
+
 // ── Markdown pre-processing ───────────────────────────────────────────────────
 
 function preprocess(md) {
@@ -85,14 +94,14 @@ function preprocess(md) {
   md = md.replace(/```dataview[\s\S]*?```/g,
     '<span class="dataview-note">Dataview query (not rendered in web view)</span>');
 
-  // [[Wiki Link|Alias]] → [Alias](#Wiki Link)
+  // [[Wiki Link|Alias]] → [Alias](#path/slug)
   md = md.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, target, alias) =>
-    `[${alias}](#${encodeURIComponent(target)})`
+    `[${alias}](#${encodePathSlug(target)})`
   );
 
-  // [[Wiki Link]] → [Wiki Link](#Wiki Link)
+  // [[Wiki Link]] → [Wiki Link](#path/slug)
   md = md.replace(/\[\[([^\]]+)\]\]/g, (_, name) =>
-    `[${name}](#${encodeURIComponent(name)})`
+    `[${name}](#${encodePathSlug(name)})`
   );
 
   return md;
@@ -113,7 +122,7 @@ async function loadPage(slug) {
   const filename = slug + '.md';
 
   try {
-    const resp = await fetch(encodeURIComponent(filename));
+    const resp = await fetch(encodePathSlug(filename));
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const raw = await resp.text();
     const processed = preprocess(raw);
@@ -194,7 +203,7 @@ function showPreviewForSlug(slug, pageLabel, x, y) {
     previewEl.style.display = 'block';
 
     try {
-      const resp = await fetch(encodeURIComponent(slug + '.md'));
+      const resp = await fetch(encodePathSlug(slug + '.md'));
       if (!resp.ok) throw new Error('not found');
       const raw = await resp.text();
 
@@ -221,10 +230,12 @@ function attachPreviewDelegation(containerEl) {
     const anchor = e.target.closest('a[href^="#"]');
     if (!anchor) return;
     const slug = decodeURIComponent(anchor.getAttribute('href').slice(1));
-    const page = ALL_PAGES.find(p => p.slug === slug);
-    if (!page) return;
     if (slug === getSlug()) return;   // no preview for the page already showing
-    showPreviewForSlug(slug, page.label, e.clientX, e.clientY);
+    // Use registered nav label if available; otherwise derive a label from
+    // the slug's last path segment (e.g. 'outcomes/TL-02' → 'TL-02').
+    const page  = ALL_PAGES.find(p => p.slug === slug);
+    const label = page ? page.label : slug.split('/').pop();
+    showPreviewForSlug(slug, label, e.clientX, e.clientY);
   });
 
   containerEl.addEventListener('mouseout', e => {
