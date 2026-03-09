@@ -1,7 +1,8 @@
 #AIHUMMA 
 (A research summary produced by Claude under direction of Dan Ryan 2/26)
 
-Let's look at what kind of folks are hired by five AI and society organizations.
+CONCEIT: Program design should be motivated by what kind of graduates you are trying to produce.  One tactic for grappling with that is to imagine a set of employers and look at what kinds of folks they are hiring (and wanting to hire but perhaps not finding).  For this proof of concept, let's look at what kind of folks are hired by five AI and society organizations.
+
 ### The Five Orgs, Briefly Profiled
 
 **[Partnership on AI](https://partnershiponai.org/about/)** — Currently no openings, but structurally they hire program managers, policy researchers, and communications staff. Strong NGO culture, expects coalition-building and stakeholder writing skills. Most hospitable to humanities people.
@@ -13,6 +14,7 @@ Let's look at what kind of folks are hired by five AI and society organizations.
 **[CAIS](https://safe.ai/about)** — More technically focused at the research level, but currently hiring a **Newsletter Editor** (journalism/editing skills, AI safety familiarity), a **Program Manager** (stakeholder management, fellowship/workshop/publication coordination), and an **Operations Associate** (BA required, 1-3 years experience, any background). The Program Manager role is the most instructive for curriculum: it explicitly requires no technical credentials but asks for someone who can manage "fellowships, workshops, publications, convenings, and policy initiatives."
 
 **[METR](https://metr.org/about)** — Most technical of the five by far. Their open roles are research engineer and research scientist level, requiring Python coding ability. The one exception is an operations role. This is the hardest entry point for humanities people and probably shouldn't be the primary target for your curriculum — though understanding evaluation methodology would be valuable background.
+
 ## Implications
 
 Across these five orgs, four competency clusters appear repeatedly in non-technical job descriptions:
