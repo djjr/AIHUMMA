@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIHUMMA Taxonomy Network</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="taxonomy-network.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #0f1117;
+      color: #e0e0e0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Header ──────────────────────────────────────────────────────────── */
+    #header {
+      background: #1a1d27;
+      border-bottom: 1px solid #2e3248;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+    #header h1 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    #header h1 span {
+      color: #7b8cde;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-label {
+      font-size: 11px;
+      color: #7a8299;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .filter-btn {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #3a3f5c;
+      background: transparent;
+      color: #aab0cc;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: #7b8cde; color: #fff; }
+    .filter-btn.active { color: #fff; border-color: transparent; }
+    .filter-btn[data-mc="comprehension"].active { background: #2a4a6e; border-color: #4A90D9; }
+    .filter-btn[data-mc="normative_judgment"].active { background: #6e3a15; border-color: #E67E22; }
+    .filter-btn[data-mc="productive_capacity"].active { background: #1a5c35; border-color: #27AE60; }
+    .filter-btn[data-mc="domain_application"].active { background: #4a2460; border-color: #8E44AD; }
+
+    .toggle-btn {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #3a3f5c;
+      background: transparent;
+      color: #aab0cc;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .toggle-btn:hover { border-color: #f39c12; color: #fff; }
+    .toggle-btn.active { background: #5c4a10; border-color: #f39c12; color: #f5c542; }
+
+    #stats-display {
+      margin-left: auto;
+      font-size: 11px;
+      color: #5a6080;
+    }
+
+    /* ── Main layout ─────────────────────────────────────────────────────── */
+    #main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── SVG Canvas ──────────────────────────────────────────────────────── */
+    #canvas-wrap {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Detail Panel ────────────────────────────────────────────────────── */
+    #detail-panel {
+      width: 300px;
+      background: #1a1d27;
+      border-left: 1px solid #2e3248;
+      padding: 20px;
+      overflow-y: auto;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #detail-panel h2 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+    #detail-panel .empty-state {
+      color: #4a5070;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .detail-code {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .detail-label {
+      font-size: 13px;
+      color: #c0c8e0;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .detail-desc {
+      font-size: 11.5px;
+      color: #8a90a8;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .badge-K { background: #1e3a5f; color: #5ba4f5; }
+    .badge-S { background: #1a4a30; color: #4dc87a; }
+    .badge-D { background: #4a2a15; color: #e8914a; }
+    .badge-general { background: #2a2a40; color: #8a8fc0; }
+    .badge-ai { background: #3a1a4a; color: #b070e8; }
+    .badge-foundational { background: #3a2a10; color: #d4a520; }
+    .badge-integrative { background: #1a3a3a; color: #40c8c8; }
+    .badge-middle { background: #2a2a2a; color: #888; }
+
+    .coverage-bar-wrap {
+      margin-top: 12px;
+    }
+    .coverage-bar-wrap label {
+      font-size: 10px;
+      color: #5a6080;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .coverage-bar {
+      margin-top: 6px;
+      height: 6px;
+      background: #2e3248;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .coverage-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+    .coverage-number {
+      font-size: 11px;
+      color: #8a90a8;
+      margin-top: 4px;
+    }
+
+    .aihumma-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 3px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .aihumma-badge.owns { background: #2a3a15; color: #8fd640; border: 1px solid #4a7020; }
+    .aihumma-badge.elective { background: #2a2a2a; color: #666; border: 1px solid #333; }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 600;
+      color: #5a6080;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    .connections-list {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .conn-item {
+      font-size: 11px;
+      padding: 5px 8px;
+      border-radius: 4px;
+      background: #1e2235;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      transition: background 0.1s;
+    }
+    .conn-item:hover { background: #2a2e4a; }
+    .conn-arrow { color: #4a5070; font-size: 10px; flex-shrink: 0; margin-top: 1px; }
+    .conn-code { font-weight: 600; color: #aab0cc; flex-shrink: 0; }
+    .conn-label { color: #6a7090; font-size: 10.5px; line-height: 1.3; }
+
+    /* ── Legend ──────────────────────────────────────────────────────────── */
+    #legend {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(20, 23, 35, 0.92);
+      border: 1px solid #2e3248;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 10.5px;
+      color: #8a90a8;
+      pointer-events: none;
+    }
+    #legend .legend-title {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #5a6080;
+      margin-bottom: 8px;
+    }
+    .legend-row { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+    .legend-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+    .legend-line-dash {
+      width: 24px; height: 2px; background: #4a5070;
+      border-top: 2px dashed #4a5070; flex-shrink: 0;
+    }
+    .legend-line-solid {
+      width: 24px; height: 2px; background: #4a5070; flex-shrink: 0;
+    }
+
+    /* ── D3 node/edge styles ─────────────────────────────────────────────── */
+    .node circle {
+      stroke-width: 1.5;
+      transition: opacity 0.2s;
+    }
+    .node text {
+      font-size: 9px;
+      fill: #ccc;
+      pointer-events: none;
+      text-anchor: middle;
+    }
+    .node .code-label {
+      font-size: 9px;
+      font-weight: 700;
+      fill: #fff;
+    }
+    .link {
+      stroke-opacity: 0.35;
+      transition: stroke-opacity 0.2s;
+    }
+    .link.highlighted { stroke-opacity: 0.85; }
+    .link.dimmed { stroke-opacity: 0.05; }
+    .node.dimmed circle { opacity: 0.15; }
+    .node.dimmed text { opacity: 0.15; }
+    .node.highlighted circle { stroke-width: 2.5; }
+
+    /* tooltip */
+    #tooltip {
+      position: absolute;
+      background: #1a1d27;
+      border: 1px solid #3a3f5c;
+      border-radius: 5px;
+      padding: 8px 10px;
+      font-size: 11px;
+      color: #c0c8e0;
+      pointer-events: none;
+      max-width: 220px;
+      line-height: 1.5;
+      display: none;
+      z-index: 100;
+    }
+    #tooltip strong { color: #fff; display: block; margin-bottom: 2px; }
+    #tooltip em { color: #6a7090; font-size: 10px; font-style: normal; }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <h1>AIHUMMA <span>Taxonomy Network</span></h1>
+
+  <div class="filter-group">
+    <span class="filter-label">Filter</span>
+    <button class="filter-btn active" data-mc="all">All</button>
+    <button class="filter-btn" data-mc="comprehension">Comprehension</button>
+    <button class="filter-btn" data-mc="normative_judgment">Normative Judgment</button>
+    <button class="filter-btn" data-mc="productive_capacity">Productive Capacity</button>
+    <button class="filter-btn" data-mc="domain_application">Domain Application</button>
+  </div>
+
+  <div class="filter-group">
+    <span class="filter-label">Show</span>
+    <button class="toggle-btn" id="toggle-aihumma">AIHUMMA-owned only</button>
+    <button class="toggle-btn" id="toggle-edges">Hide edges</button>
+  </div>
+
+  <div id="stats-display"></div>
+</div>
+
+<div id="main">
+  <div id="canvas-wrap">
+    <svg id="viz"></svg>
+    <div id="legend">
+      <div class="legend-title">Meta-clusters</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#4A90D9"></div>Comprehension (TL, CH)</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#E67E22"></div>Normative Judgment (EV, GP)</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#27AE60"></div>Productive Capacity (RM, CW, HI)</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#8E44AD"></div>Domain Application (SD)</div>
+      <div style="margin-top:8px; border-top:1px solid #2e3248; padding-top:8px;">
+        <div class="legend-title">Letter inside node</div>
+        <div class="legend-row"><span style="font-weight:700;color:#5ba4f5;font-size:11px;width:12px;display:inline-block">K</span> Knowledge — propositional, teachable</div>
+        <div class="legend-row"><span style="font-weight:700;color:#4dc87a;font-size:11px;width:12px;display:inline-block">S</span> Skill — procedural, needs practice</div>
+        <div class="legend-row"><span style="font-weight:700;color:#e8914a;font-size:11px;width:12px;display:inline-block">D</span> Disposition — habitual stance, needs socialization</div>
+      </div>
+      <div style="margin-top:8px; border-top:1px solid #2e3248; padding-top:8px;">
+        <div class="legend-title">Node size</div>
+        <div class="legend-row">Larger = more JHU courses cover it</div>
+        <div style="margin-top:6px;" class="legend-title">Ring</div>
+        <div class="legend-row"><div class="legend-dot" style="background:transparent;border:2px solid #f5c542;width:10px;height:10px;"></div>AIHUMMA must own this</div>
+      </div>
+    </div>
+    <div id="tooltip"></div>
+  </div>
+
+  <div id="detail-panel">
+    <h2>Outcome Detail</h2>
+    <div class="empty-state" id="detail-empty">
+      Click any node to see details about that learning outcome — including its type (Knowledge / Skill / Disposition), JHU coverage, whether AIHUMMA must build it, and how it connects to other outcomes.
+    </div>
+    <div id="detail-content" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+// ─── CONFIG ──────────────────────────────────────────────────────────────────
+const META_COLORS = {
+  comprehension:       "#4A90D9",
+  normative_judgment:  "#E67E22",
+  productive_capacity: "#27AE60",
+  domain_application:  "#8E44AD"
+};
+
+const NODE_MIN_R = 8;
+const NODE_MAX_R = 28;
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let activeFilter = "all";
+let showAihummaOnly = false;
+let showEdges = true;
+let selectedNode = null;
+
+// ─── DATA PREP ────────────────────────────────────────────────────────────────
+const nodes = window.TAXONOMY_NODES.map(d => ({ ...d }));
+const edges = window.TAXONOMY_EDGES.map(d => ({ ...d }));
+
+// Scale node radius by coverage
+const maxCoverage = d3.max(nodes, d => d.jhu_coverage) || 1;
+const rScale = d3.scaleSqrt().domain([0, maxCoverage]).range([NODE_MIN_R, NODE_MAX_R]);
+
+// ─── SVG SETUP ────────────────────────────────────────────────────────────────
+const svg = d3.select("#viz");
+const width = () => document.getElementById("canvas-wrap").clientWidth;
+const height = () => document.getElementById("canvas-wrap").clientHeight;
+
+const g = svg.append("g").attr("class", "viz-root");
+
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.2, 4])
+  .on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom);
+
+// Arrow marker definitions (one per meta-cluster color + dimmed)
+const defs = svg.append("defs");
+const arrowColors = [
+  { id: "arrow-comp",  color: "#4A90D9" },
+  { id: "arrow-norm",  color: "#E67E22" },
+  { id: "arrow-prod",  color: "#27AE60" },
+  { id: "arrow-dom",   color: "#8E44AD" },
+  { id: "arrow-dim",   color: "#2e3248" },
+  { id: "arrow-default", color: "#4a5070" }
+];
+arrowColors.forEach(({ id, color }) => {
+  defs.append("marker")
+    .attr("id", id)
+    .attr("viewBox", "0 -4 8 8")
+    .attr("refX", 8)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,-4L8,0L0,4")
+    .attr("fill", color);
+});
+
+// ─── FORCE SIMULATION ─────────────────────────────────────────────────────────
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(edges)
+    .id(d => d.id)
+    .distance(d => {
+      // longer distance for cross-cluster edges
+      const srcCluster = nodes.find(n => n.id === (d.source.id || d.source))?.cluster;
+      const tgtCluster = nodes.find(n => n.id === (d.target.id || d.target))?.cluster;
+      return srcCluster === tgtCluster ? 90 : 160;
+    })
+    .strength(0.3))
+  .force("charge", d3.forceManyBody().strength(-280))
+  .force("center", d3.forceCenter(0, 0))
+  .force("collision", d3.forceCollide().radius(d => rScale(d.jhu_coverage) + 6))
+  // Cluster grouping forces
+  .force("cluster-x", d3.forceX().x(d => {
+    const offsets = { comprehension: -200, normative_judgment: 100, productive_capacity: 50, domain_application: -150 };
+    return offsets[d.meta_cluster] || 0;
+  }).strength(0.06))
+  .force("cluster-y", d3.forceY().y(d => {
+    const offsets = { comprehension: -120, normative_judgment: -80, productive_capacity: 100, domain_application: 160 };
+    return offsets[d.meta_cluster] || 0;
+  }).strength(0.06));
+
+// ─── DRAW EDGES ──────────────────────────────────────────────────────────────
+const linkG = g.append("g").attr("class", "links");
+
+const link = linkG.selectAll("line")
+  .data(edges)
+  .enter().append("line")
+  .attr("class", "link")
+  .attr("stroke", "#4a5070")
+  .attr("stroke-width", d => d.strength === 3 ? 2 : d.strength === 2 ? 1.5 : 1)
+  .attr("stroke-dasharray", d => d.type === "scaffolds" ? "5,4" : d.type === "integrates" ? "2,3" : null)
+  .attr("marker-end", "url(#arrow-default)");
+
+// ─── DRAW NODES ──────────────────────────────────────────────────────────────
+const nodeG = g.append("g").attr("class", "nodes");
+
+const node = nodeG.selectAll("g")
+  .data(nodes)
+  .enter().append("g")
+  .attr("class", "node")
+  .attr("data-id", d => d.id)
+  .call(d3.drag()
+    .on("start", dragStart)
+    .on("drag", dragged)
+    .on("end", dragEnd))
+  .on("click", nodeClick)
+  .on("mouseover", nodeMouseover)
+  .on("mouseout", nodeMouseout);
+
+// Background glow ring for AIHUMMA-owned
+node.filter(d => d.aihumma_owns)
+  .append("circle")
+  .attr("r", d => rScale(d.jhu_coverage) + 4)
+  .attr("fill", "none")
+  .attr("stroke", "#f5c542")
+  .attr("stroke-width", 1.5)
+  .attr("stroke-dasharray", "3,2")
+  .attr("opacity", 0.5);
+
+// Main circle
+node.append("circle")
+  .attr("r", d => rScale(d.jhu_coverage))
+  .attr("fill", d => {
+    const base = META_COLORS[d.meta_cluster];
+    return base;
+  })
+  .attr("fill-opacity", 0.75)
+  .attr("stroke", d => META_COLORS[d.meta_cluster])
+  .attr("stroke-width", 1.5);
+
+// Code label (always visible)
+node.append("text")
+  .attr("class", "code-label")
+  .attr("dy", "-0.15em")
+  .text(d => d.id);
+
+// Cluster sub-label (small)
+node.append("text")
+  .attr("dy", "1.1em")
+  .style("fill", "rgba(255,255,255,0.45)")
+  .style("font-size", "7.5px")
+  .text(d => {
+    const typeLabels = { K: "K", S: "S", D: "D" };
+    return typeLabels[d.type] || "";
+  });
+
+// ─── SIMULATION TICK ─────────────────────────────────────────────────────────
+sim.on("tick", () => {
+  link
+    .attr("x1", d => d.source.x)
+    .attr("y1", d => d.source.y)
+    .attr("x2", d => {
+      // shorten line to not overlap node
+      const dx = d.target.x - d.source.x;
+      const dy = d.target.y - d.source.y;
+      const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      const r = rScale(d.target.jhu_coverage) + 8;
+      return d.target.x - (dx / dist) * r;
+    })
+    .attr("y2", d => {
+      const dx = d.target.x - d.source.x;
+      const dy = d.target.y - d.source.y;
+      const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      const r = rScale(d.target.jhu_coverage) + 8;
+      return d.target.y - (dy / dist) * r;
+    });
+
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+// Center view after layout settles
+sim.on("end", () => {
+  const bbox = nodeG.node().getBBox();
+  const cx = bbox.x + bbox.width / 2;
+  const cy = bbox.y + bbox.height / 2;
+  const scale = Math.min(0.85,
+    Math.min(width() / (bbox.width + 80), height() / (bbox.height + 80))
+  );
+  svg.transition().duration(800).call(
+    zoom.transform,
+    d3.zoomIdentity.translate(width() / 2 - cx * scale, height() / 2 - cy * scale).scale(scale)
+  );
+  updateStats();
+});
+
+// ─── DRAG HANDLERS ───────────────────────────────────────────────────────────
+function dragStart(event, d) {
+  if (!event.active) sim.alphaTarget(0.3).restart();
+  d.fx = d.x; d.fy = d.y;
+}
+function dragged(event, d) { d.fx = event.x; d.fy = event.y; }
+function dragEnd(event, d) {
+  if (!event.active) sim.alphaTarget(0);
+  d.fx = null; d.fy = null;
+}
+
+// ─── TOOLTIP ─────────────────────────────────────────────────────────────────
+const tooltip = document.getElementById("tooltip");
+
+function nodeMouseover(event, d) {
+  tooltip.style.display = "block";
+  tooltip.innerHTML = `<strong>${d.id}: ${d.label}</strong><em>${d.cluster} · ${d.type} · ${d.jhu_coverage} JHU courses</em>`;
+}
+function nodeMouseout() {
+  tooltip.style.display = "none";
+}
+svg.on("mousemove", function(event) {
+  const [mx, my] = d3.pointer(event, this);
+  tooltip.style.left = (mx + 16) + "px";
+  tooltip.style.top = (my - 20) + "px";
+});
+
+// ─── NODE CLICK → DETAIL PANEL ───────────────────────────────────────────────
+function nodeClick(event, d) {
+  event.stopPropagation();
+  selectedNode = d;
+  highlightConnections(d);
+  renderDetailPanel(d);
+}
+
+svg.on("click", () => {
+  if (selectedNode) {
+    selectedNode = null;
+    clearHighlight();
+    document.getElementById("detail-empty").style.display = "block";
+    document.getElementById("detail-content").style.display = "none";
+  }
+});
+
+function highlightConnections(d) {
+  const connected = new Set([d.id]);
+  edges.forEach(e => {
+    const sid = e.source.id || e.source;
+    const tid = e.target.id || e.target;
+    if (sid === d.id || tid === d.id) {
+      connected.add(sid);
+      connected.add(tid);
+    }
+  });
+
+  node.classed("dimmed", n => !connected.has(n.id));
+  node.classed("highlighted", n => n.id === d.id);
+
+  link.classed("highlighted", e => {
+    const sid = e.source.id || e.source;
+    const tid = e.target.id || e.target;
+    return sid === d.id || tid === d.id;
+  });
+  link.classed("dimmed", e => {
+    const sid = e.source.id || e.source;
+    const tid = e.target.id || e.target;
+    return !(sid === d.id || tid === d.id);
+  });
+}
+
+function clearHighlight() {
+  node.classed("dimmed", false).classed("highlighted", false);
+  link.classed("highlighted", false).classed("dimmed", false);
+}
+
+function renderDetailPanel(d) {
+  document.getElementById("detail-empty").style.display = "none";
+  const panel = document.getElementById("detail-content");
+  panel.style.display = "block";
+
+  const mc = window.TAXONOMY_META_CLUSTERS.find(m => m.id === d.meta_cluster);
+  const mcColor = META_COLORS[d.meta_cluster];
+  const coveragePct = Math.round((d.jhu_coverage / maxCoverage) * 100);
+
+  const typeLabels = { K: "Knowledge", S: "Skill", D: "Disposition" };
+  const typeClass = { K: "badge-K", S: "badge-S", D: "badge-D" };
+  const roleClass = {
+    foundational: "badge-foundational",
+    integrative: "badge-integrative",
+    middle: "badge-middle"
+  };
+
+  // Find prerequisites (edges where target = d.id)
+  const prereqs = edges.filter(e => (e.target.id || e.target) === d.id);
+  // Find enables (edges where source = d.id)
+  const enables = edges.filter(e => (e.source.id || e.source) === d.id);
+
+  const nodeById = id => nodes.find(n => n.id === id);
+
+  const connItem = (edgeObj, direction) => {
+    // "from" means d is the source → the other node is the target
+    // "to"   means d is the target → the other node is the source
+    const otherId = direction === "from"
+      ? (edgeObj.target.id || edgeObj.target)
+      : (edgeObj.source.id || edgeObj.source);
+    const other = nodeById(otherId);
+    if (!other) return "";
+    const arrow = direction === "from" ? "→" : "←";
+    const label = direction === "from"
+      ? `enables <strong>${other.id}</strong>`
+      : `requires <strong>${other.id}</strong>`;
+    return `<div class="conn-item" data-goto="${other.id}">
+      <span class="conn-arrow">${arrow}</span>
+      <span>
+        <span class="conn-code">${other.id}</span>
+        <span class="conn-label"> ${other.label}</span>
+        <br><span style="color:#4a5570;font-size:9.5px">${edgeObj.type} · str ${edgeObj.strength}</span>
+      </span>
+    </div>`;
+  };
+
+  panel.innerHTML = `
+    <div>
+      <div class="detail-code" style="color:${mcColor}">${d.id}</div>
+      <div class="detail-label">${d.label}</div>
+      <div style="font-size:10px;color:${mcColor};margin-top:4px;opacity:0.8">${mc ? mc.label : d.meta_cluster} · ${d.cluster}</div>
+    </div>
+
+    <div class="detail-desc">${d.description}</div>
+
+    <div class="badges">
+      <span class="badge ${typeClass[d.type]}">${typeLabels[d.type]}</span>
+      <span class="badge ${d.specificity === 'ai_specific' ? 'badge-ai' : 'badge-general'}">
+        ${d.specificity === 'ai_specific' ? 'AI-specific' : 'General'}
+      </span>
+      <span class="badge ${roleClass[d.network_role]}">${d.network_role}</span>
+    </div>
+
+    <div class="coverage-bar-wrap">
+      <label>JHU Coverage</label>
+      <div class="coverage-bar">
+        <div class="coverage-bar-fill" style="width:${coveragePct}%;background:${mcColor};opacity:0.7"></div>
+      </div>
+      <div class="coverage-number">${d.jhu_coverage} / 65 courses (${Math.round(d.jhu_coverage/65*100)}%)</div>
+    </div>
+
+    <div>
+      <div class="${d.aihumma_owns ? 'aihumma-badge owns' : 'aihumma-badge elective'}">
+        ${d.aihumma_owns ? '★ AIHUMMA must own this' : '○ Available as elective'}
+      </div>
+    </div>
+
+    ${prereqs.length > 0 ? `
+      <div>
+        <div class="section-title">Requires / Builds On</div>
+        <div class="connections-list">
+          ${prereqs.map(e => connItem(e, "to")).join("")}
+        </div>
+      </div>` : ""}
+
+    ${enables.length > 0 ? `
+      <div>
+        <div class="section-title">Enables / Scaffolds</div>
+        <div class="connections-list">
+          ${enables.map(e => connItem(e, "from")).join("")}
+        </div>
+      </div>` : ""}
+  `;
+
+  // Wire up conn-item clicks
+  panel.querySelectorAll(".conn-item[data-goto]").forEach(el => {
+    el.addEventListener("click", () => {
+      const target = nodes.find(n => n.id === el.dataset.goto);
+      if (target) {
+        selectedNode = target;
+        highlightConnections(target);
+        renderDetailPanel(target);
+        // Zoom to node
+        svg.transition().duration(400).call(
+          zoom.transform,
+          d3.zoomIdentity
+            .translate(width() / 2 - target.x * 1.5, height() / 2 - target.y * 1.5)
+            .scale(1.5)
+        );
+      }
+    });
+  });
+}
+
+// ─── FILTER BUTTONS ──────────────────────────────────────────────────────────
+document.querySelectorAll(".filter-btn[data-mc]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn[data-mc]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.mc;
+    applyFilters();
+    updateStats();
+  });
+});
+
+document.getElementById("toggle-aihumma").addEventListener("click", function() {
+  showAihummaOnly = !showAihummaOnly;
+  this.classList.toggle("active", showAihummaOnly);
+  applyFilters();
+  updateStats();
+});
+
+document.getElementById("toggle-edges").addEventListener("click", function() {
+  showEdges = !showEdges;
+  this.classList.toggle("active", !showEdges);
+  linkG.style("opacity", showEdges ? 1 : 0);
+  this.textContent = showEdges ? "Hide edges" : "Show edges";
+});
+
+function applyFilters() {
+  const visible = new Set();
+  nodes.forEach(d => {
+    const mcMatch = activeFilter === "all" || d.meta_cluster === activeFilter;
+    const aiMatch = !showAihummaOnly || d.aihumma_owns;
+    if (mcMatch && aiMatch) visible.add(d.id);
+  });
+
+  node.style("display", d => visible.has(d.id) ? null : "none");
+  link.style("display", e => {
+    const sid = e.source.id || e.source;
+    const tid = e.target.id || e.target;
+    return visible.has(sid) && visible.has(tid) ? null : "none";
+  });
+}
+
+function updateStats() {
+  const visibleNodes = nodes.filter(d => {
+    const mcMatch = activeFilter === "all" || d.meta_cluster === activeFilter;
+    const aiMatch = !showAihummaOnly || d.aihumma_owns;
+    return mcMatch && aiMatch;
+  });
+  const aihummaCount = visibleNodes.filter(d => d.aihumma_owns).length;
+  document.getElementById("stats-display").textContent =
+    `${visibleNodes.length} outcomes · ${aihummaCount} AIHUMMA-owned`;
+}
+
+// Initial stats
+setTimeout(updateStats, 100);
+
+// ─── RESPONSIVE RESIZE ───────────────────────────────────────────────────────
+window.addEventListener("resize", () => {
+  sim.force("center", d3.forceCenter(0, 0));
+});
+</script>
+</body>
+</html>
