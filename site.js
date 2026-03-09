@@ -14,7 +14,7 @@ const NAV = [
       { label: 'Competitive Landscape', slug: 'AIHUMMA Competitive Landscape' },
       { label: 'Curriculum Idea 01',    slug: 'AIHUMMA Curriculum Idea 01' },
       { label: 'Curriculum Mapping',    slug: 'aihumma-curriculum-mapping' },
-      { label: 'Taxonomy Network',      slug: 'AIHUMMA Taxonomy Network' },
+      { label: 'Taxonomy Visualization',      slug: 'AIHUMMA Taxonomy Network' },
       { label: 'Existing Courses',      slug: 'Existing Courses' },
     ]
   },
