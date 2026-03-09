@@ -6,6 +6,16 @@
 | ------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
 | How AI Systems Work | Institutions, Governance, <br>and the Regulation of <br>Risky Technologies | Ethics, Values, and <br>AI: From Philosophy <br>to Policy | Writing for Policy: <br>Genre, Audience, <br>and Argument |
 
+| Concentration Tracks                     |                                              |
+| ---------------------------------------- | -------------------------------------------- |
+| **Policy and Governance Research**       | **Operations, Programs, and Communications** |
+| Comparative AI Regulation                | Program Design and Convening                 |
+| Research Methods for AI Governance       | Strategic Communications for AI Governance   |
+| Seminar: Frontier AI Risk and Governance | Fundraising, Operations, and Field-Building  |
+
+| Practicum and Capstone |                  |                  |
+| ---------------------- | ---------------- | ---------------- |
+| Field Practicum        | Capstone Seminar | Capstone Project |
 ## Foundation Layer: Four Core Courses
 Everyone takes these regardless of track. They build the shared language of the cohort and ensure every graduate can function credibly in any of the target orgs.
 ### AIHUMMA-F1 · How AI Systems Work (For People Who Don't Build Them)
