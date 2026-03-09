@@ -5,6 +5,7 @@ const NAV = [
     section: 'Project',
     pages: [
       { label: 'Home',                slug: 'HOME' },
+      { label: 'Workflow',            slug: 'curriculum-exploration-workflow' },
     ]
   },
   {
