@@ -257,3 +257,78 @@ body {
   border-left: 2px solid var(--mid);
   margin: 0.5rem 0;
 }
+
+/* ── Page preview (Obsidian-style hover) ─────────────────────────────────── */
+
+#page-preview {
+  position: fixed;
+  z-index: 500;
+  width: 360px;
+  max-height: 380px;
+  overflow: hidden;
+  background: var(--white);
+  border: 2px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+  padding: 1.25rem 1.5rem 2.5rem;
+  display: none;
+  pointer-events: auto;
+}
+
+/* Fade gradient signals more content below */
+#page-preview::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3.5rem;
+  background: linear-gradient(transparent, var(--white));
+  pointer-events: none;
+}
+
+/* Source page label at top of preview */
+.preview-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Scale down the rendered markdown inside the preview */
+#page-preview h1, #page-preview h2, #page-preview h3,
+#page-preview h4, #page-preview h5, #page-preview h6 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0.6rem 0 0.35rem;
+  text-transform: none;
+  letter-spacing: 0;
+  border: none;
+  padding: 0;
+  color: var(--black);
+}
+
+#page-preview p {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin-bottom: 0.45rem;
+  color: #333;
+  max-width: none;
+}
+
+#page-preview ul, #page-preview ol {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0.25rem 0 0.45rem 1.25rem;
+  max-width: none;
+}
+
+#page-preview li { margin-bottom: 0.2rem; }
+
+/* Links inside preview are visual-only — clicking navigates via the source link */
+#page-preview a {
+  color: var(--red);
+  pointer-events: none;
+  text-decoration: none;
+}

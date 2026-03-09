@@ -257,6 +257,7 @@
       font-size: 10.5px;
       color: #8a90a8;
       pointer-events: none;
+      display: none;
     }
     #legend .legend-title {
       font-size: 10px;
@@ -341,6 +342,7 @@
     <span class="filter-label">Show</span>
     <button class="toggle-btn" id="toggle-aihumma">AIHUMMA-owned only</button>
     <button class="toggle-btn" id="toggle-edges">Hide edges</button>
+    <button class="toggle-btn" id="toggle-legend">Legend</button>
   </div>
 
   <div id="stats-display"></div>
@@ -783,6 +785,13 @@ document.getElementById("toggle-edges").addEventListener("click", function() {
   this.classList.toggle("active", !showEdges);
   linkG.style("opacity", showEdges ? 1 : 0);
   this.textContent = showEdges ? "Hide edges" : "Show edges";
+});
+
+document.getElementById("toggle-legend").addEventListener("click", function() {
+  const legend = document.getElementById("legend");
+  const visible = legend.style.display === "block";
+  legend.style.display = visible ? "none" : "block";
+  this.classList.toggle("active", !visible);
 });
 
 function applyFilters() {

@@ -266,17 +266,17 @@ The four capstone formats each emphasize different code combinations: the policy
 
 These outcomes are intentionally not addressed in required AIHUMMA courses. The JHU catalog covers them adequately, and students should be directed to specific electives.
 
-| Code | Coverage | Recommended Electives |
-|------|---------|----------------------|
-| TL-03 | 17 courses | EN.601.475 Machine Learning, EN.553.632 Intro to ML |
-| TL-05 | 12 courses | Mathematics/statistics prerequisites as needed |
-| CH-04 | 16 courses | AS.060.334 AI in Film, AS.214.634 Speculative Fiction and AI |
-| HI-02 | 7 courses | EN.601.484 Explainable AI Design, EN.601.480 Intro Human-Centered AI |
-| HI-04 | 2 courses | Human-centered design electives in Engineering |
-| HI-05 | 3 courses | EN.601.689 Intro Agentic AI Systems |
-| SD-01 | 10 courses | Bloomberg/Carey health AI courses |
-| SD-05 | 6 courses | Peabody, Film & Media Studies electives |
-| SD-07 | 11 courses | Carey Business School AI courses |
+| Code  | Coverage   | Recommended Electives                                                |
+| ----- | ---------- | -------------------------------------------------------------------- |
+| TL-03 | 17 courses | EN.601.475 Machine Learning, EN.553.632 Intro to ML                  |
+| TL-05 | 12 courses | Mathematics/statistics prerequisites as needed                       |
+| CH-04 | 16 courses | AS.060.334 AI in Film, AS.214.634 Speculative Fiction and AI         |
+| HI-02 | 7 courses  | EN.601.484 Explainable AI Design, EN.601.480 Intro Human-Centered AI |
+| HI-04 | 2 courses  | Human-centered design electives in Engineering                       |
+| HI-05 | 3 courses  | EN.601.689 Intro Agentic AI Systems                                  |
+| SD-01 | 10 courses | Bloomberg/Carey health AI courses                                    |
+| SD-05 | 6 courses  | Peabody, Film & Media Studies electives                              |
+| SD-07 | 11 courses | Carey Business School AI courses                                     |
 
 ---
 

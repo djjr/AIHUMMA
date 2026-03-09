@@ -123,7 +123,122 @@ async function loadPage(slug) {
   window.scrollTo(0, 0);
 }
 
+// ── Page preview (Obsidian-style hover) ──────────────────────────────────────
+//
+// Strategy: event delegation on the two long-lived containers (#nav, #content)
+// so we don't have to re-wire listeners every time a page re-renders.
+// A 280 ms delay before fetching prevents flicker on casual mouse-overs.
+// Fetched markdown is cached so subsequent hovers are instant.
+
+const previewCache = new Map();   // slug → rendered HTML string
+let   hoverTimer   = null;
+let   previewActive = false;      // true while mouse is inside the panel itself
+
+// Create the panel once and wire its own enter/leave to keep it alive while
+// the user is reading it (i.e. don't hide it the moment the cursor leaves a link).
+const previewEl = (() => {
+  const el = document.createElement('div');
+  el.id = 'page-preview';
+  document.body.appendChild(el);
+  el.addEventListener('mouseenter', () => {
+    previewActive = true;
+    clearTimeout(hoverTimer);
+  });
+  el.addEventListener('mouseleave', () => {
+    previewActive = false;
+    scheduleHide();
+  });
+  return el;
+})();
+
+// Hide after a short grace period (lets mouse move from link → panel without flash).
+function scheduleHide() {
+  clearTimeout(hoverTimer);
+  hoverTimer = setTimeout(() => {
+    if (!previewActive) previewEl.style.display = 'none';
+  }, 150);
+}
+
+// Place the panel near the cursor, but flip left or up if we'd overflow the viewport.
+function positionPreview(x, y) {
+  const PAD = 14;
+  const W   = 360;   // must match CSS width
+  const H   = 380;   // must match CSS max-height
+  let left  = x + PAD;
+  let top   = y + PAD;
+  if (left + W > window.innerWidth  - PAD) left = x - W - PAD;
+  if (top  + H > window.innerHeight - PAD) top  = y - H - PAD;
+  if (left < PAD) left = PAD;
+  if (top  < PAD) top  = PAD;
+  previewEl.style.left = left + 'px';
+  previewEl.style.top  = top  + 'px';
+}
+
+// After the delay: fetch (or use cache), truncate, render, show.
+function showPreviewForSlug(slug, pageLabel, x, y) {
+  clearTimeout(hoverTimer);
+  hoverTimer = setTimeout(async () => {
+    positionPreview(x, y);
+
+    if (previewCache.has(slug)) {
+      previewEl.innerHTML  = previewCache.get(slug);
+      previewEl.style.display = 'block';
+      return;
+    }
+
+    // Show a lightweight loading state while we fetch
+    previewEl.innerHTML = `<div class="preview-title">${pageLabel}</div>` +
+                          '<p class="loading">Loading…</p>';
+    previewEl.style.display = 'block';
+
+    try {
+      const resp = await fetch(encodeURIComponent(slug + '.md'));
+      if (!resp.ok) throw new Error('not found');
+      const raw = await resp.text();
+
+      // Take first ~55 non-blank lines — enough for a meaningful glance,
+      // fast to parse, and stops before huge tables / matrices.
+      const snippet = raw.split('\n').slice(0, 55).join('\n');
+      const html    = `<div class="preview-title">${pageLabel}</div>` +
+                      marked.parse(preprocess(snippet));
+      previewCache.set(slug, html);
+      previewEl.innerHTML     = html;
+      previewEl.style.display = 'block';
+    } catch (_) {
+      previewEl.style.display = 'none';
+    }
+  }, 280);
+}
+
+// Attach delegated listeners to one container.  Called once per container on
+// DOMContentLoaded; works for all dynamically-rendered child links thereafter.
+function attachPreviewDelegation(containerEl) {
+  if (!containerEl) return;
+
+  containerEl.addEventListener('mouseover', e => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const slug = decodeURIComponent(anchor.getAttribute('href').slice(1));
+    const page = ALL_PAGES.find(p => p.slug === slug);
+    if (!page) return;
+    if (slug === getSlug()) return;   // no preview for the page already showing
+    showPreviewForSlug(slug, page.label, e.clientX, e.clientY);
+  });
+
+  containerEl.addEventListener('mouseout', e => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    // If the cursor is moving into the panel, let the panel's own listeners take over
+    if (e.relatedTarget && (e.relatedTarget === previewEl || previewEl.contains(e.relatedTarget))) return;
+    scheduleHide();
+  });
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 
 window.addEventListener('hashchange', () => loadPage(getSlug()));
-document.addEventListener('DOMContentLoaded', () => loadPage(getSlug()));
+document.addEventListener('DOMContentLoaded', () => {
+  loadPage(getSlug());
+  attachPreviewDelegation(document.getElementById('nav'));
+  attachPreviewDelegation(document.getElementById('content'));
+});

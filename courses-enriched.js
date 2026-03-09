@@ -5,16 +5,14 @@ window.COURSES_ENRICHED = [
     "school": "",
     "units": [],
     "instructors": [],
-    "description": "This course introduces substantial machine learning methods of particular relevance to humanistic scholarship. Areas covered include standard models for classification, regression, and topic modeling, before turning to the array of open-source pretrained deep neural models, and the common mechanisms for employing them. Students are expected to have a level of programming experience equivalent to that gained from AS.360.304, Gateway Computing, AS.250.205, or Harvard\u2019s CS50 for Python. Students will come away with an understanding of the strengths and weaknesses of different machine learning models, the ability to discuss them in relation to human intelligence and to make informed decisions of when and how to employ them, and an array of related technical knowledge.",
+    "description": "This course introduces substantial machine learning methods of particular relevance to humanistic scholarship. Areas covered include standard models for classification, regression, and topic modeling, before turning to the array of open-source pretrained deep neural models, and the common mechanisms for employing them. Students are expected to have a level of programming experience equivalent to that gained from AS.360.304, Gateway Computing, AS.250.205, or Harvard’s CS50 for Python. Students will come away with an understanding of the strengths and weaknesses of different machine learning models, the ability to discuss them in relation to human intelligence and to make informed decisions of when and how to employ them, and an array of related technical knowledge.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "machine-learning",
       "humanities",
-      "python",
-      "human-intelligence"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -49,11 +47,7 @@ window.COURSES_ENRICHED = [
     "notes": "",
     "keywords": [
       "humanities",
-      "python",
-      "experimental-design",
-      "hypothesis-testing",
-      "empirical-research",
-      "data-analysis"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-03",
@@ -89,11 +83,8 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "lab",
       "ethnography",
-      "qualitative-methods",
-      "translation",
-      "oral-history"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-04",
@@ -131,13 +122,8 @@ window.COURSES_ENRICHED = [
       "ethnography",
       "social-media",
       "healthcare",
-      "startups",
-      "labor-rights",
       "surveillance",
-      "automation",
-      "human-exceptionalism",
-      "legal-frameworks",
-      "technology-society"
+      "automation"
     ],
     "outcome_codes": [
       "TL-04",
@@ -160,53 +146,6 @@ window.COURSES_ENRICHED = [
       "Can critically evaluate competing visions of AI futures and propose alternative pathways grounded in specific institutional, ethical, or political commitments."
     ],
     "tech_hum_scale": 5
-  },
-  {
-    "title": "Practical Mathematics for AI",
-    "course_number": "AS.110.204",
-    "school": "",
-    "units": [],
-    "instructors": [
-      "Ali Yousuf, Muhammad"
-    ],
-    "description": "This course provides a rigorous yet accessible introduction to the essential mathematical foundations underlying modern Artificial Intelligence (AI) and Deep Learning applications. The course emphasizes the practical application of linear algebra, probability, statistics, calculus, and optimization techniques in the design and understanding of machine learning systems. Students will explore how these core mathematical tools are used to build models for computer vision, regression, classification, clustering, and deep neural networks. Each topic is contextualized with real-world problems, Python Code, and bridging theory with implementation. The course is designed for students from diverse academic backgrounds who want to gain a solid foundation in mathematics for working with AI systems. Topics include: Vectors, matrices, and tensor operations; Calculus and gradient-based optimization for training neural networks; Probability theory and statistical inference in machine learning; Mathematical intuition behind computer vision, regression, classification, clustering, and deep neural networks with practical use cases.",
-    "credits": "",
-    "term": "",
-    "campus": "",
-    "notes": "",
-    "keywords": [
-      "linear-algebra",
-      "probability",
-      "statistics",
-      "calculus",
-      "optimization",
-      "gradient-descent",
-      "deep-learning",
-      "computer-vision",
-      "classification",
-      "clustering",
-      "python",
-      "math-foundations"
-    ],
-    "outcome_codes": [
-      "TL-01",
-      "TL-03",
-      "TL-05",
-      "CH-05",
-      "RM-02",
-      "HI-01"
-    ],
-    "learning_outcomes": [
-      "Students will be able to apply linear algebra and matrix operations to understand how neural networks learn and make predictions.",
-      "Students will be able to use probability and statistics to analyze uncertainty in ML systems and evaluate model performance.",
-      "Students will be able to understand optimization algorithms and their role in training ML models.",
-      "Students will be able to apply calculus and mathematical reasoning to diagnose why models fail and how to improve them."
-    ],
-    "signature_capabilities": [
-      "Can apply mathematical reasoning to explain why a specific machine learning model succeeds or fails on a problem.",
-      "Can use probability and optimization concepts to improve model performance and diagnose failure modes."
-    ],
-    "tech_hum_scale": 1
   },
   {
     "title": "Philosophy and AI in Healthcare",
@@ -253,19 +192,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Ang, Yuen Yuen"
     ],
-    "description": "This exploratory PhD seminar invites students into the emerging space where human research practices and artificial intelligence begin to intersect. Framed by the concept of directed improvisation, the course treats the human researcher as a director\u2014shaping the conditions and prompts under which AI, like a responsive actor, contributes to the creative process. AI is not approached as a shortcut, a threat, or mere tool, but as a partner in co-creation. The course covers the intellectual history of AI, contemporary debates, and practical applications of AI for research tasks. This is not a course with prepackaged answers. Our goal is to think and practice together, engaging in a range of novel questions that haven\u2019t yet been fully named.",
+    "description": "This exploratory PhD seminar invites students into the emerging space where human research practices and artificial intelligence begin to intersect. Framed by the concept of directed improvisation, the course treats the human researcher as a director—shaping the conditions and prompts under which AI, like a responsive actor, contributes to the creative process. AI is not approached as a shortcut, a threat, or mere tool, but as a partner in co-creation. The course covers the intellectual history of AI, contemporary debates, and practical applications of AI for research tasks. This is not a course with prepackaged answers. Our goal is to think and practice together, engaging in a range of novel questions that haven’t yet been fully named.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "PhD seminar (as described).",
     "keywords": [
-      "phd-seminar",
-      "research-practice",
-      "human-ai-collaboration",
-      "creative-process",
-      "ai-history",
-      "methods",
-      "improvisation"
+      "human-ai-interaction",
+      "ai-history"
     ],
     "outcome_codes": [
       "TL-04",
@@ -306,7 +240,6 @@ window.COURSES_ENRICHED = [
       "policy",
       "bias",
       "safety",
-      "institutions",
       "values"
     ],
     "outcome_codes": [
@@ -342,21 +275,16 @@ window.COURSES_ENRICHED = [
       "Tatarchenko, Ksenia",
       "Watters, Aliza"
     ],
-    "description": "Artificial Intelligence (AI) is rapidly shaping how we learn, work, and communicate\u2014but understanding what AI is, how it works, and when it should be used requires more than technical knowledge. This 1-credit seminar invites students to explore AI through a humanities-informed lens, emphasizing historical context, conceptual inquiry, and critical reflection. Students will be introduced to how AI systems, such as machine learning models, are developed and trained, and will consider questions about intelligence, prediction, and human judgment. Through guided discussion, short readings, reflective writing, and low-stakes engagement with AI tools, students will examine different ways AI is used across academic, social, and professional settings. Using case studies drawn from areas such as mental health, deepfakes, social media, and recommendation systems, students will have the opportunity to critically analyze ethical concerns\u2014including bias, privacy, environmental impact, accountability, and institutional power\u2014aligned with their goals and interests. No prior experience with AI is required.",
+    "description": "Artificial Intelligence (AI) is rapidly shaping how we learn, work, and communicate—but understanding what AI is, how it works, and when it should be used requires more than technical knowledge. This 1-credit seminar invites students to explore AI through a humanities-informed lens, emphasizing historical context, conceptual inquiry, and critical reflection. Students will be introduced to how AI systems, such as machine learning models, are developed and trained, and will consider questions about intelligence, prediction, and human judgment. Through guided discussion, short readings, reflective writing, and low-stakes engagement with AI tools, students will examine different ways AI is used across academic, social, and professional settings. Using case studies drawn from areas such as mental health, deepfakes, social media, and recommendation systems, students will have the opportunity to critically analyze ethical concerns—including bias, privacy, environmental impact, accountability, and institutional power—aligned with their goals and interests. No prior experience with AI is required.",
     "credits": "1",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "ai",
-      "society",
       "humanities",
-      "history",
       "ethics",
       "bias",
       "privacy",
-      "recommendation-systems",
-      "environmental-impact",
       "accountability"
     ],
     "outcome_codes": [
@@ -396,12 +324,6 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "sex",
-      "gender",
-      "feminist-theory",
-      "cybertechnology",
-      "robots",
-      "film-and-media",
       "ethnography",
       "ethics"
     ],
@@ -442,12 +364,9 @@ window.COURSES_ENRICHED = [
     "notes": "",
     "keywords": [
       "national-security",
-      "intelligence-community",
-      "intelligence-analysis",
       "ai-history",
       "ethics",
-      "policy",
-      "human-ai-interface"
+      "policy"
     ],
     "outcome_codes": [
       "TL-04",
@@ -478,19 +397,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Gourgey, Bill"
     ],
-    "description": "Discover the power and impact of data-driven stories. Through case studies and hands-on experience, students will explore the art of sourcing, analyzing, and verifying data, and using AI reporting tools, while applying narrative skills to write compelling data-driven stories about science, medicine, and technology. Engage in discussions about the biases buried in data, the influence data has on our lives, the channels for mis- and disinformation, and the unique ways in which data storytelling can enhance reader engagement. Learn to work with three key aspects of data storytelling: sourcing the data, presenting the data (often called visualization), and writing narratives that unpack hidden messages. This writing elective opens with a 4-week introduction to data, including data sourcing, analysis, and verification, with user-friendly tools, that don\u2019t require deep technical skills. Accompanying readings will focus on best practices in data journalism and using AI within the ethical bounds of journalism, with examples of compelling data-driven stories. In preparation for writing their own data-driven stories, students will examine case studies that demonstrate how data is collected, transformed, analyzed, and interpreted to forge engaging narratives and accompanying visuals. Following the case studies, students will share their data-driven stories and critique their classmates' work. By the end of the course, students can expect to have a solid foundation in data literacy and the ability to tell stories with data. Prerequisite: AS.491.658, AS.491.750, or permission of your academic advisor.",
+    "description": "Discover the power and impact of data-driven stories. Through case studies and hands-on experience, students will explore the art of sourcing, analyzing, and verifying data, and using AI reporting tools, while applying narrative skills to write compelling data-driven stories about science, medicine, and technology. Engage in discussions about the biases buried in data, the influence data has on our lives, the channels for mis- and disinformation, and the unique ways in which data storytelling can enhance reader engagement. Learn to work with three key aspects of data storytelling: sourcing the data, presenting the data (often called visualization), and writing narratives that unpack hidden messages. This writing elective opens with a 4-week introduction to data, including data sourcing, analysis, and verification, with user-friendly tools, that don’t require deep technical skills. Accompanying readings will focus on best practices in data journalism and using AI within the ethical bounds of journalism, with examples of compelling data-driven stories. In preparation for writing their own data-driven stories, students will examine case studies that demonstrate how data is collected, transformed, analyzed, and interpreted to forge engaging narratives and accompanying visuals. Following the case studies, students will share their data-driven stories and critique their classmates' work. By the end of the course, students can expect to have a solid foundation in data literacy and the ability to tell stories with data. Prerequisite: AS.491.658, AS.491.750, or permission of your academic advisor.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "Prerequisites listed.",
     "keywords": [
-      "data-journalism",
-      "storytelling",
-      "visualization",
       "misinformation",
-      "bias",
-      "science-writing",
-      "narrative"
+      "bias"
     ],
     "outcome_codes": [
       "CH-02",
@@ -527,8 +441,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "responsible-ai",
-      "ai-safety",
+      "safety",
       "fairness",
       "equity",
       "governance",
@@ -536,8 +449,7 @@ window.COURSES_ENRICHED = [
       "bias",
       "transparency",
       "accountability",
-      "business-strategy",
-      "risk-management"
+      "business-strategy"
     ],
     "outcome_codes": [
       "CH-05",
@@ -569,16 +481,13 @@ window.COURSES_ENRICHED = [
       "BU Information Systems"
     ],
     "instructors": [],
-    "description": "This course covers the foundations of Artificial Intelligence (AI) technologies with emphasis on their business application. It will cover models of machine learning and pattern optimizations. This course will enable the student to gain a fundamental understanding of the foundations and applications of different AI technologies, analysis of the required AI algorithms and machine Learning technologies, necessary to support different business applications. It will require basic uses and applications of an AI tool\u2019s (IBM Watson, Python, or R,), however, it does include teaching software coding.",
+    "description": "This course covers the foundations of Artificial Intelligence (AI) technologies with emphasis on their business application. It will cover models of machine learning and pattern optimizations. This course will enable the student to gain a fundamental understanding of the foundations and applications of different AI technologies, analysis of the required AI algorithms and machine Learning technologies, necessary to support different business applications. It will require basic uses and applications of an AI tool’s (IBM Watson, Python, or R,), however, it does include teaching software coding.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "Course number/instructor not provided in this entry.",
     "keywords": [
-      "business-applications",
-      "python",
-      "r",
-      "coding"
+      "business-strategy"
     ],
     "outcome_codes": [
       "TL-01",
@@ -617,7 +526,8 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "business-strategy"
+      "business-strategy",
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -652,23 +562,13 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Godes, David"
     ],
-    "description": "This course prepares students to thrive in an AI-driven marketing world. We begin with the proposition that AI is transforming fundamentally the way organizations of all types acquire, nurture, retain and monetize customer relationships. After an introductory session providing the necessary basic statistical and contextual background, the course proceeds through a range of applications via which students will develop an understanding of both \u201cwhat\u201d these technologies are able to do and \u201chow\u201d marketers can benefit from them in practice. We will cover both predictive and generative models with specific applications drawn from predicting customer churn, generalizing insights from pilot tests to acquisition at-scale, mining customer feedback for new product ideas, optimizing content for search-engine optimization (SEO), writing marketing copy, and the possibility of using LLMs as a substitute for costly market research. Neither prior machine learning knowledge nor significant coding experience are required (though they are of course, welcome!). Through a mix of lectures, hands-on exercises, mini-case discussions and guest speakers, students will develop an understanding of the full process of data-driven marketing from problem identification to the generation of implementable solutions.",
+    "description": "This course prepares students to thrive in an AI-driven marketing world. We begin with the proposition that AI is transforming fundamentally the way organizations of all types acquire, nurture, retain and monetize customer relationships. After an introductory session providing the necessary basic statistical and contextual background, the course proceeds through a range of applications via which students will develop an understanding of both “what” these technologies are able to do and “how” marketers can benefit from them in practice. We will cover both predictive and generative models with specific applications drawn from predicting customer churn, generalizing insights from pilot tests to acquisition at-scale, mining customer feedback for new product ideas, optimizing content for search-engine optimization (SEO), writing marketing copy, and the possibility of using LLMs as a substitute for costly market research. Neither prior machine learning knowledge nor significant coding experience are required (though they are of course, welcome!). Through a mix of lectures, hands-on exercises, mini-case discussions and guest speakers, students will develop an understanding of the full process of data-driven marketing from problem identification to the generation of implementable solutions.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "marketing",
-      "predictive-models",
-      "generative-models",
-      "customer-churn",
-      "customer-feedback",
-      "seo",
-      "marketing-copy",
-      "llms",
-      "market-research",
-      "data-driven",
-      "analytics"
+      "llms"
     ],
     "outcome_codes": [
       "TL-01",
@@ -706,16 +606,10 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "ai-fundamentals",
-      "neural-networks",
       "deep-learning",
-      "computer-vision",
-      "nlp",
       "generative-ai",
-      "cloud-computing",
-      "hands-on",
-      "business-value",
-      "healthcare"
+      "healthcare",
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -748,23 +642,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Yao, Yaxing"
     ],
-    "description": "Artificial intelligence (AI) has transformed nearly every aspect of modern life. Tools such as ChatGPT and Gemini have greatly expanded human capability, but they also raise critical questions about privacy, accessibility, ethics, and human agency. This course introduces the emerging field of human-centered, an approach that integrates human values, design principles, and technical understanding to ensure AI systems are useful, usable, and responsible. Through a combination of lectures, guest talks, hands-on projects, and in-class activities, students will explore key dimensions of human-centered AI: human aspects, technical aspects, human\u2013AI interaction, special domains. In addition, the course features interactive workshops introducing tools and frameworks essential to human-centered AI practice, such as Figma, React, and the OpenAI API. Required Course Background: foundational knowledge of AI/ML concepts, programming, and human-centered design or behavioral science. Students can earn credit for at most one of 601.494/694.",
+    "description": "Artificial intelligence (AI) has transformed nearly every aspect of modern life. Tools such as ChatGPT and Gemini have greatly expanded human capability, but they also raise critical questions about privacy, accessibility, ethics, and human agency. This course introduces the emerging field of human-centered, an approach that integrates human values, design principles, and technical understanding to ensure AI systems are useful, usable, and responsible. Through a combination of lectures, guest talks, hands-on projects, and in-class activities, students will explore key dimensions of human-centered AI: human aspects, technical aspects, human–AI interaction, special domains. In addition, the course features interactive workshops introducing tools and frameworks essential to human-centered AI practice, such as Figma, React, and the OpenAI API. Required Course Background: foundational knowledge of AI/ML concepts, programming, and human-centered design or behavioral science. Students can earn credit for at most one of 601.494/694.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "Cross-credit note: at most one of 601.494/694.",
     "keywords": [
-      "human-centered-ai",
       "human-ai-interaction",
-      "design",
       "ethics",
       "privacy",
-      "accessibility",
-      "human-agency",
-      "figma",
-      "react",
-      "openai-api",
-      "workshops"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-02",
@@ -796,23 +683,15 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Hager, Greg"
     ],
-    "description": "There are any number of predictions on how AI will impact the future of work, including a national academies study on the topic. However, the fact is that how work is impacted and how it changes depends fundamentally on both what \u201cthe work\u201d is, the level of AI performance necessary to create an effective solution, and if or how human support is involved in the solution. The goal of this course is to 1) Explore different application areas of AI \u2013 its use in information-intensive tasks, its use in image-intensive tasks, and its use in physical world tasks; 2) Understand the system structures that are being developed to deploy AI \u2013 for example how human backup is used to support systems that require high fidelity; 3) Touch on some of the policy and regulatory structures that impact our ability to develop and deploy AI-driven solutions. Students are expected to have some background in AI.",
+    "description": "There are any number of predictions on how AI will impact the future of work, including a national academies study on the topic. However, the fact is that how work is impacted and how it changes depends fundamentally on both what “the work” is, the level of AI performance necessary to create an effective solution, and if or how human support is involved in the solution. The goal of this course is to 1) Explore different application areas of AI – its use in information-intensive tasks, its use in image-intensive tasks, and its use in physical world tasks; 2) Understand the system structures that are being developed to deploy AI – for example how human backup is used to support systems that require high fidelity; 3) Touch on some of the policy and regulatory structures that impact our ability to develop and deploy AI-driven solutions. Students are expected to have some background in AI.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "future-of-work",
-      "ai-systems",
-      "deployment",
-      "human-in-the-loop",
-      "high-fidelity-systems",
       "policy",
-      "regulation",
-      "information-tasks",
-      "vision-tasks",
-      "robotics",
-      "workforce"
+      "regulation"
     ],
     "outcome_codes": [
       "TL-07",
@@ -850,16 +729,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "entrepreneurship",
-      "generative-ai",
-      "product-development",
-      "hands-on",
-      "startups",
-      "investors",
-      "venture-capital",
-      "pitching",
-      "business-models",
-      "guest-speakers"
+      "generative-ai"
     ],
     "outcome_codes": [
       "TL-06",
@@ -900,18 +770,10 @@ window.COURSES_ENRICHED = [
     "notes": "May be cross-listed.",
     "keywords": [
       "generative-ai",
-      "text-generation",
-      "image-generation",
-      "music-generation",
-      "autoencoders",
-      "gans",
-      "transformers",
-      "expert-systems",
-      "markov-models",
       "ethics",
       "bias",
       "privacy",
-      "project-based"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -944,24 +806,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Saeed, Amir Kashif"
     ],
-    "description": "In this course, we will dive into what it truly means to build agentic AI\u2014systems that perceive their environment, make decisions, learn from experience, and act autonomously. We begin by exploring the core principles of intelligent agency and how these systems interact with the world around them. From there, we will examine foundational models and techniques for crafting intelligent behavior, including decision trees, utility theory, Markov decision processes, and game theory. As the course progresses, you will design both standalone agents and complex multi-agent systems, learning how they make decisions, communicate, collaborate, and compete. We will also explore the human side of AI\u2014how to build trust, ensure explainability, and design intuitive interfaces for effective human-AI collaboration. In the final phase, we investigate the frontier of AI: generative agents powered by large language and vision models. These advanced systems do not merely react\u2014they reflect, plan, and interact in ways that resemble human cognition. You will gain hands-on experience building and evaluating these agents using state-of-the-art frameworks. By the end of the course, you will be equipped to model, build, and evaluate intelligent agents for both simulated and real-world environments, with a solid grounding in both theory and practice.",
+    "description": "In this course, we will dive into what it truly means to build agentic AI—systems that perceive their environment, make decisions, learn from experience, and act autonomously. We begin by exploring the core principles of intelligent agency and how these systems interact with the world around them. From there, we will examine foundational models and techniques for crafting intelligent behavior, including decision trees, utility theory, Markov decision processes, and game theory. As the course progresses, you will design both standalone agents and complex multi-agent systems, learning how they make decisions, communicate, collaborate, and compete. We will also explore the human side of AI—how to build trust, ensure explainability, and design intuitive interfaces for effective human-AI collaboration. In the final phase, we investigate the frontier of AI: generative agents powered by large language and vision models. These advanced systems do not merely react—they reflect, plan, and interact in ways that resemble human cognition. You will gain hands-on experience building and evaluating these agents using state-of-the-art frameworks. By the end of the course, you will be equipped to model, build, and evaluate intelligent agents for both simulated and real-world environments, with a solid grounding in both theory and practice.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "agentic-ai",
-      "autonomy",
-      "mdps",
-      "decision-trees",
-      "utility-theory",
-      "game-theory",
-      "multi-agent-systems",
-      "communication",
-      "trust",
       "explainability",
-      "human-ai-collaboration",
-      "generative-agents"
+      "human-ai-interaction",
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-02",
@@ -1004,12 +858,7 @@ window.COURSES_ENRICHED = [
       "generative-ai",
       "policy",
       "ethics",
-      "finance",
-      "misinformation",
-      "research",
-      "practice",
-      "health-communication",
-      "decision-support"
+      "misinformation"
     ],
     "outcome_codes": [
       "TL-06",
@@ -1049,18 +898,10 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "information-policy",
-      "ai-policy",
       "regulation",
       "privacy",
-      "data-rights",
-      "competition",
-      "digital-platforms",
-      "internet-of-things",
-      "ar-vr-metaverse",
       "ethics",
-      "governance",
-      "current-events"
+      "governance"
     ],
     "outcome_codes": [
       "TL-06",
@@ -1095,22 +936,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Buchanan, Benjamin"
     ],
-    "description": "The course examines one of the topics most central for the future of national security policy: artificial intelligence (AI). We will begin first by examining what AI is and isn\u2019t, and discuss how the underlying technology works. We will then proceed to survey the national security landscape and consider how AI will impact key policy and strategy decisions in the near future. Topics discussed include autonomous weapons, intelligence collection and analysis, cyber attacks, disinformation, and technology competition. We will also focus on the AI strategies of the US and China. No technical background is required for this class, though we will introduce some important ideas that are relevant to how AI works. Students will be evaluated through a key concepts quiz that assesses understanding of important ideas. They will also be assigned one final paper in which they will take a stand on a proposition regarding AI\u2019s policy impact. In addition, class participation is a vital component of this class, as a substantial portion of each week will be oriented towards discussion.",
+    "description": "The course examines one of the topics most central for the future of national security policy: artificial intelligence (AI). We will begin first by examining what AI is and isn’t, and discuss how the underlying technology works. We will then proceed to survey the national security landscape and consider how AI will impact key policy and strategy decisions in the near future. Topics discussed include autonomous weapons, intelligence collection and analysis, cyber attacks, disinformation, and technology competition. We will also focus on the AI strategies of the US and China. No technical background is required for this class, though we will introduce some important ideas that are relevant to how AI works. Students will be evaluated through a key concepts quiz that assesses understanding of important ideas. They will also be assigned one final paper in which they will take a stand on a proposition regarding AI’s policy impact. In addition, class participation is a vital component of this class, as a substantial portion of each week will be oriented towards discussion.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "national-security",
-      "autonomous-weapons",
-      "intelligence",
-      "cybersecurity",
-      "disinformation",
-      "us-china",
-      "strategy",
-      "policy",
-      "technology-competition",
-      "ai-basics"
+      "policy"
     ],
     "outcome_codes": [
       "TL-02",
@@ -1143,25 +976,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Rid, T"
     ],
-    "description": "Ghost in the Machine traces the history of one of humanity\u2019s most powerful and most consequential ideas: that humans could build machines that surpass themselves, in all faculties, and thus outwit our maker, ultimately cheating death and disease. This idea has become the best-funded futurist project of our time. We will investigate how mythical thinking about intelligent machines has evolved since World War II, what effects such thinking has had on the development of intelligent machinery, and how breakthroughs in neural networks, deep learning, and transformers over seventy years have shaped our capacity to foresee and manage the future of artificial\u2014and human\u2014intelligence. We will trace seven critical ideas: extinction, salvation, the intelligence explosion, training, black boxes, agents, and a curious vanishing act. The detailed historical reconstruction of innovation reveals how the technology actually works: students will acquire familiarity with some of the core concepts of artificial intelligence, such as neural networks, gradient descent, false peaks, vectorization, weights, backpropagation, self-attention, transformers, the scaling laws, interpretability, feature extraction, circuits, superposition, and alignment trends. Students will also gain appreciation for the key thinkers, innovators, and engineers who have shaped AI \u2014 its technology, its ideology, and its politics. No math or technical background is required. Rid will use this class as an experimental space to demo cutting edge AI-tools that enhance and accelerate the research and learning process \u2014 as they are getting updated and released.",
+    "description": "Ghost in the Machine traces the history of one of humanity’s most powerful and most consequential ideas: that humans could build machines that surpass themselves, in all faculties, and thus outwit our maker, ultimately cheating death and disease. This idea has become the best-funded futurist project of our time. We will investigate how mythical thinking about intelligent machines has evolved since World War II, what effects such thinking has had on the development of intelligent machinery, and how breakthroughs in neural networks, deep learning, and transformers over seventy years have shaped our capacity to foresee and manage the future of artificial—and human—intelligence. We will trace seven critical ideas: extinction, salvation, the intelligence explosion, training, black boxes, agents, and a curious vanishing act. The detailed historical reconstruction of innovation reveals how the technology actually works: students will acquire familiarity with some of the core concepts of artificial intelligence, such as neural networks, gradient descent, false peaks, vectorization, weights, backpropagation, self-attention, transformers, the scaling laws, interpretability, feature extraction, circuits, superposition, and alignment trends. Students will also gain appreciation for the key thinkers, innovators, and engineers who have shaped AI — its technology, its ideology, and its politics. No math or technical background is required. Rid will use this class as an experimental space to demo cutting edge AI-tools that enhance and accelerate the research and learning process — as they are getting updated and released.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "ai-history",
-      "risk",
-      "myth-and-ideology",
-      "neural-networks",
       "deep-learning",
-      "transformers",
-      "gradient-descent",
-      "backpropagation",
-      "self-attention",
-      "scaling-laws",
-      "interpretability",
-      "alignment",
-      "intelligence-explosion"
+      "explainability",
+      "alignment"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1201,17 +1025,8 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Research seminar (as titled).",
     "keywords": [
-      "critical-ai",
       "humanities",
-      "social-sciences",
-      "ethics",
-      "history",
-      "culture",
-      "society",
-      "machine-learning",
-      "research-project",
-      "seminar",
-      "readings"
+      "ethics"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1252,15 +1067,9 @@ window.COURSES_ENRICHED = [
     "notes": "",
     "keywords": [
       "explainability",
-      "interpretability",
       "human-ai-interaction",
-      "human-centered-design",
       "trustworthy-ai",
-      "case-studies",
-      "affordances",
-      "ml-design",
-      "group-project",
-      "evaluation"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1303,16 +1112,8 @@ window.COURSES_ENRICHED = [
     "notes": "Instructor list included a duplicate name in the source; de-duplicated here.",
     "keywords": [
       "public-health",
-      "python",
-      "data-science",
-      "unix",
-      "version-control",
-      "visualization",
-      "interactive-graphics",
-      "web-apps",
-      "reproducible-research",
-      "resampling",
-      "deep-learning"
+      "deep-learning",
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1351,17 +1152,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "computer-music",
-      "machine-listening",
-      "machine-learning",
-      "neural-networks",
-      "classification",
-      "regression",
-      "dimensionality-reduction",
-      "clustering",
-      "spectral-decomposition",
-      "creative-practice",
-      "datasets"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1395,23 +1186,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Hu, Jennifer"
     ],
-    "description": "The rise of artificial intelligence (AI) is one of the most powerful\u2014and controversial\u2014breakthroughs of our lifetime. Some say that large language models, like ChatGPT, are oracles that will render human thought obsolete. Others say that these models are \u201cstochastic parrots\u201d with no real understanding of the text they produce. Who is right? And what would it even mean for a machine to be able to think and use languages like humans do? This course will give students the tools to answer these questions and critically analyze AI through a grounding in cognitive science, with a focus on language. Topics will include the technical foundation of language models, human language learning, syntax, semantics, pragmatics, reasoning, creativity, and how AI use is affecting our own minds. Strongly recommended: prior course in programming and/or probability theory.",
+    "description": "The rise of artificial intelligence (AI) is one of the most powerful—and controversial—breakthroughs of our lifetime. Some say that large language models, like ChatGPT, are oracles that will render human thought obsolete. Others say that these models are “stochastic parrots” with no real understanding of the text they produce. Who is right? And what would it even mean for a machine to be able to think and use languages like humans do? This course will give students the tools to answer these questions and critically analyze AI through a grounding in cognitive science, with a focus on language. Topics will include the technical foundation of language models, human language learning, syntax, semantics, pragmatics, reasoning, creativity, and how AI use is affecting our own minds. Strongly recommended: prior course in programming and/or probability theory.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "cognitive-science",
-      "language-models",
-      "llms",
-      "syntax",
-      "semantics",
-      "pragmatics",
-      "reasoning",
-      "creativity",
-      "human-language-learning",
-      "stochastic-parrots",
-      "ai-and-mind"
+      "llms"
     ],
     "outcome_codes": [
       "TL-04",
@@ -1452,14 +1234,9 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "philosophy-of-mind",
       "cognitive-science",
       "ai-history",
-      "computationalism",
-      "connectionism",
-      "4e-cognition",
-      "ai-ethics",
-      "brains-and-computers",
+      "ethics",
       "responsibility"
     ],
     "outcome_codes": [
@@ -1499,16 +1276,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Waitlist Only (per source).",
     "keywords": [
-      "human-ai-collaboration",
-      "augmentation",
-      "decision-making",
-      "brain-computer-interface",
-      "human-ai-teaming",
-      "autonomous-systems",
-      "social-ai",
-      "strategy",
-      "leadership",
-      "industry-transformation"
+      "human-ai-interaction"
     ],
     "outcome_codes": [
       "TL-02",
@@ -1546,17 +1314,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "sequential-decision-making",
-      "mdps",
-      "reinforcement-learning",
-      "deep-rl",
-      "curse-of-dimensionality",
-      "business-analytics",
-      "optimization",
-      "uncertainty",
-      "python",
-      "prescriptive-analytics",
-      "supply-chain"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-03",
@@ -1595,15 +1353,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Six-week course (per description).",
     "keywords": [
-      "health-professions-education",
-      "curriculum-design",
-      "clinical-education",
-      "ai-tools",
-      "ethics",
-      "teaching",
-      "research",
-      "evaluation",
-      "education-technology"
+      "ethics"
     ],
     "outcome_codes": [
       "TL-02",
@@ -1642,17 +1392,14 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "ai-ethics",
+      "ethics",
       "automation",
-      "values-based-design",
       "safety",
       "bias",
       "explainability",
       "privacy",
       "regulation",
-      "synthetic-life",
-      "future-of-work",
-      "case-studies"
+      "future-of-work"
     ],
     "outcome_codes": [
       "CH-05",
@@ -1691,16 +1438,9 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Cross-credit note: only one of 601.464/664. May be cross-listed.",
     "keywords": [
-      "ai",
-      "reasoning",
-      "planning",
-      "learning",
-      "intelligent-agents",
       "deep-learning",
       "cognitive-science",
-      "programming",
-      "math-foundations",
-      "assignments"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1733,23 +1473,13 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Shu, Tianmin"
     ],
-    "description": "No other species possesses a social intelligence quite like that of humans. Our ability to understand one another\u2019s minds and actions, and to interact with one another in rich and complex ways, is the basis for much of our success, from governments to symphonies to the scientific enterprise. This course will discuss the principles of human social cognition, how we can use machine learning and AI models to computationally capture these principles, how these principles can help us build human-level machine social intelligence, and how social intelligence can enable the engineering of AI systems that can understand and interact with humans safely and productively in real-world settings. In this seminar course, we will read and discuss literature that cover diverse topics on social intelligence in humans and machines. These include (but are not limited to) social perception, Theory of Mind, multi-agent planning, multi-agent communication, social learning, human-AI teaming, moral judgment, and value alignment. Required Course Background: Linear Algebra, Probability and Statistics, and Calculus; 601.475/675 Machine Learning or EN.601.464/664 Artificial Intelligence or equivalent.",
+    "description": "No other species possesses a social intelligence quite like that of humans. Our ability to understand one another’s minds and actions, and to interact with one another in rich and complex ways, is the basis for much of our success, from governments to symphonies to the scientific enterprise. This course will discuss the principles of human social cognition, how we can use machine learning and AI models to computationally capture these principles, how these principles can help us build human-level machine social intelligence, and how social intelligence can enable the engineering of AI systems that can understand and interact with humans safely and productively in real-world settings. In this seminar course, we will read and discuss literature that cover diverse topics on social intelligence in humans and machines. These include (but are not limited to) social perception, Theory of Mind, multi-agent planning, multi-agent communication, social learning, human-AI teaming, moral judgment, and value alignment. Required Course Background: Linear Algebra, Probability and Statistics, and Calculus; 601.475/675 Machine Learning or EN.601.464/664 Artificial Intelligence or equivalent.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "Prerequisites listed.",
     "keywords": [
-      "social-intelligence",
-      "theory-of-mind",
-      "multi-agent-systems",
-      "social-cognition",
-      "human-ai-interaction",
-      "value-alignment",
-      "moral-judgment",
-      "social-learning",
-      "communication",
-      "seminar",
-      "ml-prereq"
+      "human-ai-interaction"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1790,17 +1520,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "cognition",
-      "human-behavior",
-      "general-intelligence",
-      "vision",
-      "audition",
-      "language",
-      "emotion",
-      "social-cognition",
-      "creativity",
-      "consciousness",
-      "industry-applications"
+      "cognitive-science"
     ],
     "outcome_codes": [
       "TL-06",
@@ -1838,16 +1558,7 @@ window.COURSES_ENRICHED = [
     "notes": "",
     "keywords": [
       "llms",
-      "language-modeling",
-      "attention",
-      "prompting",
-      "instruction-tuning",
-      "quantization",
-      "lora",
-      "low-rank-adaptation",
-      "optimization",
-      "deployment",
-      "computational-linguistics"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1888,18 +1599,9 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "leadership",
-      "ai-strategy",
-      "project-management",
-      "data",
-      "deployment",
-      "transformers",
       "llms",
       "generative-ai",
-      "symbolic-ai",
-      "risk-mitigation",
-      "ethics",
-      "bias-mitigation"
+      "ethics"
     ],
     "outcome_codes": [
       "TL-01",
@@ -1940,15 +1642,7 @@ window.COURSES_ENRICHED = [
     "keywords": [
       "public-health",
       "generative-ai",
-      "policy-briefs",
-      "data-visualization",
-      "statistical-coding",
-      "grant-writing",
-      "summarization",
-      "decision-support",
-      "communication",
-      "career-materials",
-      "hands-on"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-03",
@@ -1987,17 +1681,7 @@ window.COURSES_ENRICHED = [
     "campus": "Homewood Campus",
     "notes": "Appears to be a specific section (88).",
     "keywords": [
-      "linear-algebra",
-      "probability",
-      "statistics",
-      "calculus",
-      "optimization",
-      "tensors",
-      "gradient-based-optimization",
-      "deep-learning",
-      "computer-vision",
-      "python",
-      "math-foundations"
+      "deep-learning"
     ],
     "outcome_codes": [
       "TL-01",
@@ -2036,13 +1720,8 @@ window.COURSES_ENRICHED = [
     "notes": "",
     "keywords": [
       "philosophy",
-      "consciousness",
       "responsibility",
-      "ai-decision-making",
-      "nature-vs-nurture",
-      "ethics",
-      "mind",
-      "agency"
+      "ethics"
     ],
     "outcome_codes": [
       "CH-04",
@@ -2077,24 +1756,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Todarello, Josh"
     ],
-    "description": "How is the so-called \u201cAI Revolution\u201d altering the landscape of work? This course takes up this question through the lens of underemployment, migratory labor, and diasporic communities. We will read a variety of key works on migration and imagined communities, precarity and alienation, labor, automation, and empire\u2014as well as texts produced in the margins of globalization. In conversation with these texts, we will investigate the dynamics of diasporic communities, migration, and solidarity vis-a-vis the future of work in a global society increasingly automated by AI models such as DeepSeek, ChatGPT, and Qwen 2.5, and the entities that own them. Through a variety of writing assignments and presentations, students engage issues such as race, class, gender, the border, citizenship, and community as they exist for diasporic and migratory workers. This course explores themes relevant to students of Critical Diaspora Studies, as well as the history of science and technology, political science and political economy, international studies, literature, film, and sociology. Readings may include works by Ruha Benjamin, Audre Lorde, Harry Braverman, Benedict Anderson, David Harvey, Edward Said, Mary L. Gray, Octavia Butler, and Ng\u0169g\u0129 wa Thiong\u2019o.",
+    "description": "How is the so-called “AI Revolution” altering the landscape of work? This course takes up this question through the lens of underemployment, migratory labor, and diasporic communities. We will read a variety of key works on migration and imagined communities, precarity and alienation, labor, automation, and empire—as well as texts produced in the margins of globalization. In conversation with these texts, we will investigate the dynamics of diasporic communities, migration, and solidarity vis-a-vis the future of work in a global society increasingly automated by AI models such as DeepSeek, ChatGPT, and Qwen 2.5, and the entities that own them. Through a variety of writing assignments and presentations, students engage issues such as race, class, gender, the border, citizenship, and community as they exist for diasporic and migratory workers. This course explores themes relevant to students of Critical Diaspora Studies, as well as the history of science and technology, political science and political economy, international studies, literature, film, and sociology. Readings may include works by Ruha Benjamin, Audre Lorde, Harry Braverman, Benedict Anderson, David Harvey, Edward Said, Mary L. Gray, Octavia Butler, and Ngũgĩ wa Thiong’o.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "future-of-work",
-      "labor",
-      "migration",
-      "diaspora",
-      "automation",
-      "precarity",
-      "political-economy",
-      "race",
-      "gender",
-      "borders",
-      "solidarity",
-      "globalization"
+      "automation"
     ],
     "outcome_codes": [
       "CH-01",
@@ -2128,23 +1797,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Saad, Alaa Amr"
     ],
-    "description": "Film is a creative medium and an art. It is a fictive, real, and profound way of knowing and making real worlds. It is a storyline and life mirrored in image, sound, light, and movement. It reflects our being in the world and our imaginations of what could be. In this course, students will explore the influence of the move to digital technologies on the textures of filmmaking. How do we watch and read movies like Ex-Machina, The Matrix, or Her that deal with speculative realities of AI before the emergence of AI on the world stage? We will explore questions about using artificial intelligence (AI) technologies within filmmaking, focusing on how the \u2018digital\u2019 represents \u2018realities\u2019 of gender, memory, race, class, and environmental degradation. Moving between forms of scholarly work on digital media and AI-based films, students will become familiar with how AI opens a new imagination of creative representations and forecloses others.",
+    "description": "Film is a creative medium and an art. It is a fictive, real, and profound way of knowing and making real worlds. It is a storyline and life mirrored in image, sound, light, and movement. It reflects our being in the world and our imaginations of what could be. In this course, students will explore the influence of the move to digital technologies on the textures of filmmaking. How do we watch and read movies like Ex-Machina, The Matrix, or Her that deal with speculative realities of AI before the emergence of AI on the world stage? We will explore questions about using artificial intelligence (AI) technologies within filmmaking, focusing on how the ‘digital’ represents ‘realities’ of gender, memory, race, class, and environmental degradation. Moving between forms of scholarly work on digital media and AI-based films, students will become familiar with how AI opens a new imagination of creative representations and forecloses others.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "film",
-      "hollywood",
-      "digital-media",
-      "ai-in-film",
-      "speculative-fiction",
-      "gender",
-      "memory",
-      "race",
-      "class",
-      "environment",
-      "media-analysis"
+      "humanities",
+      "equity"
     ],
     "outcome_codes": [
       "CH-02",
@@ -2177,25 +1837,12 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Sack, Graham"
     ],
-    "description": "This course, offered in conjunction with a Nexus Research Grant sponsored by the Hopkins Bloomberg Center, explores how neuroscience, AI, wearable biometrics, and brain-computer interface (BCI) technology can transform immersive storytelling, interactive media, and live performance. Students will have the opportunity to collaborate closely with an active production that will be in development, rehearsal, and performance at JHU during the 2025-2026 academic year. Initial course meetings will focus on creative research, speculative design, and world-building exercises, utilizing Stanislaw Lem\u2019s iconic science fiction novel Solaris as a source text and springboard for collective imagining. We will juxtapose Lem\u2019s novel with iconic film adaptations and critical theory about the climate crisis, environmental and synthetic intelligence, planetary-scale computation, and the ontology of \u201chyperobjects.\u201d Mid-semester, students will work hands-on with neurotechnology and AI, including EEG headsets, AI tools, and interactive performance platforms. The course culminates in classroom-based, student-led demo performances integrating AI, BCI technologies, and experimental theater techniques. Guest artists and field trips will further enrich the experience. Prerequisite: students must have taken at least one ISET course although exceptions will be granted on a case by case basis based on the student's level of experience.",
+    "description": "This course, offered in conjunction with a Nexus Research Grant sponsored by the Hopkins Bloomberg Center, explores how neuroscience, AI, wearable biometrics, and brain-computer interface (BCI) technology can transform immersive storytelling, interactive media, and live performance. Students will have the opportunity to collaborate closely with an active production that will be in development, rehearsal, and performance at JHU during the 2025-2026 academic year. Initial course meetings will focus on creative research, speculative design, and world-building exercises, utilizing Stanislaw Lem’s iconic science fiction novel Solaris as a source text and springboard for collective imagining. We will juxtapose Lem’s novel with iconic film adaptations and critical theory about the climate crisis, environmental and synthetic intelligence, planetary-scale computation, and the ontology of “hyperobjects.” Mid-semester, students will work hands-on with neurotechnology and AI, including EEG headsets, AI tools, and interactive performance platforms. The course culminates in classroom-based, student-led demo performances integrating AI, BCI technologies, and experimental theater techniques. Guest artists and field trips will further enrich the experience. Prerequisite: students must have taken at least one ISET course although exceptions will be granted on a case by case basis based on the student's level of experience.",
     "credits": "",
     "term": "2025-2026 academic year (project context)",
     "campus": "",
     "notes": "Prerequisite mentioned (ISET).",
-    "keywords": [
-      "creative-technology",
-      "neuroscience",
-      "bci",
-      "wearables",
-      "biometrics",
-      "interactive-media",
-      "performance",
-      "eeg",
-      "ai-tools",
-      "world-building",
-      "speculative-design",
-      "hyperobjects"
-    ],
+    "keywords": [],
     "outcome_codes": [
       "TL-07",
       "CH-02",
@@ -2226,24 +1873,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Waggoner, Philip"
     ],
-    "description": "This course is an introduction to the tools used to create chat and analytical artificial intelligence (AI) applications including the ethical considerations associated with AI including bias, transparency, fairness, accuracy and the methods used to measure and assess the results produced by AI. The different forms of AI in the public sector are evaluated using the AI products currently in use at the federal, state, and local level. The application of AI for diverse policy areas including policing, disaster mitigation, and foreign policy and citizens\u2019 responses to interactions with AI in service provision are also covered, along with current and emerging policy guidelines for public sector AI.",
+    "description": "This course is an introduction to the tools used to create chat and analytical artificial intelligence (AI) applications including the ethical considerations associated with AI including bias, transparency, fairness, accuracy and the methods used to measure and assess the results produced by AI. The different forms of AI in the public sector are evaluated using the AI products currently in use at the federal, state, and local level. The application of AI for diverse policy areas including policing, disaster mitigation, and foreign policy and citizens’ responses to interactions with AI in service provision are also covered, along with current and emerging policy guidelines for public sector AI.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "public-sector",
-      "ai-applications",
-      "chatbots",
-      "analytics",
       "policy",
       "bias",
       "fairness",
-      "transparency",
-      "evaluation",
-      "policing",
-      "disaster-mitigation",
-      "foreign-policy"
+      "transparency"
     ],
     "outcome_codes": [
       "TL-02",
@@ -2279,16 +1918,10 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Duplicate title/course number appears with different instructor in source; kept as separate entry.",
     "keywords": [
-      "ai-fundamentals",
-      "neural-networks",
       "deep-learning",
-      "computer-vision",
-      "nlp",
       "generative-ai",
-      "cloud-computing",
-      "hands-on",
-      "business-value",
-      "healthcare"
+      "healthcare",
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -2321,23 +1954,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Hassan, Zia"
     ],
-    "description": "Artificial intelligence (AI) is transforming education, influencing how we learn, teach, and\u2014perhaps\u2014think about understanding knowledge itself. This course critically examines AI as both a tool and a mirror, reflecting human cognition, creativity, ethics, and systemic biases. Through hands-on experimentation, critical analysis, and applied projects, students will explore AI\u2019s potential to enrich and expand educational goals and practices while questioning its limitations and potential dangers. Designed for a broad range of educational professionals, the course balances theoretical inquiry with practical skill development. Students will engage with AI tools, analyze their impact, and apply them in meaningful ways to their professional contexts. The course is structured around five interconnected themes: (1) AI, Cognition, and Learning; (2) AI as Co-Intelligence and Thought Partner; (3) Ethics, Bias, and AI Governance; (4) AI and the Purposes of Education; (5) Policy, Design, and Future Directions: Designing responsible AI frameworks for educational settings.",
+    "description": "Artificial intelligence (AI) is transforming education, influencing how we learn, teach, and—perhaps—think about understanding knowledge itself. This course critically examines AI as both a tool and a mirror, reflecting human cognition, creativity, ethics, and systemic biases. Through hands-on experimentation, critical analysis, and applied projects, students will explore AI’s potential to enrich and expand educational goals and practices while questioning its limitations and potential dangers. Designed for a broad range of educational professionals, the course balances theoretical inquiry with practical skill development. Students will engage with AI tools, analyze their impact, and apply them in meaningful ways to their professional contexts. The course is structured around five interconnected themes: (1) AI, Cognition, and Learning; (2) AI as Co-Intelligence and Thought Partner; (3) Ethics, Bias, and AI Governance; (4) AI and the Purposes of Education; (5) Policy, Design, and Future Directions: Designing responsible AI frameworks for educational settings.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "education",
-      "ai-tools",
-      "learning",
-      "cognition",
-      "co-intelligence",
       "ethics",
       "bias",
       "governance",
-      "policy",
-      "design",
-      "professional-practice"
+      "policy"
     ],
     "outcome_codes": [
       "CH-02",
@@ -2369,23 +1995,13 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Murray, Kenton W"
     ],
-    "description": "This course will look at Artificial Intelligence and the algorithms and technology behind it through the lens of games. We will discuss how popular games such as Wordle, Crossword Puzzles, and Cards Against Humanity offer really detailed insights into the core workings of AI \u2013 from how they are trained, to what happens when they are deployed to users in the wild. While we will get into cutting-edge algorithms and engineering advances, no prior technical knowledge or programming skills are required. At the end of the semester, students will be able to understand and debate engineering decisions and principles underlying all of the fundamental technological aspects of Modern AI systems. Students are expected to come to class prepared to discuss assigned readings and there will be a class project to build an AI Bot to play the popular TV show game Wheel of Fortune.",
+    "description": "This course will look at Artificial Intelligence and the algorithms and technology behind it through the lens of games. We will discuss how popular games such as Wordle, Crossword Puzzles, and Cards Against Humanity offer really detailed insights into the core workings of AI – from how they are trained, to what happens when they are deployed to users in the wild. While we will get into cutting-edge algorithms and engineering advances, no prior technical knowledge or programming skills are required. At the end of the semester, students will be able to understand and debate engineering decisions and principles underlying all of the fundamental technological aspects of Modern AI systems. Students are expected to come to class prepared to discuss assigned readings and there will be a class project to build an AI Bot to play the popular TV show game Wheel of Fortune.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "first-year-seminar",
-      "games",
-      "ai-explanation",
-      "algorithms",
-      "training",
-      "deployment",
-      "wordle",
-      "nlp",
-      "project",
-      "bot-building",
-      "discussion-based"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-07",
@@ -2417,24 +2033,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Hadfield, Gillian"
     ],
-    "description": "This course will focus on the alignment and governance challenges posed by advanced frontier/general purpose AI models: why these models may behave in ways that pose significant risk to human welfare and what technical and governance approaches might mitigate these risks. We\u2019ll begin the course studying general results from alignment and governance in human normative systems such as markets, politics, norms and laws. We\u2019ll pay special attention to risks arising from agentic AI. We\u2019ll then look at current technical and position papers in various topics in AI safety and alignment. Topics could include: RLHF, constitutional AI, red-teaming, safety evaluation methods, red lines, jail-breaking, prompt injection, over-optimization, and open-source debates. We\u2019ll conclude with discussion of regulatory frameworks such as regulatory markets, registration of frontier models, international governance organizations, registration of AI agents and legal personhood for AI agents. This is a paper-reading class.",
+    "description": "This course will focus on the alignment and governance challenges posed by advanced frontier/general purpose AI models: why these models may behave in ways that pose significant risk to human welfare and what technical and governance approaches might mitigate these risks. We’ll begin the course studying general results from alignment and governance in human normative systems such as markets, politics, norms and laws. We’ll pay special attention to risks arising from agentic AI. We’ll then look at current technical and position papers in various topics in AI safety and alignment. Topics could include: RLHF, constitutional AI, red-teaming, safety evaluation methods, red lines, jail-breaking, prompt injection, over-optimization, and open-source debates. We’ll conclude with discussion of regulatory frameworks such as regulatory markets, registration of frontier models, international governance organizations, registration of AI agents and legal personhood for AI agents. This is a paper-reading class.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "Paper-reading class (per description).",
     "keywords": [
-      "ai-safety",
+      "safety",
       "alignment",
       "governance",
-      "agentic-ai",
-      "rlhf",
-      "constitutional-ai",
-      "red-teaming",
-      "evals",
-      "jailbreaking",
-      "prompt-injection",
-      "regulatory-frameworks",
-      "frontier-models"
+      "agentic-ai"
     ],
     "outcome_codes": [
       "TL-02",
@@ -2473,17 +2081,14 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "advanced-ml",
       "trustworthy-ai",
-      "robustness",
       "fairness",
       "safety",
       "transparency",
-      "interpretability",
+      "explainability",
       "privacy",
-      "sustainability",
-      "ai-ethics",
-      "research-frontiers"
+      "ethics",
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -2525,17 +2130,9 @@ window.COURSES_ENRICHED = [
     "notes": "",
     "keywords": [
       "generative-ai",
-      "prompt-engineering",
-      "nlp",
-      "fine-tuning",
       "llms",
       "agentic-ai",
-      "secure-ai",
-      "evaluation",
-      "rag",
-      "vector-databases",
-      "open-source-llms",
-      "hands-on-projects"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-02",
@@ -2566,22 +2163,13 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Morin, Christophe"
     ],
-    "description": "In today\u2019s rapidly evolving marketplace, the key to effective leadership is understanding the intersection of science, technology, and consumer behavior. Neuromarketing AI: The Future of Persuasion and Consumer Insights, is a pioneering course designed specifically for leaders who seek to harness the latest advancements in neuroscience and artificial intelligence to transform their marketing strategies and decision-making processes. This course merges groundbreaking brain science with AI-driven techniques, giving participants a unique opportunity to master the science of persuasion and its real-world applications. Participants will explore how the human brain processes decisions, learn how to apply neuromarketing principles, and leverage AI to predict consumer behavior and personalize messaging at scale. With a curriculum built on the renowned Persuasion Code model, this program will empower participants to revolutionize how they communicate with customers, employees, and stakeholders.",
+    "description": "In today’s rapidly evolving marketplace, the key to effective leadership is understanding the intersection of science, technology, and consumer behavior. Neuromarketing AI: The Future of Persuasion and Consumer Insights, is a pioneering course designed specifically for leaders who seek to harness the latest advancements in neuroscience and artificial intelligence to transform their marketing strategies and decision-making processes. This course merges groundbreaking brain science with AI-driven techniques, giving participants a unique opportunity to master the science of persuasion and its real-world applications. Participants will explore how the human brain processes decisions, learn how to apply neuromarketing principles, and leverage AI to predict consumer behavior and personalize messaging at scale. With a curriculum built on the renowned Persuasion Code model, this program will empower participants to revolutionize how they communicate with customers, employees, and stakeholders.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "neuromarketing",
-      "consumer-behavior",
-      "neuroscience",
-      "persuasion",
-      "personalization",
-      "prediction",
-      "marketing-strategy",
-      "decision-making",
-      "ai-in-marketing",
-      "leadership"
+      "business-strategy"
     ],
     "outcome_codes": [
       "TL-03",
@@ -2620,17 +2208,8 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "data-science",
-      "social-impact",
-      "technology-ethics",
-      "case-studies",
-      "high-stakes-decisions",
       "social-media",
-      "mental-health",
       "llms",
-      "agi",
-      "sustainability",
-      "social-justice",
       "democracy"
     ],
     "outcome_codes": [
@@ -2669,23 +2248,14 @@ window.COURSES_ENRICHED = [
       "Flombaum, Jonathan",
       "Gruenhut, Johanna"
     ],
-    "description": "From the rise of machine consciousness to the ethics of automation, artificial intelligence has captured the human imagination. This First-Year Seminar explores how playwrights and theater artists engage with AI as a dramatic subject, a creative tool, and a lens for examining the human condition. Through an interdisciplinary approach, and co-taught by faculty in Psychological and Brain Sciences and Theatre, students will analyze plays and performances that grapple with the hopes and anxieties surrounding AI. Works such as Karel \u010capek\u2019s R.U.R. (which introduced the word \u201crobot\u201d), Jordan Harrison\u2019s Marjorie Prime, Jennifer Haley\u2019s The Nether, and Nick Payne\u2019s Constellations will serve as key texts alongside contemporary plays such as Julia Cho\u2019s The Language, Rolin Jone\u2019s The Intelligent Design of Jenny Chow, The Effect by Lucy Prebble, and Photograph 51 by Anna Ziegler. We will also discuss experimental performances that integrate AI technologies.",
+    "description": "From the rise of machine consciousness to the ethics of automation, artificial intelligence has captured the human imagination. This First-Year Seminar explores how playwrights and theater artists engage with AI as a dramatic subject, a creative tool, and a lens for examining the human condition. Through an interdisciplinary approach, and co-taught by faculty in Psychological and Brain Sciences and Theatre, students will analyze plays and performances that grapple with the hopes and anxieties surrounding AI. Works such as Karel Čapek’s R.U.R. (which introduced the word “robot”), Jordan Harrison’s Marjorie Prime, Jennifer Haley’s The Nether, and Nick Payne’s Constellations will serve as key texts alongside contemporary plays such as Julia Cho’s The Language, Rolin Jone’s The Intelligent Design of Jenny Chow, The Effect by Lucy Prebble, and Photograph 51 by Anna Ziegler. We will also discuss experimental performances that integrate AI technologies.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "theatre",
-      "drama",
-      "ai-in-culture",
-      "machine-consciousness",
-      "automation-ethics",
-      "plays",
-      "performance",
-      "robot",
-      "human-condition",
-      "interdisciplinary",
-      "creative-tool"
+      "ethics",
+      "humanities"
     ],
     "outcome_codes": [
       "TL-07",
@@ -2718,22 +2288,14 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Wonderly, Monique Lisa"
     ],
-    "description": "In this course, we will examine philosophical debates concerning the moral permissibility of developing, distributing, and/or using certain controversial technologies. Candidate technologies for consideration include, but are not limited to, nootropics (smart drugs), moral bioenhancement, so-called \u201cultraviolent\u201d video games, memory-alteration technologies, the development of drugs that aim to create, sustain, or eliminate love, and AI intended to function as therapists, romantic interests, or interactive representations of deceased loved ones",
+    "description": "In this course, we will examine philosophical debates concerning the moral permissibility of developing, distributing, and/or using certain controversial technologies. Candidate technologies for consideration include, but are not limited to, nootropics (smart drugs), moral bioenhancement, so-called “ultraviolent” video games, memory-alteration technologies, the development of drugs that aim to create, sustain, or eliminate love, and AI intended to function as therapists, romantic interests, or interactive representations of deceased loved ones",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "ethics",
-      "technology",
-      "philosophy",
-      "nootropics",
-      "bioenhancement",
-      "memory-alteration",
-      "ai-therapists",
-      "human-relationships",
-      "controversial-tech",
-      "moral-permissibility"
+      "philosophy"
     ],
     "outcome_codes": [
       "CH-02",
@@ -2772,18 +2334,10 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "data-science",
-      "ai",
       "deep-learning",
       "business-strategy",
-      "operations",
-      "supply-chain",
-      "marketing",
-      "marketplace-design",
-      "leadership",
-      "economics",
       "bias",
-      "foundations"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -2818,24 +2372,16 @@ window.COURSES_ENRICHED = [
     "instructors": [
       "Dai, Tinglong"
     ],
-    "description": "Artificial intelligence is not the future of healthcare. It is already a reality in medicine, and its importance in improving healthcare delivery is expected to grow substantially in future decades. As of June 2024, 950 AI-powered medical devices have been cleared for clinical use by the U.S. Food and Drug Administration. The recent boom in generative AI has further fueled enthusiasm for medical AI, presenting a rare opportunity to address challenges like aging populations, declining productivity, rising costs, and disparities in access to care. This course explores the intersection of AI and the business of health, introducing key AI concepts, including its mathematical and computational foundations, economic forces, and its impact on healthcare. Students will learn how to develop predictive and generative AI applications that transform structured and unstructured healthcare data into tools that enhance patient outcomes, streamline operations, and create value in the health sector. The course will cover AI strategies in various healthcare contexts, including patient care, medical research, healthcare operations, and public health supply chains. A key focus will be on the science of scaling medical AI, integrating AI into clinical workflows to improve productivity, access, and equity in healthcare. The course will also address the importance of sustainable reimbursement models for medical AI, exploring different paths AI creators can take towards reimbursement and the roles of various stakeholders in this process. Additionally, students will develop AI leadership skills that synthesize human and non-human intelligence, with an understanding of AI\u2019s inner workings and limitations, including how AI can reinforce or mitigate human biases in healthcare. By the end of the course, students will be equipped to lead the integration of AI into healthcare systems, ensuring that AI\u2019s benefits are broadly and appropriately realized, supported by sustainable financial models.",
+    "description": "Artificial intelligence is not the future of healthcare. It is already a reality in medicine, and its importance in improving healthcare delivery is expected to grow substantially in future decades. As of June 2024, 950 AI-powered medical devices have been cleared for clinical use by the U.S. Food and Drug Administration. The recent boom in generative AI has further fueled enthusiasm for medical AI, presenting a rare opportunity to address challenges like aging populations, declining productivity, rising costs, and disparities in access to care. This course explores the intersection of AI and the business of health, introducing key AI concepts, including its mathematical and computational foundations, economic forces, and its impact on healthcare. Students will learn how to develop predictive and generative AI applications that transform structured and unstructured healthcare data into tools that enhance patient outcomes, streamline operations, and create value in the health sector. The course will cover AI strategies in various healthcare contexts, including patient care, medical research, healthcare operations, and public health supply chains. A key focus will be on the science of scaling medical AI, integrating AI into clinical workflows to improve productivity, access, and equity in healthcare. The course will also address the importance of sustainable reimbursement models for medical AI, exploring different paths AI creators can take towards reimbursement and the roles of various stakeholders in this process. Additionally, students will develop AI leadership skills that synthesize human and non-human intelligence, with an understanding of AI’s inner workings and limitations, including how AI can reinforce or mitigate human biases in healthcare. By the end of the course, students will be equipped to lead the integration of AI into healthcare systems, ensuring that AI’s benefits are broadly and appropriately realized, supported by sustainable financial models.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
       "healthcare",
-      "medical-ai",
-      "predictive-models",
       "generative-ai",
-      "clinical-workflows",
-      "scaling",
       "equity",
-      "reimbursement",
-      "operations",
-      "public-health-supply-chains",
-      "bias",
-      "leadership"
+      "bias"
     ],
     "outcome_codes": [
       "TL-05",
@@ -2867,24 +2413,13 @@ window.COURSES_ENRICHED = [
       "EN First Year Seminars"
     ],
     "instructors": [],
-    "description": "This seminar is a hands-on survey of the fundamental concepts of computer science, spanning everything from the art of \u201cthinking slowly\u201d to the cutting edge of machine learning and AI alignment. We\u2019ll learn to design clear, step-by-step problem-solving strategies, represent them in flowcharts, and see how encoding information in binary enables circuits to perform logic and math. We'll learn how structuring information makes it possible to build data processing machines and we'll learn how those machines recognize patterns, follow instructions, seek goals, keep secrets, see, and learn. You\u2019ll complete the seminar with a synoptic view of the conceptual terrain of computer science and a set of critical thinking skills that dovetail with those cultivated in the humanities and social sciences. Class sessions will focus on lively discussions, hands-on exercises, debates, and collaborative problem-solving during our meetings. No prior coding experience is required; although you\u2019ll encounter some code, learning to program is not a primary goal of the course and is not part of the assessment.",
+    "description": "This seminar is a hands-on survey of the fundamental concepts of computer science, spanning everything from the art of “thinking slowly” to the cutting edge of machine learning and AI alignment. We’ll learn to design clear, step-by-step problem-solving strategies, represent them in flowcharts, and see how encoding information in binary enables circuits to perform logic and math. We'll learn how structuring information makes it possible to build data processing machines and we'll learn how those machines recognize patterns, follow instructions, seek goals, keep secrets, see, and learn. You’ll complete the seminar with a synoptic view of the conceptual terrain of computer science and a set of critical thinking skills that dovetail with those cultivated in the humanities and social sciences. Class sessions will focus on lively discussions, hands-on exercises, debates, and collaborative problem-solving during our meetings. No prior coding experience is required; although you’ll encounter some code, learning to program is not a primary goal of the course and is not part of the assessment.",
     "credits": "",
     "term": "",
     "campus": "",
     "notes": "",
     "keywords": [
-      "computational-reasoning",
-      "computer-science-foundations",
-      "problem-solving",
-      "flowcharts",
-      "binary",
-      "logic",
-      "patterns",
-      "algorithms",
-      "security",
-      "machine-learning",
-      "ai-alignment",
-      "hands-on"
+      "alignment"
     ],
     "outcome_codes": [
       "TL-01",
@@ -2924,18 +2459,9 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Prerequisite: programming (e.g., Python).",
     "keywords": [
-      "global-health",
-      "health-equity",
-      "machine-learning",
-      "case-studies",
-      "africa",
-      "south-asia",
-      "latin-america",
-      "cnns",
       "generative-ai",
-      "time-series",
       "public-health",
-      "python"
+      "technical-practice"
     ],
     "outcome_codes": [
       "TL-01",
@@ -2975,17 +2501,8 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "data-science",
-      "technical-leadership",
-      "data-management",
-      "ml",
-      "ai-basics",
-      "hands-on",
-      "project-assignments",
-      "evaluation",
       "policy",
-      "ethics",
-      "mission-objectives"
+      "ethics"
     ],
     "outcome_codes": [
       "TL-01",
@@ -3023,18 +2540,14 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "Duplicate course number appears with different instructor; source also mentions ePortfolio assignments.",
     "keywords": [
-      "ai-ethics",
+      "ethics",
       "automation",
-      "values-based-design",
       "safety",
       "bias",
       "explainability",
       "privacy",
       "regulation",
-      "synthetic-life",
-      "future-of-work",
-      "case-studies",
-      "eportfolio"
+      "future-of-work"
     ],
     "outcome_codes": [
       "CH-05",
@@ -3073,9 +2586,7 @@ window.COURSES_ENRICHED = [
     "campus": "",
     "notes": "",
     "keywords": [
-      "attention",
-      "social-media",
-      "critique"
+      "social-media"
     ],
     "outcome_codes": [
       "TL-04",
