@@ -15,7 +15,7 @@ const NAV = [
       { label: 'Curriculum Idea 01',    slug: 'AIHUMMA Curriculum Idea 01' },
       { label: 'Curriculum Mapping',    slug: 'aihumma-curriculum-mapping' },
       { label: 'Taxonomy Network',      slug: 'AIHUMMA Taxonomy Network' },
-      { label: 'Courses',               slug: 'AIHUMMA Courses' },
+      { label: 'Existing Courses',      slug: 'Existing JHU Courses' },
     ]
   },
   {
@@ -62,7 +62,9 @@ function getSlug() {
 
 function buildNav(currentSlug) {
   const nav = document.getElementById('nav');
-  nav.innerHTML = NAV.map(section => `
+  nav.innerHTML =
+    `<div class="site-version">v0.1 &nbsp;·&nbsp; Spring 2026</div>` +
+    NAV.map(section => `
     <div class="nav-section">${section.section}</div>
     ${section.pages.map(p => `
       <a href="#${encodeURIComponent(p.slug)}"
