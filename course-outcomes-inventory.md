@@ -1,4 +1,4 @@
-# JHU AI Courses: Learning Outcomes Inventory
+# Existing AI Courses: Learning Outcomes Inventory
 
 *65 courses tagged with putative learning outcomes using the AIHUMMA taxonomy*
 *Generated for comparison with AIHUMMA program outcomes framework*
@@ -24,7 +24,7 @@
 - **CH-03:** Apply humanistic methods (close reading, ethnography, cultural analysis, oral history) to study AI phenomena
 - **CH-04:** Critique AI representations in cultural forms (film, theatre, fiction, media) and what they reveal about social anxieties
 - **CH-05:** Evaluate AI claims about consciousness, intelligence, and agency using philosophical and cognitive science frameworks
-- **CH-06:** Analyze AI through feminist, postcolonial, critical race, or disability frameworks to reveal differential impacts
+- **CH-06:** Analyze AI through, for example, feminist, postcolonial, critical race, or disability frameworks to reveal differential impacts
 
 ### Cluster EV: Ethics & Values
 
