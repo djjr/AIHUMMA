@@ -5,7 +5,6 @@ const NAV = [
     section: 'Project',
     pages: [
       { label: 'Home',                slug: 'HOME' },
-      { label: 'All Pages',           slug: 'All Pages' },
     ]
   },
   {
