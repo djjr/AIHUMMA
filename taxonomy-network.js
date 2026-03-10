@@ -538,6 +538,19 @@ window.TAXONOMY_NODES = [
     aihumma_owns: true,
     bloom_level: "apply"
   },
+  {
+    id: "CW-06",
+    cluster: "CW",
+    meta_cluster: "productive_capacity",
+    label: "Direct and evaluate AI-assisted writing for policy quality",
+    description: "Apply expert judgment to AI-assisted writing workflows — directing tools with policy genre knowledge and domain expertise, evaluating output against professional standards, recognizing plausible-but-wrong analysis, and maintaining author accountability for what goes out under your name. The higher-order skill that makes the difference between using AI tools and using them well in high-stakes policy contexts.",
+    type: "S",
+    specificity: "ai_specific",
+    network_role: "integrative",
+    jhu_coverage: 0,
+    aihumma_owns: true,
+    bloom_level: "evaluate"
+  },
 
   // ─── HI: Human-AI Interaction & Design ───────────────────────────────────
 
@@ -788,12 +801,18 @@ window.TAXONOMY_EDGES = [
     rationale: "Translating for lay audiences is a variation on policy genre calibration" },
   { source: "CW-01", target: "CW-04", type: "scaffolds", strength: 2,
     rationale: "Persuasive genre writing builds on policy memo skill" },
+  { source: "CW-05", target: "CW-06", type: "prerequisite", strength: 2,
+    rationale: "Tool fluency is prerequisite to expert direction and evaluation of AI-assisted output" },
+  { source: "CW-01", target: "CW-06", type: "prerequisite", strength: 3,
+    rationale: "Policy genre knowledge is prerequisite to evaluating whether AI output meets those standards" },
 
   // Cross-cluster: TL → other clusters
   { source: "TL-02", target: "GP-05", type: "prerequisite", strength: 3,
     rationale: "Governing frontier AI safety requires reading technical safety documents as arguments — the F1 signature skill" },
   { source: "TL-02", target: "CW-03", type: "prerequisite", strength: 2,
     rationale: "Translating technical content for lay audiences requires first being able to read it critically yourself" },
+  { source: "TL-02", target: "CW-06", type: "scaffolds", strength: 2,
+    rationale: "Reading AI documents as arguments scaffolds evaluating AI-generated analysis on technical topics" },
   { source: "TL-06", target: "GP-01", type: "scaffolds", strength: 2,
     rationale: "Comparing regulatory frameworks is enriched by understanding what AI capabilities each regime is trying to address" },
   { source: "TL-07", target: "EV-02", type: "scaffolds", strength: 2,
@@ -900,11 +919,11 @@ window.AIHUMMA_COURSES = [
     layer: "foundation",
     credits: 3,
     semester: 2,
-    primary_codes: ["CW-01", "CW-03", "CW-04"],
+    primary_codes: ["CW-01", "CW-03", "CW-04", "CW-06"],
     secondary_codes: ["CW-02", "CW-05", "RM-04", "TL-02"],
     signature_code: "CW-01",
     gap_level: "fills_gap",
-    gap_note: "CW-01 at only 7 courses; CW-02 and CW-04 at 1 each; CW-05 entirely absent. CW cluster is the most uniformly sparse in the catalog. F4 is non-redundant with anything that exists.",
+    gap_note: "CW-01 at only 7 courses; CW-02 and CW-04 at 1 each; CW-05 and CW-06 entirely absent. CW cluster is the most uniformly sparse in the catalog. F4 is non-redundant with anything that exists.",
     overlap_with_electives: [],
     description_note: "Workshop-based genre training: policy memo, executive summary, white paper, Congressional testimony, op-ed, grant proposals. Final assignment converts F1 capability translation into three formats."
   },
@@ -972,7 +991,7 @@ window.AIHUMMA_COURSES = [
     layer: "track_b",
     credits: 3,
     primary_codes: ["CW-03", "CW-04", "CW-01"],
-    secondary_codes: ["CH-02", "RM-03", "CW-05", "GP-01"],
+    secondary_codes: ["CH-02", "RM-03", "CW-05", "CW-06", "GP-01"],
     signature_code: "CW-03",
     gap_level: "fills_gap",
     gap_note: "CW-03 and CW-04 nearly absent from JHU catalog. Strategic (not corporate) communications for policy translation — the specific skill of building organizational narrative in the AI governance space.",

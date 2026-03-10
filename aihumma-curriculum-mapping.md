@@ -1,7 +1,7 @@
 # AIHUMMA Curriculum Mapping
 ## Proposed Courses → Outcome Taxonomy
 
-*Maps the 12 proposed AIHUMMA courses against the 48-code learning outcome taxonomy.*
+*Maps the 12 proposed AIHUMMA courses against the 49-code learning outcome taxonomy.*
 *Companion to: courses-enriched.js (JHU inventory), outcomes-coverage-matrix.md (JHU coverage analysis)*
 
 ---
@@ -76,13 +76,15 @@ The unusual pedagogy is the point: by teaching technical concepts *through* mode
 
 | Role | Codes |
 |------|-------|
-| Primary | CW-01, CW-03, CW-04 |
+| Primary | CW-01, CW-03, CW-04, CW-06 |
 | Secondary | CW-02, CW-05, RM-04, TL-02 |
 | Signature | **CW-01** — producing policy genre writing for decision-makers |
 
 The CW cluster is the most uniformly sparse in the JHU catalog: [[outcomes/CW-01|CW-01]] at 7 courses, [[outcomes/CW-02|CW-02]] and [[outcomes/CW-04|CW-04]] at 1 each, [[outcomes/CW-05|CW-05]] absent entirely. F4 fills this space without competing with anything that exists. The signature assignment — converting the F1 capability translation assignment into a policy memo, an op-ed, and an executive summary — threads the needle between the two halves of the foundation year: technical literacy (F1) rendered into policy craft (F4).
 
 [[outcomes/TL-02|TL-02]] appears as a secondary code because policy writing about AI systems requires the ability to read technical documents critically — the F4 workshop draws directly on students' F1 skill set.
+
+F4 also treats AI-augmented writing as a skill domain in its own right. Producing policy-quality writing in an AI-assisted workflow requires genre knowledge (to evaluate whether AI output meets professional standards), substantive expertise (to catch plausible-but-wrong analysis), and the judgment AI cannot supply — political viability, audience context, accountability for what goes out under your name. The course explicitly addresses when and how to use these tools and what the human value-add looks like when they're in the loop. This makes F4 the natural primary home for [[outcomes/CW-06|CW-06]] (AI-augmented writing workflows).
 
 ---
 
@@ -164,12 +166,14 @@ B1 is the hardest course to map cleanly onto the taxonomy because its primary sk
 | Role | Codes |
 |------|-------|
 | Primary | CW-03, CW-04, CW-01 |
-| Secondary | CH-02, RM-03, CW-05, GP-01 |
+| Secondary | CH-02, RM-03, CW-05, CW-06, GP-01 |
 | Signature | **CW-03** — translating technical AI concepts for lay audiences |
 
 B2 is the communications analog to F4 — where F4 teaches genre fluency for policy decision-makers, B2 teaches organizational communication strategy in the AI governance space. The case-study approach (how CAIS has positioned itself, how GovAI builds its public profile, how AI Now uses media as advocacy) gives students analytical tools before they produce their own strategic communications plan.
 
 [[outcomes/CH-02|CH-02]] (discourse analysis) appears as a secondary code because strategic communications is fundamentally applied rhetoric: understanding how AI discourse works enables students to construct communications that intervene in that discourse deliberately.
+
+B2 also treats AI-assisted drafting as part of the current communications workflow, with explicit attention to the strategy and judgment layer that remains irreducibly human — the framing, the targeting, the decisions about what to say and what to withhold. [[outcomes/CW-06|CW-06]] (AI-augmented writing workflows) appears as a secondary code here, with F4 as its primary home.
 
 ---
 
@@ -257,6 +261,7 @@ The four capstone formats each emphasize different code combinations: the policy
 | CW-03 | F4, B2 | P1, P2, P3 |
 | CW-04 | F4, B1, B2, B3, P3 | — |
 | CW-05 | — | F4, B2 |
+| CW-06 | F4 | B2 |
 | HI-01 | — | B1 |
 | SD-02 | — | F2 |
 | SD-03 | — | B1 |
@@ -292,6 +297,7 @@ Every outcome identified in the JHU coverage analysis as highest strategic prior
 | RM-01 (qualitative research methods) | 1 | A2 primary |
 | GP-03 (historical governance analogies) | 2 | F2 primary |
 | CW-01 (policy genre writing) | 7 | F4 primary + 5 more |
+| CW-06 (directing AI-assisted writing for policy quality) | 0 | F4 primary, B2 secondary |
 | GP-05 (tech AI safety from governance standpoint) | 3 | A3 primary, F1 secondary |
 
 This is the core design claim: AIHUMMA fills the specific structural gaps in the JHU curriculum that correspond to what GovAI, CSET, AI Now, CAIS, and PAI actually hire for.
@@ -312,7 +318,7 @@ The most strategically important outcomes are not just covered once — they are
 
 **[[outcomes/HI-03|HI-03]]** (augmentation vs. replacement dynamics): The JHU coverage analysis identified this as strategically important ("central to every Human-Centered AI program") yet appearing in only 1 course. AIHUMMA's current design does not explicitly address it. Options:
 
-- Add it to F1 as a framing concept: the distinction between AI as tool-that-augments vs. AI as system-that-replaces is itself a governance question, and F1's governance artifacts (capability evaluations, deployment policies) encode assumptions about it.
+- Add it to F1 as a framing concept: the distinction between AI as tool-that-augments vs. AI as system-that-replaces is itself a governance question, and F1's governance artifacts (capability evaluations, deployment policies) encode assumptions about it. Students also encounter the augmentation/replacement distinction not just as an abstract governance question but as a lived working reality — their own use of AI writing tools in F4 and B2 is a concrete case study in what effective augmentation requires and what the human layer must supply.
 - Add it to F3 as a values question: the augmentation/replacement distinction has deep normative stakes and connects naturally to [[outcomes/EV-04|EV-04]] (high-stakes domain ethics).
 - Create a standalone unit in A3: the frontier AI risk seminar is partly about the replacement question at the civilizational scale.
 
@@ -371,6 +377,7 @@ Rows = outcome codes. Columns = AIHUMMA courses. ● = primary, ○ = secondary.
 | CW-03 | | | | ● | | | | | ● | | ○ | ○ | ○ |
 | CW-04 | | | | ● | | | | ● | ● | ● | | | ● |
 | CW-05 | | | | ○ | | | | | ○ | | | | |
+| CW-06 | | | | ● | | | | | ○ | | | | |
 | HI-01 | | | | | | | | ○ | | | | | |
 | SD-02 | | ○ | | | | | | | | | | | |
 | SD-03 | | | | | | | | ○ | | | | | |
