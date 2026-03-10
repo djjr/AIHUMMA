@@ -6,6 +6,7 @@ const NAV = [
     pages: [
       { label: 'Home',                slug: 'HOME' },
       { label: 'Workflow',            slug: 'curriculum-exploration-workflow' },
+      { label: 'Program Deck',        url:  'aihumma-deck.html' },
     ]
   },
   {
@@ -67,12 +68,13 @@ function buildNav(currentSlug) {
     `<div class="site-version">v0.1 &nbsp;·&nbsp; Spring 2026</div>` +
     NAV.map(section => `
     <div class="nav-section">${section.section}</div>
-    ${section.pages.map(p => `
-      <a href="#${encodeURIComponent(p.slug)}"
+    ${section.pages.map(p => p.url
+      ? `<a href="${p.url}" target="_blank" class="nav-link">${p.label} ↗</a>`
+      : `<a href="#${encodeURIComponent(p.slug)}"
          class="nav-link${p.slug === currentSlug ? ' active' : ''}">
         ${p.label}
-      </a>
-    `).join('')}
+      </a>`
+    ).join('')}
   `).join('');
 }
 

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIHUMMA · Program Overview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+  <style>
+    /* ── Design tokens (mirrors site.css) ───────────────────────────────── */
+    :root {
+      --black: #0f0f0f;
+      --white: #f8f7f5;
+      --red:   #cc2200;
+      --mid:   #888;
+      --rule:  #2c2c2a;
+      --card:  #191917;
+    }
+
+    /* ── Reveal overrides ────────────────────────────────────────────────── */
+    .reveal {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* All slides: left-aligned, padded, flex column so grids can fill space */
+    .reveal .slides > section {
+      text-align: left;
+      padding: 44px 52px;
+      box-sizing: border-box;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      top: 0 !important;
+    }
+
+    /* Kill reveal's default h/p styles */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: inherit;
+      text-transform: none;
+      letter-spacing: normal;
+      text-shadow: none;
+      word-wrap: normal;
+      color: var(--white);
+      margin: 0;
+    }
+    .reveal p { margin: 0; }
+    .reveal strong { color: var(--white); }
+
+    /* ── Shared slide parts ───────────────────────────────────────────────── */
+    .label {
+      font-size: 0.59rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.3rem;
+    }
+
+    .slide-h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 0.45rem;
+    }
+
+    .slide-sub {
+      font-size: 0.78rem;
+      color: var(--mid);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .slide-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      margin: 10px 0 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── SLIDE 1: Title ───────────────────────────────────────────────────── */
+    .slide-title {
+      justify-content: center;
+    }
+
+    .wordmark {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.75rem;
+    }
+
+    .wordmark .accent { color: var(--red); }
+
+    .title-h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 0;
+    }
+
+    .title-h1 .dim { color: #555; }
+
+    .title-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin: 1.5rem 0;
+    }
+
+    .title-question {
+      font-size: 1.05rem;
+      color: #bbb;
+      line-height: 1.6;
+      max-width: 54ch;
+      font-weight: 400;
+    }
+
+    /* ── SLIDE 2: Reciprocal need ─────────────────────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      flex: 1;
+      align-items: start;
+      padding-top: 4px;
+    }
+
+    .col-head {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.65rem;
+    }
+
+    .body-p {
+      font-size: 0.85rem;
+      color: #c8c6c2;
+      line-height: 1.7;
+      max-width: none;
+      margin-bottom: 0.85rem;
+    }
+
+    /* ── SLIDE 3: Philosophy ──────────────────────────────────────────────── */
+    .principles {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+      padding: 4px 0;
+    }
+
+    .principle {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .p-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 36px;
+      padding-top: 2px;
+    }
+
+    .p-body strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .p-body p {
+      font-size: 0.78rem;
+      color: var(--mid);
+      line-height: 1.55;
+    }
+
+    /* ── SLIDE 4: Curriculum map ──────────────────────────────────────────── */
+    .curric-map {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .stage-box {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 13px 18px;
+    }
+
+    .stage-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 3px;
+    }
+
+    .stage-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .stage-codes {
+      font-size: 0.7rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    .code-chip {
+      display: inline-block;
+      background: #222;
+      color: #aaa;
+      font-weight: 700;
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      padding: 1px 7px;
+      margin-right: 3px;
+    }
+
+    .stage-arrow {
+      text-align: center;
+      color: var(--red);
+      font-size: 1rem;
+      padding: 6px 0;
+      letter-spacing: 0.2em;
+    }
+
+    .track-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .track-box {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-top: 2px solid var(--red);
+      padding: 13px 18px;
+    }
+
+    .track-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 3px;
+    }
+
+    .track-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    /* ── Course card grids ────────────────────────────────────────────────── */
+    .card-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 13px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 13px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .course-badge {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: var(--red);
+      color: var(--white);
+      padding: 2px 9px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+
+    .course-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .course-tagline {
+      font-size: 0.71rem;
+      color: var(--mid);
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    /* ── Card hover overlay ───────────────────────────────────────────────── */
+    .card-back {
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+      border-top: 3px solid var(--red);
+      padding: 15px 18px;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Thin dark scrollbar inside card backs */
+    .card-back::-webkit-scrollbar { width: 4px; }
+    .card-back::-webkit-scrollbar-track { background: #1a1a18; }
+    .card-back::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+    .card-back { scrollbar-width: thin; scrollbar-color: var(--red) #1a1a18; }
+
+    .course-card:hover .card-back {
+      opacity: 1;
+    }
+
+    .back-sig {
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 7px;
+      flex-shrink: 0;
+    }
+
+    .back-text {
+      font-size: 0.72rem;
+      line-height: 1.58;
+      color: #dddbd7;
+      flex: 1;
+    }
+
+    .back-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 10px;
+      flex-shrink: 0;
+    }
+
+    .chip {
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: #252523;
+      color: #888;
+      padding: 2px 7px;
+    }
+
+    .chip.pri { background: #3a0800; color: #ff8870; }
+
+    /* ── SLIDE 9: Employers ───────────────────────────────────────────────── */
+    .employer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .employer-card {
+      background: var(--card);
+      border-left: 3px solid var(--red);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .emp-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .emp-type {
+      font-size: 0.67rem;
+      color: var(--mid);
+      line-height: 1.45;
+    }
+
+    /* ── SLIDE 10: Closing ────────────────────────────────────────────────── */
+    .slide-closing {
+      justify-content: center;
+    }
+
+    .closing-quote {
+      font-size: 1.55rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--white);
+      max-width: 600px;
+    }
+
+    .closing-quote em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .closing-foot {
+      font-size: 0.68rem;
+      color: #555;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+
+    /* ── Reveal chrome ────────────────────────────────────────────────────── */
+    .reveal .progress { color: var(--red); }
+    .reveal .controls { color: var(--red); }
+    .reveal .slide-number { color: var(--mid); font-size: 0.65rem; }
+
+  </style>
+</head>
+<body>
+
+<div class="reveal"><div class="slides">
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 1 · TITLE                                                       -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="slide-title">
+  <div class="wordmark">AIHUMMA &nbsp;·&nbsp; <span class="accent">Master's Program in AI Governance</span></div>
+  <h1 class="title-h1">AI <span class="dim">+</span> The<br>Human Sciences</h1>
+  <div class="title-rule"></div>
+  <p class="title-question">
+    What kind of graduate degree does the world need<br>
+    at the intersection of artificial intelligence<br>
+    and the humanities and social sciences?
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 2 · THE RECIPROCAL NEED                                         -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">The Case</div>
+  <div class="slide-h2">A shortage that is specific, not generic</div>
+  <div class="slide-rule"></div>
+  <div class="two-col">
+    <div>
+      <p class="col-head">What the field needs</p>
+      <p class="body-p">The organizations doing the most consequential work in AI governance — GovAI, CSET, AI Now, CAIS, PAI, and a growing set of government offices and think tanks — are understaffed. But the shortage is not of technical talent.</p>
+      <p class="body-p">It is a shortage of people who bring the training of the social sciences and humanities to AI problems: comparative institutional analysis, interpretive and ethnographic methods, rhetorical and ethical frameworks. These are not soft supplements to technical understanding.</p>
+      <p class="body-p" style="color: var(--white); font-weight: 600;">They are the tools the governance problems actually require.</p>
+    </div>
+    <div>
+      <p class="col-head">What you bring</p>
+      <p class="body-p">If you are trained in political science, history, sociology, philosophy, or the humanities, you have already developed the analytical capacities the field most needs.</p>
+      <p class="body-p">Understanding how technologies transform institutions. How narratives of inevitability get constructed and contested. How power operates through systems that appear neutral. How policy arguments are made, evaluated, and contested.</p>
+      <p class="body-p" style="color: var(--white); font-weight: 600;">AIHUMMA gives you the technical fluency and professional formation to bring that training to bear where it matters.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 3 · PROGRAM PHILOSOPHY                                          -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">Program Design</div>
+  <div class="slide-h2">Three design principles</div>
+  <div class="slide-rule"></div>
+  <div class="principles">
+    <div class="principle">
+      <div class="p-num">1</div>
+      <div class="p-body">
+        <strong>Humanities and social sciences as the analytical core — not decoration</strong>
+        <p>The program is built around what you already know how to do. Technical literacy is added to it, not the other way around. The direction of the degree is from your strengths outward.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="p-num">2</div>
+      <div class="p-body">
+        <strong>Technical literacy built from the governance artifacts you will actually use</strong>
+        <p>Model cards, capability evaluations, responsible scaling policies — not ML textbooks. The same underlying concepts, reoriented for a different purpose and a different professional destination.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="p-num">3</div>
+      <div class="p-body">
+        <strong>A program arc that cannot be assembled from electives</strong>
+        <p>The sequencing and scaffolding that produce deep competency are not properties of individual courses. The skill of reading a technical AI document critically (F1) must become policy writing (F4) before it can reach its highest application (A3). That arc has to be built.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 4 · CURRICULUM MAP                                              -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">The Curriculum</div>
+  <div class="slide-h2">Three stages · ~12 courses</div>
+  <div class="slide-rule"></div>
+  <div class="curric-map">
+    <div class="stage-box">
+      <div class="stage-label">Stage 1 · Foundation Year &nbsp;·&nbsp; Required for all students</div>
+      <div class="stage-title">Four courses that build the common platform</div>
+      <div class="stage-codes">
+        <span class="code-chip">F1</span> How AI Systems Work &nbsp;·&nbsp;
+        <span class="code-chip">F2</span> Institutions &amp; Governance &nbsp;·&nbsp;
+        <span class="code-chip">F3</span> Ethics, Values &amp; AI &nbsp;·&nbsp;
+        <span class="code-chip">F4</span> Writing for Policy
+      </div>
+    </div>
+    <div class="stage-arrow">↓ &nbsp; choose your track &nbsp; ↓</div>
+    <div class="track-row">
+      <div class="track-box">
+        <div class="track-label">Track A &nbsp;·&nbsp; Policy &amp; Governance Research</div>
+        <div class="track-title">For students targeting research and policy roles</div>
+        <div class="stage-codes">
+          <span class="code-chip">A1</span> Comparative AI Regulation &nbsp;·&nbsp;
+          <span class="code-chip">A2</span> Research Methods &nbsp;·&nbsp;
+          <span class="code-chip">A3</span> Frontier AI Risk Seminar
+        </div>
+      </div>
+      <div class="track-box">
+        <div class="track-label">Track B &nbsp;·&nbsp; Operations, Programs &amp; Communications</div>
+        <div class="track-title">For students targeting program and field-building roles</div>
+        <div class="stage-codes">
+          <span class="code-chip">B1</span> Program Design &nbsp;·&nbsp;
+          <span class="code-chip">B2</span> Strategic Communications &nbsp;·&nbsp;
+          <span class="code-chip">B3</span> Fundraising &amp; Operations
+        </div>
+      </div>
+    </div>
+    <div class="stage-arrow">↓</div>
+    <div class="stage-box">
+      <div class="stage-label">Stage 3 · Practicum &amp; Capstone</div>
+      <div class="stage-title">Applied work in a real organization + faculty-mentored final project</div>
+      <div class="stage-codes">
+        <span class="code-chip">P1</span> Field Practicum &nbsp;·&nbsp;
+        <span class="code-chip">P2</span> Capstone Seminar &nbsp;·&nbsp;
+        <span class="code-chip">P3</span> Capstone Project
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 5 · FOUNDATION                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">Stage 1</div>
+  <div class="slide-h2">Foundation — four required courses</div>
+  <div class="slide-rule"></div>
+  <div class="card-grid-2x2">
+
+    <!-- F1 -->
+    <div class="course-card">
+      <span class="course-badge">F1</span>
+      <div class="course-title">How AI Systems Work</div>
+      <p class="course-tagline">Technical concepts through governance artifacts, not textbooks</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · TL-02 &nbsp;—&nbsp; Reading technical AI docs as arguments</div>
+        <p class="back-text">Teaches ML, LLMs, and AI safety concepts through model cards, capability evaluations, and Responsible Scaling Policies rather than ML textbooks. Students learn to read technical AI documentation as argument, not neutral fact — the foundational skill that every other course in the program builds on. The course nobody else teaches.</p>
+        <div class="back-chips">
+          <span class="chip pri">TL-01</span><span class="chip pri">TL-02</span><span class="chip pri">TL-04</span><span class="chip pri">TL-06</span><span class="chip pri">TL-07</span>
+          <span class="chip">CH-02</span><span class="chip">GP-05</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F2 -->
+    <div class="course-card">
+      <span class="course-badge">F2</span>
+      <div class="course-title">Institutions, Governance &amp; the Regulation of Risky Technologies</div>
+      <p class="course-tagline">Nuclear, pharma, aviation, finance as analytical lenses for AI</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · GP-03 &nbsp;—&nbsp; Historical governance analogies</div>
+        <p class="back-text">A full semester on the comparative governance question that other courses give two weeks. Uses nuclear, pharmaceutical, aviation, and financial regulation as analytical lenses. Asks not just what each regime says but why different political economies produced different regulatory forms — the comparative institutional logic that GP-01 survey courses never reach.</p>
+        <div class="back-chips">
+          <span class="chip pri">GP-01</span><span class="chip pri">GP-02</span><span class="chip pri">GP-03</span>
+          <span class="chip">CH-01</span><span class="chip">EV-01</span><span class="chip">SD-02</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F3 -->
+    <div class="course-card">
+      <span class="course-badge">F3</span>
+      <div class="course-title">Ethics, Values &amp; AI: From Philosophy to Policy</div>
+      <p class="course-tagline">The ethics course that actually gets to Part 4</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · EV-05 &nbsp;—&nbsp; Procedural vs. structural critique</div>
+        <p class="back-text">Builds through frameworks → standards → institutional ethics → then the move most ethics courses avoid: distinguishing procedural ethics from structural critique. Makes the Timnit Gebru / AI Now "ethics washing" argument into a learnable analytical skill. EV-05 appears in only 1 course across the full 65-course institutional inventory.</p>
+        <div class="back-chips">
+          <span class="chip pri">EV-01</span><span class="chip pri">EV-03</span><span class="chip pri">EV-05</span>
+          <span class="chip">EV-02</span><span class="chip">EV-04</span><span class="chip">EV-06</span><span class="chip">CH-06</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F4 -->
+    <div class="course-card">
+      <span class="course-badge">F4</span>
+      <div class="course-title">Writing for Policy: Genre, Audience &amp; Argument</div>
+      <p class="course-tagline">Workshop-based genre training for policy communication craft</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · CW-01 &nbsp;—&nbsp; Policy genre writing for decision-makers</div>
+        <p class="back-text">Policy memo, executive summary, white paper, Congressional testimony, op-ed, grant proposal. The signature assignment converts the F1 capability translation into three formats — threading technical literacy (F1) into policy craft (F4). Includes explicit work on AI-augmented writing: directing tools, evaluating output, maintaining accountability for what goes out under your name.</p>
+        <div class="back-chips">
+          <span class="chip pri">CW-01</span><span class="chip pri">CW-03</span><span class="chip pri">CW-04</span><span class="chip pri">CW-06</span>
+          <span class="chip">CW-02</span><span class="chip">CW-05</span><span class="chip">TL-02</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 6 · TRACK A                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">Stage 2 · Track A</div>
+  <div class="slide-h2">Policy &amp; Governance Research</div>
+  <p class="slide-sub">For students targeting research and policy roles at GovAI, CSET, government AI offices, and policy think tanks</p>
+  <div class="slide-rule"></div>
+  <div class="card-grid-3">
+
+    <!-- A1 -->
+    <div class="course-card">
+      <span class="course-badge">A1</span>
+      <div class="course-title">Comparative AI Regulation</div>
+      <p class="course-tagline">EU, US, UK, China, Global South — comparative political economy, not doctrinal comparison</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · GP-06 &nbsp;—&nbsp; International AI competition &amp; cooperation</div>
+        <p class="back-text">Asks why the EU produced binding regulation while the US produced voluntary frameworks — which requires comparative political economy, not just doctrinal comparison. Deep institutional analysis of the EU AI Act, US Executive Order, UK soft-law approach, China's algorithmic regulation regime, and Global South dynamics. GP-06 appears in only 2 courses across the full inventory.</p>
+        <div class="back-chips">
+          <span class="chip pri">GP-01</span><span class="chip pri">GP-06</span>
+          <span class="chip">GP-04</span><span class="chip">CH-02</span><span class="chip">EV-03</span><span class="chip">SD-04</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- A2 -->
+    <div class="course-card">
+      <span class="course-badge">A2</span>
+      <div class="course-title">Research Methods for AI Governance</div>
+      <p class="course-tagline">The craft of research GovAI and CSET actually publish</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · RM-01 &nbsp;—&nbsp; Qualitative research for AI governance</div>
+        <p class="back-text">Elite interviewing, document analysis, process tracing, and humanistic close reading applied to AI governance questions. Miles Brundage's career arc used as a case study in producing policy-relevant research. Fills a near-empty methodological niche: RM-01 appears in only 1 course across 65 in our institutional inventory. CH-03 (humanistic methods applied to AI) appears in only 4.</p>
+        <div class="back-chips">
+          <span class="chip pri">RM-01</span><span class="chip pri">RM-04</span><span class="chip pri">CH-03</span>
+          <span class="chip">RM-02</span><span class="chip">RM-03</span><span class="chip">RM-05</span><span class="chip">CW-01</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- A3 -->
+    <div class="course-card">
+      <span class="course-badge">A3</span>
+      <div class="course-title">Seminar: Frontier AI Risk &amp; Governance</div>
+      <p class="course-tagline">Reads both the longtermists and the critics — and requires students to engage both seriously</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · GP-05 &nbsp;—&nbsp; Technical AI safety from a governance standpoint</div>
+        <p class="back-text">The capstone of Track A's intellectual arc. Dual-literature design: students read Ord, Christiano, and METR evaluation reports alongside Gebru, Crawford, and AI Now critiques. Primary materials are the exact governance artifacts F1 taught students to read critically — now applied at full difficulty. Requires students to form defensible views about where these literatures converge and conflict.</p>
+        <div class="back-chips">
+          <span class="chip pri">GP-05</span><span class="chip pri">TL-02</span><span class="chip pri">EV-05</span>
+          <span class="chip">TL-04</span><span class="chip">TL-07</span><span class="chip">GP-02</span><span class="chip">GP-06</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 7 · TRACK B                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">Stage 2 · Track B</div>
+  <div class="slide-h2">Operations, Programs &amp; Communications</div>
+  <p class="slide-sub">For students targeting program, communications, and field-building roles at AI governance nonprofits and foundations</p>
+  <div class="slide-rule"></div>
+  <div class="card-grid-3">
+
+    <!-- B1 -->
+    <div class="course-card">
+      <span class="course-badge">B1</span>
+      <div class="course-title">Program Design &amp; Convening</div>
+      <p class="course-tagline">Fellowship design, workshop architecture, and field-building as intellectual craft</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · RM-04 &nbsp;—&nbsp; Evidence synthesis for program design</div>
+        <p class="back-text">Designing programs, fellowships, and convenings as a learnable craft — drawing on organizational sociology, adult learning theory, and the institutional history of convening bodies like Asilomar and the Santa Fe Institute. The core argument: good program design requires the same evidence synthesis and defensible-argument construction skills as good policy research.</p>
+        <div class="back-chips">
+          <span class="chip pri">RM-04</span><span class="chip pri">CW-04</span>
+          <span class="chip">EV-03</span><span class="chip">HI-01</span><span class="chip">SD-03</span><span class="chip">GP-02</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- B2 -->
+    <div class="course-card">
+      <span class="course-badge">B2</span>
+      <div class="course-title">Strategic Communications for AI Governance</div>
+      <p class="course-tagline">Not PR — strategic translation between technical and policy communities</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · CW-03 &nbsp;—&nbsp; Translating technical AI concepts for lay audiences</div>
+        <p class="back-text">Case studies: how CAIS has positioned itself, how GovAI builds its public profile, how AI Now uses media as part of advocacy. Students produce a communications audit and strategic plan for a fictional AI governance nonprofit. Treats AI-assisted drafting as part of the current workflow, with explicit attention to the strategy and judgment layer that remains irreducibly human.</p>
+        <div class="back-chips">
+          <span class="chip pri">CW-03</span><span class="chip pri">CW-04</span><span class="chip pri">CW-01</span>
+          <span class="chip">CH-02</span><span class="chip">RM-03</span><span class="chip">CW-05</span><span class="chip">CW-06</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- B3 -->
+    <div class="course-card">
+      <span class="course-badge">B3</span>
+      <div class="course-title">Fundraising, Operations &amp; Field-Building</div>
+      <p class="course-tagline">The unsexy course that makes everything else possible</p>
+      <div class="card-back">
+        <div class="back-sig">Signature · CW-04 &nbsp;—&nbsp; Persuasive arguments across genres</div>
+        <p class="back-text">Open Philanthropy, SFF, Longview, MacArthur, Hewlett. How to write a grant proposal. How to design operations infrastructure for a small mission-driven organization. How to structure donor communications. Target roles: CAIS Operations Associate, PAI program staff. The course maintains direct contact with hiring managers at partner organizations to ensure content stays calibrated.</p>
+        <div class="back-chips">
+          <span class="chip pri">CW-04</span><span class="chip pri">CW-01</span>
+          <span class="chip">GP-02</span><span class="chip">EV-03</span><span class="chip">RM-04</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 8 · PRACTICUM & CAPSTONE                                        -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">Stage 3</div>
+  <div class="slide-h2">Practicum &amp; Capstone — applied and demonstrated</div>
+  <div class="slide-rule"></div>
+  <div class="card-grid-3">
+
+    <!-- P1 -->
+    <div class="course-card">
+      <span class="course-badge">P1</span>
+      <div class="course-title">Field Practicum</div>
+      <p class="course-tagline">8 weeks embedded in a partner organization on a real project</p>
+      <div class="card-back">
+        <div class="back-sig">Core competencies · CW-01 + RM-04</div>
+        <p class="back-text">8-week engagement with a partner organization — GovAI, CAIS, AI Now, a city-level AI governance body, or a federal AI office. Every student produces policy-quality writing and synthesizes evidence into a real deliverable for a real organizational client. Track-dependent: A-track placements emphasize research outputs; B-track placements emphasize communications and program work.</p>
+        <div class="back-chips">
+          <span class="chip pri">CW-01</span><span class="chip pri">RM-04</span>
+          <span class="chip">RM-01</span><span class="chip">RM-05</span><span class="chip">CW-03</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="course-card">
+      <span class="course-badge">P2</span>
+      <div class="course-title">Capstone Seminar</div>
+      <p class="course-tagline">Faculty-mentored project development with weekly practitioner guests</p>
+      <div class="card-back">
+        <div class="back-sig">Core competencies · RM-04 + CW-01</div>
+        <p class="back-text">Every session includes a practitioner from a target organization who responds directly to student work in progress — creating real intellectual exchanges and hiring relationships, not networking events. Students develop capstone projects with peer critique and faculty mentorship. The practitioner engagement model is the course's distinctive contribution: it makes program completion an entry point into the field.</p>
+        <div class="back-chips">
+          <span class="chip pri">RM-04</span><span class="chip pri">CW-01</span>
+          <span class="chip">RM-03</span><span class="chip">CW-03</span><span class="chip">CW-04</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="course-card">
+      <span class="course-badge">P3</span>
+      <div class="course-title">Capstone Project</div>
+      <p class="course-tagline">A substantive deliverable in one of four formats, reviewed by practitioners</p>
+      <div class="card-back">
+        <div class="back-sig">Four formats — student chooses based on track and target role</div>
+        <p class="back-text">
+          <strong style="color: var(--red); font-size: 0.68rem;">Policy research report</strong> — 15–25 pages, GovAI-quality white paper on a governance question.<br><br>
+          <strong style="color: var(--red); font-size: 0.68rem;">Program design document</strong> — fellowship, initiative, or convening design with evidence-based rationale.<br><br>
+          <strong style="color: var(--red); font-size: 0.68rem;">Fellowship application portfolio</strong> — complete application package for a target fellowship program.<br><br>
+          <strong style="color: var(--red); font-size: 0.68rem;">Strategic communications plan</strong> — audit + strategy + sample outputs for a real or fictional org.
+        </p>
+        <div class="back-chips">
+          <span class="chip pri">RM-04</span><span class="chip pri">CW-01</span><span class="chip pri">CW-04</span>
+          <span class="chip">RM-01</span><span class="chip">CW-03</span><span class="chip">GP-05</span><span class="chip">EV-05</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 9 · WHERE GRADUATES GO                                          -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="label">Professional Outcomes</div>
+  <div class="slide-h2">The target employers</div>
+  <div class="slide-rule"></div>
+  <div class="employer-grid">
+    <div class="employer-card">
+      <div class="emp-name">GovAI</div>
+      <div class="emp-type">Research analyst · Policy fellow · Program officer</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">CSET</div>
+      <div class="emp-type">Research analyst · Data &amp; AI policy fellow</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">AI Now Institute</div>
+      <div class="emp-type">Research associate · Advocacy &amp; communications</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">CAIS</div>
+      <div class="emp-type">Operations associate · Program staff · Research</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">PAI</div>
+      <div class="emp-type">Program associate · Policy &amp; governance officer</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">Government AI Offices</div>
+      <div class="emp-type">OSTP · NIST AI Safety Institute · EU AI Office · City-level AI bodies</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">Philanthropic Foundations</div>
+      <div class="emp-type">Open Philanthropy · MacArthur · Hewlett · SFF &nbsp;—&nbsp; Program officer roles</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">AI Companies</div>
+      <div class="emp-type">Policy, trust &amp; safety, and governance functions at frontier AI labs</div>
+    </div>
+    <div class="employer-card">
+      <div class="emp-name">Think Tanks &amp; Universities</div>
+      <div class="emp-type">Brookings · RAND · Atlantic Council · University AI policy centers</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  SLIDE 10 · CLOSING                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="slide-closing">
+  <div class="label">AIHUMMA</div>
+  <div class="title-rule"></div>
+  <div class="closing-quote">
+    This work matters.<br>
+    These people are needed.<br>
+    We are <em>well-positioned</em> to build<br>
+    a program that produces them well.
+  </div>
+  <div class="title-rule" style="margin-top: 2.5rem;"></div>
+  <p class="closing-foot">AI + Humanities, Managed &amp; Applied &nbsp;·&nbsp; Master's Program in AI Governance</p>
+</section>
+
+</div></div><!-- /.slides /.reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    center: false,
+    width: 960,
+    height: 700,
+    margin: 0,
+    minScale: 0.4,
+    maxScale: 2.0,
+  });
+
+  // Prevent reveal.js from intercepting wheel/touch events while
+  // scrolling inside a card-back overlay.
+  document.querySelectorAll('.card-back').forEach(el => {
+    el.addEventListener('wheel', e => e.stopPropagation(), { passive: true });
+    el.addEventListener('touchmove', e => e.stopPropagation(), { passive: true });
+  });
+</script>
+</body>
+</html>
