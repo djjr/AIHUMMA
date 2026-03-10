@@ -1,7 +1,7 @@
 /**
  * AIHUMMA Taxonomy Network
  * ========================
- * Encodes the full meta-structure of the 48-code AIHUMMA outcome taxonomy
+ * Encodes the full meta-structure of the 49-code AIHUMMA outcome taxonomy
  * for network visualization and curriculum analysis.
  *
  * DATA STRUCTURES:

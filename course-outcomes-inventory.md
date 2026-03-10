@@ -59,6 +59,7 @@
 - **CW-03:** Translate technical AI concepts clearly for lay or policy audiences in written and oral form
 - **CW-04:** Produce persuasive arguments in multiple genres calibrated to specific audiences and institutional contexts
 - **CW-05:** Use generative AI tools to enhance and accelerate writing, summarization, and communication workflows
+- **CW-06:** Direct and evaluate AI-assisted writing for policy quality — applying expert judgment to AI-assisted workflows, evaluating output against professional standards, recognizing plausible-but-wrong analysis, and maintaining author accountability for what goes out under your name
 
 ### Cluster HI: Human-AI Interaction & Design
 

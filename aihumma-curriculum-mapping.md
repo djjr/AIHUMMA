@@ -8,7 +8,7 @@
 
 ## How to Read This Document
 
-**The analytical question:** For each of the 48 taxonomy codes, where does AIHUMMA build it — and does that placement make sense given the JHU elective ecosystem?
+**The analytical question:** For each of the 49 taxonomy codes, where does AIHUMMA build it — and does that placement make sense given the JHU elective ecosystem?
 
 Three categories matter:
 
@@ -225,7 +225,7 @@ The four capstone formats each emphasize different code combinations: the policy
 
 ## Outcome Coverage Summary
 
-### What AIHUMMA Covers (39/48 codes)
+### What AIHUMMA Covers (40/49 codes)
 
 | Code | Primary in | Secondary in |
 |------|-----------|-------------|
@@ -267,7 +267,7 @@ The four capstone formats each emphasize different code combinations: the policy
 | SD-03 | — | B1 |
 | SD-04 | — | A1 |
 
-### What AIHUMMA Delegates to Electives (9/48 codes)
+### What AIHUMMA Delegates to Electives (9/49 codes)
 
 These outcomes are intentionally not addressed in required AIHUMMA courses. The JHU catalog covers them adequately, and students should be directed to specific electives.
 
