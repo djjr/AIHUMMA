@@ -276,24 +276,20 @@ body {
   z-index: 500;
   width: 360px;
   max-height: 380px;
-  overflow: hidden;
+  overflow-y: auto;
   background: var(--white);
   border: 2px solid var(--black);
   box-shadow: 5px 5px 0 var(--black);
-  padding: 1.25rem 1.5rem 2.5rem;
+  padding: 1.25rem 1.5rem;
   display: none;
   pointer-events: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--mid) transparent;
 }
 
-/* Fade gradient signals more content below */
-#page-preview::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3.5rem;
-  background: linear-gradient(transparent, var(--white));
-  pointer-events: none;
-}
+#page-preview::-webkit-scrollbar { width: 4px; }
+#page-preview::-webkit-scrollbar-track { background: transparent; }
+#page-preview::-webkit-scrollbar-thumb { background: var(--mid); border-radius: 2px; }
 
 /* Source page label at top of preview */
 .preview-title {
