@@ -909,9 +909,9 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["EV-02", "EV-04", "EV-06", "CH-06", "GP-02"],
     signature_code: "EV-05",
     gap_level: "fills_gap",
-    gap_note: "EV-05 (procedural vs. structural ethics) has only 1 course in JHU catalog. This is the 'Timnit Gebru course' — the ethics washing critique — almost entirely absent elsewhere.",
+    gap_note: "EV-05 (distinguishing substantive from procedural ethics) has only 1 course across the full catalog — the sharpest gap in the taxonomy. F3 must own it; no other required course builds to this skill.",
     overlap_with_electives: ["EV-01", "EV-02", "EV-04"],
-    description_note: "Course arc: frameworks → standards → institutional ethics → limits of ethics. The crucial move is Part 4: distinguishing procedural ethics from structural critique."
+    description_note: "Course arc: landscape (what counts as an AI ethics problem) → philosophical frameworks → machine agency and moral accountability → pragmatic implementation and governance critique. Part 4 uses privacy/consent/data rights regimes (EV-06) as case studies in ethics-as-governance before asking which implementations are substantive."
   },
   {
     id: "F4",

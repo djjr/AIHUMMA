@@ -57,7 +57,7 @@ The unusual pedagogy is the point: by teaching technical concepts *through* mode
 ---
 
 **F3 · Ethics, Values, and AI: From Philosophy to Policy**
-*The ethics course that gets to Part 4: distinguishing procedural from structural critique*
+*The philosophically grounded ethics course: moral theory, machine agency, and governance*
 
 | Role | Codes |
 |------|-------|
@@ -65,9 +65,13 @@ The unusual pedagogy is the point: by teaching technical concepts *through* mode
 | Secondary | EV-02, EV-04, EV-06, CH-06, GP-02 |
 | Signature | **EV-05** — distinguishing procedural vs. structural ethics critique |
 
-[[outcomes/EV-05|EV-05]] has only 1 course across all 65 JHU AI courses — this is the sharpest gap in the entire taxonomy. F3's Part 4 ("The Limits of Ethics") makes the Timnit Gebru / AI Now critique of ethics washing into a learnable analytical skill, not just a political position. The course sequence deliberately builds to this: students cannot arrive at Part 4 without the ethical frameworks vocabulary ([[outcomes/EV-01|EV-01]], Part 1), the standards case studies ([[outcomes/EV-03|EV-03]], Parts 2–3), and the critical social lenses ([[outcomes/CH-06|CH-06]], threading throughout).
+F3 starts where most AI ethics courses don't: with actual ethics. Students work through the philosophical traditions AI ethics discourse leans on — consequentialism, deontology, virtue ethics, contractualism — at enough depth to apply and contest them. The course takes the position: opinions about AI require justification in terms of something, and students who can't name that something can't argue.
 
-[[outcomes/CH-06|CH-06]] (feminist/postcolonial analysis) appears as a secondary code rather than primary because F3's core arc is policy-focused; [[outcomes/CH-06|CH-06]] is integrated throughout as a mode of analysis rather than a dedicated unit. Students who want to go deeper should be directed toward the SAIS and Krieger electives that cover this more extensively.
+Part 1 maps the landscape: what claims get classified as AI ethics problems, by whom, and with what assumptions. Fairness and accountability as technical problems; privacy as a values problem and a rights problem; labor displacement, surveillance, and power concentration. The question of classification is substantive, not preliminary. Part 2 works through frameworks from the standard canon alongside care ethics, relational frameworks, and discourse ethics as correctives to the liberal-individualist defaults. Part 3 takes up the questions: Can AI systems be moral agents? What does it mean to hold a deployer accountable for a model's outputs when no individual made the consequential choices? Where does legal liability sit relative to moral culpability, and what governance mechanisms bridge the gap?
+
+Part 4 moves from philosophical analysis to practical ethics: how do values and ethical commitments actually get implemented? Privacy frameworks, consent models, and data rights regimes serve as the course's primary case studies in ethics translated into governance instruments. The closing thread then distinguishes substantive ethical implementation from procedural compliance theater as an analytical framework, not a political position. What makes an ethics intervention substantive rather than cosmetic? When does invoking "values" mean something and when does it substitute for structural accountability? [[outcomes/EV-05|EV-05]] appears in exactly one course across the full 65-course catalog; F3 must own it.
+
+[[outcomes/CH-06|CH-06]] (power, identity, and structural inequality lenses) remains a secondary code; it threads through the course as an analytic mode rather than a dedicated unit, and students who want more depth should be pointed toward electives that cover it extensively.
 
 ---
 
