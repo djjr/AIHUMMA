@@ -5,7 +5,7 @@ LIST from  #AIHUMMA
 ##### Hardcoded for Published Site
 [[HOME]]
 [[AIHUMMA Competitive Landscape]]
-[[AIHUMMA Courses]]
+[[Existing Courses]]
 [[AIHUMMA Curriculum Idea 01]]
 Programs
 	[[Lindenwood University Certificate in Human Centered AI]]
