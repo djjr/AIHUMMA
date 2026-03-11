@@ -2,19 +2,19 @@
 ## Proposed Courses → Outcome Taxonomy
 
 *Maps the 12 proposed AIHUMMA courses against the 49-code learning outcome taxonomy.*
-*Companion to: courses-enriched.js (JHU inventory), outcomes-coverage-matrix.md (JHU coverage analysis)*
+*Companion to: courses-enriched.js (existing course inventory), outcomes-coverage-matrix.md (coverage analysis)*
 
 ---
 
 ## How to Read This Document
 
-**The analytical question:** For each of the 49 taxonomy codes, where does AIHUMMA build it — and does that placement make sense given the JHU elective ecosystem?
+**The analytical question:** For each of the 49 taxonomy codes, where does AIHUMMA build it — and does that placement make sense given the existing elective ecosystem?
 
 Three categories matter:
 
-1. **AIHUMMA must build** — outcomes where the JHU catalog is thin (≤ 5 courses) and AIHUMMA has identified it as a program differentiator. These should appear as primary codes in at least one AIHUMMA course.
-2. **AIHUMMA reinforces** — outcomes that the JHU elective pool covers adequately (10+ courses), but which AIHUMMA still touches as secondary codes to ensure integration into a policy-focused context.
-3. **AIHUMMA delegates** — outcomes deliberately left to electives, where existing JHU courses are strong enough that AIHUMMA students can satisfy them through the broader curriculum.
+1. **AIHUMMA must build** — outcomes where the existing catalog is thin (≤ 5 courses) and AIHUMMA has identified it as a program differentiator. These should appear as primary codes in at least one AIHUMMA course.
+2. **AIHUMMA reinforces** — outcomes that the existing elective pool covers adequately (10+ courses), but which AIHUMMA still touches as secondary codes to ensure integration into a policy-focused context.
+3. **AIHUMMA delegates** — outcomes deliberately left to electives, where existing courses are strong enough that AIHUMMA students can satisfy them through the broader curriculum.
 
 The strategic insight is that AIHUMMA's **required** courses should concentrate on the first category. The second category appears naturally as secondary coverage. The third category informs the elective guidance AIHUMMA provides.
 
@@ -50,7 +50,7 @@ The unusual pedagogy is the point: by teaching technical concepts *through* mode
 | Secondary | CH-01, EV-01, GP-04, SD-02 |
 | Signature | **GP-03** — using historical tech governance analogies |
 
-[[outcomes/GP-03|GP-03]] appears in only 2 of the 65 JHU courses; F2 owns it almost exclusively. The course's comparative case method also develops [[outcomes/GP-01|GP-01]] (regulatory frameworks overview) more deeply than the survey courses that currently provide JHU's 15-course coverage — F2's [[outcomes/GP-01|GP-01]] is about *institutional design logic*, not just what each law says.
+[[outcomes/GP-03|GP-03]] appears in only 2 of the 65 existing courses; F2 owns it almost exclusively. The course's comparative case method also develops [[outcomes/GP-01|GP-01]] (regulatory frameworks overview) more deeply than the survey courses that currently provide 15-course coverage — F2's [[outcomes/GP-01|GP-01]] is about *institutional design logic*, not just what each law says.
 
 [[outcomes/CH-01|CH-01]] (AI in intellectual history) is a secondary code because the course's narrative frame — "we have done this before, with these results" — requires situating AI in the history of technology governance. Students who go deep on the Asilomar conference or the creation of the IAEA are doing intellectual history.
 
@@ -84,7 +84,7 @@ Part 4 moves from philosophical analysis to practical ethics: how do values and 
 | Secondary | CW-02, CW-05, RM-04, TL-02 |
 | Signature | **CW-01** — producing policy genre writing for decision-makers |
 
-The CW cluster is the most uniformly sparse in the JHU catalog: [[outcomes/CW-01|CW-01]] at 7 courses, [[outcomes/CW-02|CW-02]] and [[outcomes/CW-04|CW-04]] at 1 each, [[outcomes/CW-05|CW-05]] absent entirely. F4 fills this space without competing with anything that exists. The signature assignment — converting the F1 capability translation assignment into a policy memo, an op-ed, and an executive summary — threads the needle between the two halves of the foundation year: technical literacy (F1) rendered into policy craft (F4).
+The CW cluster is the most uniformly sparse in the existing catalog: [[outcomes/CW-01|CW-01]] at 7 courses, [[outcomes/CW-02|CW-02]] and [[outcomes/CW-04|CW-04]] at 1 each, [[outcomes/CW-05|CW-05]] absent entirely. F4 fills this space without competing with anything that exists. The signature assignment — converting the F1 capability translation assignment into a policy memo, an op-ed, and an executive summary — threads the needle between the two halves of the foundation year: technical literacy (F1) rendered into policy craft (F4).
 
 [[outcomes/TL-02|TL-02]] appears as a secondary code because policy writing about AI systems requires the ability to read technical documents critically — the F4 workshop draws directly on students' F1 skill set.
 
@@ -105,7 +105,7 @@ F4 also treats AI-augmented writing as a skill domain in its own right. Producin
 | Secondary | GP-04, CH-02, EV-03, SD-04 |
 | Signature | **GP-06** — international AI competition and cooperation dynamics |
 
-[[outcomes/GP-06|GP-06]] (international AI competition, US-China dynamics, multilateral governance) appears in only 2 JHU courses — A1 provides systematic coverage. Its [[outcomes/GP-01|GP-01]] treatment goes considerably deeper than the survey-level comparative law that 15 JHU courses offer: A1 asks *why* the EU produced binding regulation while the US produced voluntary frameworks — which requires comparative political economy, not just doctrinal comparison.
+[[outcomes/GP-06|GP-06]] (international AI competition, US-China dynamics, multilateral governance) appears in only 2 existing courses — A1 provides systematic coverage. Its [[outcomes/GP-01|GP-01]] treatment goes considerably deeper than the survey-level comparative law that 15 existing courses offer: A1 asks *why* the EU produced binding regulation while the US produced voluntary frameworks — which requires comparative political economy, not just doctrinal comparison.
 
 [[outcomes/SD-04|SD-04]] (democracy and political discourse) appears as a secondary code because AI regulation debates in multiple jurisdictions are partly *about* democracy — platform regulation, content moderation, disinformation — and case studies naturally incorporate this domain context.
 
@@ -120,7 +120,7 @@ F4 also treats AI-augmented writing as a skill domain in its own right. Producin
 | Secondary | RM-02, RM-03, RM-05, CW-01 |
 | Signature | **RM-01** — designing and conducting qualitative research for AI governance |
 
-[[outcomes/RM-01|RM-01]] has only 1 course in the JHU catalog (LAMA Lab). [[outcomes/CH-03|CH-03]] (humanistic methods applied to AI) has only 4. A2 fills a nearly empty methodological niche. The combination of primary codes reflects what policy-relevant qualitative research actually requires: the methods themselves ([[outcomes/RM-01|RM-01]] / [[outcomes/CH-03|CH-03]]), the ability to synthesize findings into arguments ([[outcomes/RM-04|RM-04]]), and enough quantitative literacy to critically evaluate empirical papers produced by others ([[outcomes/RM-02|RM-02]] secondary).
+[[outcomes/RM-01|RM-01]] has only 1 course in the existing catalog. [[outcomes/CH-03|CH-03]] (humanistic methods applied to AI) has only 4. A2 fills a nearly empty methodological niche. The combination of primary codes reflects what policy-relevant qualitative research actually requires: the methods themselves ([[outcomes/RM-01|RM-01]] / [[outcomes/CH-03|CH-03]]), the ability to synthesize findings into arguments ([[outcomes/RM-04|RM-04]]), and enough quantitative literacy to critically evaluate empirical papers produced by others ([[outcomes/RM-02|RM-02]] secondary).
 
 The Miles Brundage case study framing is a pedagogical asset: it makes the argument that producing policy-relevant research in this space is a learnable career path with documented examples, not an aspirational abstraction.
 
@@ -135,7 +135,7 @@ The Miles Brundage case study framing is a pedagogical asset: it makes the argum
 | Secondary | TL-07, TL-04, GP-02, GP-06, CH-05, CH-06, RM-03 |
 | Signature | **GP-05** — assessing technical AI safety from a governance standpoint |
 
-[[outcomes/GP-05|GP-05]] (reading RLHF, red-teaming, evals, and frontier model thresholds through a policy lens) appears in only 3 JHU courses. A3 is the capstone of Track A's intellectual arc — it requires everything the foundation courses built and pushes students to form defensible views at the intersection of technical AI safety and governance.
+[[outcomes/GP-05|GP-05]] (reading RLHF, red-teaming, evals, and frontier model thresholds through a policy lens) appears in only 3 existing courses. A3 is the capstone of Track A's intellectual arc — it requires everything the foundation courses built and pushes students to form defensible views at the intersection of technical AI safety and governance.
 
 The dual-literature design is the course's distinctive contribution: students who have only read Ord and Christiano arrive at GovAI with one vocabulary; students who have only read Gebru and Crawford arrive at AI Now with another. A3 produces graduates who can engage seriously with both communities and say something substantive about where they converge and conflict.
 
@@ -273,19 +273,19 @@ The four capstone formats each emphasize different code combinations: the policy
 
 ### What AIHUMMA Delegates to Electives (9/49 codes)
 
-These outcomes are intentionally not addressed in required AIHUMMA courses. The JHU catalog covers them adequately, and students should be directed to specific electives.
+These outcomes are intentionally not addressed in required AIHUMMA courses. The existing catalog covers them adequately, and students should be directed to specific electives.
 
 | Code  | Coverage   | Recommended Electives                                                |
 | ----- | ---------- | -------------------------------------------------------------------- |
-| TL-03 | 17 courses | EN.601.475 Machine Learning, EN.553.632 Intro to ML                  |
+| TL-03 | 17 courses | Machine learning and applied ML electives                            |
 | TL-05 | 12 courses | Mathematics/statistics prerequisites as needed                       |
-| CH-04 | 16 courses | AS.060.334 AI in Film, AS.214.634 Speculative Fiction and AI         |
-| HI-02 | 7 courses  | EN.601.484 Explainable AI Design, EN.601.480 Intro Human-Centered AI |
-| HI-04 | 2 courses  | Human-centered design electives in Engineering                       |
-| HI-05 | 3 courses  | EN.601.689 Intro Agentic AI Systems                                  |
-| SD-01 | 10 courses | Bloomberg/Carey health AI courses                                    |
-| SD-05 | 6 courses  | Peabody, Film & Media Studies electives                              |
-| SD-07 | 11 courses | Carey Business School AI courses                                     |
+| CH-04 | 16 courses | AI in film, speculative fiction and AI electives                     |
+| HI-02 | 7 courses  | Explainable AI design, human-centered AI electives                   |
+| HI-04 | 2 courses  | Human-centered design electives                                      |
+| HI-05 | 3 courses  | Agentic AI systems electives                                         |
+| SD-01 | 10 courses | Health and medicine AI electives                                     |
+| SD-05 | 6 courses  | Film, media, and creative industries electives                       |
+| SD-07 | 11 courses | Business school AI electives                                         |
 
 ---
 
@@ -293,9 +293,9 @@ These outcomes are intentionally not addressed in required AIHUMMA courses. The 
 
 ### All ⭐⭐⭐ priority outcomes are covered
 
-Every outcome identified in the JHU coverage analysis as highest strategic priority (nearly absent in JHU catalog AND high professional demand) maps to a primary code in at least one AIHUMMA required course:
+Every outcome identified in the coverage analysis as highest strategic priority (nearly absent in existing catalog AND high professional demand) maps to a primary code in at least one AIHUMMA required course:
 
-| Priority outcome | JHU courses | AIHUMMA coverage |
+| Priority outcome | Existing courses | AIHUMMA coverage |
 |-----------------|-------------|------------------|
 | EV-05 (procedural vs. structural ethics) | 1 | F3 primary, A3 primary |
 | RM-01 (qualitative research methods) | 1 | A2 primary |
@@ -304,7 +304,7 @@ Every outcome identified in the JHU coverage analysis as highest strategic prior
 | CW-06 (directing AI-assisted writing for policy quality) | 0 | F4 primary, B2 secondary |
 | GP-05 (tech AI safety from governance standpoint) | 3 | A3 primary, F1 secondary |
 
-This is the core design claim: AIHUMMA fills the specific structural gaps in the JHU curriculum that correspond to what GovAI, CSET, AI Now, CAIS, and PAI actually hire for.
+This is the core design claim: AIHUMMA fills the specific structural gaps in existing curricula that correspond to what GovAI, CSET, AI Now, CAIS, and PAI actually hire for.
 
 ### The reinforcement structure for high-value outcomes
 
@@ -320,7 +320,7 @@ The most strategically important outcomes are not just covered once — they are
 
 ### Three outcomes that deserve more explicit treatment
 
-**[[outcomes/HI-03|HI-03]]** (augmentation vs. replacement dynamics): The JHU coverage analysis identified this as strategically important ("central to every Human-Centered AI program") yet appearing in only 1 course. AIHUMMA's current design does not explicitly address it. Options:
+**[[outcomes/HI-03|HI-03]]** (augmentation vs. replacement dynamics): The coverage analysis identified this as strategically important ("central to every Human-Centered AI program") yet appearing in only 1 course. AIHUMMA's current design does not explicitly address it. Options:
 
 - Add it to F1 as a framing concept: the distinction between AI as tool-that-augments vs. AI as system-that-replaces is itself a governance question, and F1's governance artifacts (capability evaluations, deployment policies) encode assumptions about it. Students also encounter the augmentation/replacement distinction not just as an abstract governance question but as a lived working reality — their own use of AI writing tools in F4 and B2 is a concrete case study in what effective augmentation requires and what the human layer must supply.
 - Add it to F3 as a values question: the augmentation/replacement distinction has deep normative stakes and connects naturally to [[outcomes/EV-04|EV-04]] (high-stakes domain ethics).
@@ -332,14 +332,14 @@ The most strategically important outcomes are not just covered once — they are
 
 ### The elective guidance opportunity
 
-The 9 delegated outcomes define a natural **elective framework** for AIHUMMA advising. Rather than asking students to choose from the full 65-course catalog, AIHUMMA can organize elective guidance around exactly these gaps:
+The 9 delegated outcomes define a natural **elective framework** for AIHUMMA advising. Rather than asking students to choose from the full existing course catalog, AIHUMMA can organize elective guidance around exactly these gaps:
 
 - Students wanting deeper technical skill → [[outcomes/TL-03|TL-03]], [[outcomes/TL-05|TL-05]] pathway
 - Students wanting cultural/humanities depth → [[outcomes/CH-04|CH-04]] pathway
 - Students wanting HCI/design grounding → [[outcomes/HI-02|HI-02]], [[outcomes/HI-04|HI-04]], [[outcomes/HI-05|HI-05]] pathway
 - Students wanting domain specialization → [[outcomes/SD-01|SD-01]] (health), [[outcomes/SD-07|SD-07]] (business), [[outcomes/SD-05|SD-05]] (creative industries)
 
-This framing — "your required courses give you the program's distinctive competencies; your electives fill in a domain or technical skill from a curated set of existing JHU courses" — is a more coherent advising story than a generic elective requirement.
+This framing — "your required courses give you the program's distinctive competencies; your electives fill in a domain or technical skill from a curated set of existing courses" — is a more coherent advising story than a generic elective requirement.
 
 ---
 
