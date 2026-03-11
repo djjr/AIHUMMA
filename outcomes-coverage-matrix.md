@@ -1,7 +1,7 @@
 # AIHUMMA Outcomes Coverage Matrix
-## JHU AI Course Inventory — Synthesis Analysis
+## AI Course Inventory — Synthesis Analysis
 
-*Based on outcomes tagging of 65 JHU AI-related courses across 9 schools*
+*Based on outcomes tagging of 65 AI-related courses across 9 schools*
 *Refined after manual review of CH-04 (cultural forms) and addition of HI-02, SD-01, SD-04, SD-07*
 *Generated for comparison with AIHUMMA program design*
 
@@ -9,9 +9,9 @@
 
 ## How to Read This Document
 
-Each outcome code was assigned to courses where that skill is plausibly developed — explicitly stated or reasonably inferred. The counts show how many of the 65 courses address each outcome. High counts mean the JHU curriculum covers it broadly; low counts identify **gaps** — outcomes that, if central to AIHUMMA, will need to be built rather than assumed from existing courses.
+Each outcome code was assigned to courses where that skill is plausibly developed — explicitly stated or reasonably inferred. The counts show how many of the 65 courses address each outcome. High counts mean the existing curriculum covers it broadly; low counts identify **gaps** — outcomes that, if central to AIHUMMA, will need to be built rather than assumed from existing courses.
 
-The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-covered* in existing JHU courses are ones AIHUMMA students could potentially satisfy through electives. Outcomes *sparsely covered* are the ones AIHUMMA must own and build distinctively.
+The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-covered* in existing courses are ones AIHUMMA students could potentially satisfy through electives. Outcomes *sparsely covered* are the ones AIHUMMA must own and build distinctively.
 
 ---
 
@@ -28,7 +28,7 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 | **HI** Human-AI Interaction & Design | 26 | 0.40 |
 | **CW** Communication & Writing | 14 | 0.22 |
 
-**Key observation:** After tag refinement, TL and CH are in closer balance, which is a more realistic picture of the JHU curriculum. Ethics (EV) is a solid third. Domain applications (SD) are now properly represented. Governance and policy (GP), communication craft (CW), and interaction design (HI) remain comparatively thin — exactly the space AIHUMMA is designed to fill.
+**Key observation:** After tag refinement, TL and CH are in closer balance, which is a more realistic picture of the existing curriculum. Ethics (EV) is a solid third. Domain applications (SD) are now properly represented. Governance and policy (GP), communication craft (CW), and interaction design (HI) remain comparatively thin — exactly the space AIHUMMA is designed to fill.
 
 ---
 
@@ -42,7 +42,7 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 | 4/5 | Mostly Humanistic | 10 | 15% |
 | 5/5 | Highly Humanistic | 22 | 34% |
 
-49% of the curriculum leans humanistic (4–5); 26% is primarily technical (1–2). JHU's AI catalog is genuinely interdisciplinary. AIHUMMA students with humanities backgrounds will find substantial existing coursework that meets them where they are.
+49% of the curriculum leans humanistic (4–5); 26% is primarily technical (1–2). The existing AI catalog is genuinely interdisciplinary. AIHUMMA students with humanities backgrounds will find substantial existing coursework that meets them where they are.
 
 ---
 
@@ -100,12 +100,12 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 |------|-------------|---------|---|------------|
 | GP-01 | Compare AI regulatory frameworks across jurisdictions | 15 | 23% | ✅ Moderate-good |
 | GP-02 | Apply institutional design to AI governance | 5 | 8% | ⚠️ Sparse |
-| GP-04 | Evaluate AI in public sector / national security | 5 | 8% | ⚠️ Sparse — concentrated in SAIS |
+| GP-04 | Evaluate AI in public sector / national security | 5 | 8% | ⚠️ Sparse — concentrated in policy/IR programs |
 | GP-05 | Assess technical AI safety from governance standpoint | 3 | 5% | 🔴 Rare — critical AIHUMMA differentiator |
 | GP-03 | Draw on historical tech governance analogies | 2 | 3% | 🔴 Nearly absent |
 | GP-06 | Analyze international AI competition/cooperation | 2 | 3% | 🔴 Nearly absent |
 
-**AIHUMMA note:** GP-03 — using nuclear, pharma, aviation, and financial governance as analytical lenses for AI policy — appears in only two courses in the entire catalog. GP-05 (reading RLHF, red-teaming, and evals through a policy lens) and GP-06 (US-China dynamics, global governance institutions) are similarly rare. These are precisely the outcomes GovAI, CSET, and CAIS care about most, and AIHUMMA has a near-monopoly opportunity across JHU.
+**AIHUMMA note:** GP-03 — using nuclear, pharma, aviation, and financial governance as analytical lenses for AI policy — appears in only two courses in the entire catalog. GP-05 (reading RLHF, red-teaming, and evals through a policy lens) and GP-06 (US-China dynamics, global governance institutions) are similarly rare. These are precisely the outcomes GovAI, CSET, and CAIS care about most, and AIHUMMA has a near-monopoly opportunity.
 
 ---
 
@@ -119,7 +119,7 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 | RM-05 | Use AI as research instrument with critical awareness | 3 | 5% | 🔴 Rare — growing in importance |
 | RM-01 | Design/conduct qualitative research (ethnography, interviewing) | 1 | 2% | 🔴 Nearly absent |
 
-**AIHUMMA note:** RM-01 is the sharpest methods gap in the entire catalog. One course — LAMA Lab — teaches ethnographic and qualitative methods applied to AI. Yet qualitative research (elite interviewing, document analysis, process tracing) is exactly the methodology GovAI and CSET use to produce policy-relevant research. JHU is an engineering-heavy research university and qualitative social science methods are not well-represented in its AI curriculum. AIHUMMA's Research Methods course (A2) fills an almost empty niche.
+**AIHUMMA note:** RM-01 is the sharpest methods gap in the entire catalog. Only one existing course teaches ethnographic and qualitative methods applied to AI. Yet qualitative research (elite interviewing, document analysis, process tracing) is exactly the methodology GovAI and CSET use to produce policy-relevant research. Qualitative social science methods are not well-represented in the existing AI curriculum. AIHUMMA's Research Methods course (A2) fills an almost empty niche.
 
 ---
 
@@ -133,7 +133,7 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 | CW-04 | Produce persuasive arguments across genres | 1 | 2% | 🔴 Nearly absent |
 | CW-05 | Use GenAI to enhance writing/communication workflows | 0 | 0% | 🔴 **Absent** |
 
-**AIHUMMA note:** CW is the most uniformly sparse cluster in the catalog. Writing instruction — particularly *genre fluency* across policy writing formats — is almost entirely absent from JHU's AI curriculum. The one journalism course (Storytelling with Data and AI) teaches data narrative, but policy memo writing, white paper production, and the genre conventions of AI governance writing are taught nowhere. AIHUMMA-F4 (Writing for Policy) is not redundant with anything that exists. CW-05 (using GenAI to enhance one's own research and writing practice) is also absent, despite being a practically critical skill for every target job role.
+**AIHUMMA note:** CW is the most uniformly sparse cluster in the catalog. Writing instruction — particularly *genre fluency* across policy writing formats — is almost entirely absent from the existing AI curriculum. The one journalism-adjacent course teaches data narrative, but policy memo writing, white paper production, and the genre conventions of AI governance writing are taught nowhere. AIHUMMA-F4 (Writing for Policy) is not redundant with anything that exists. CW-05 (using GenAI to enhance one's own research and writing practice) is also absent, despite being a practically critical skill for every target job role.
 
 ---
 
@@ -147,7 +147,7 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 | HI-04 | Evaluate human-AI teaming structures | 2 | 3% | 🔴 Sparse |
 | HI-03 | Analyze augmentation vs. replacement dynamics | 1 | 2% | 🔴 Nearly absent despite being central to HCAI discourse |
 
-**AIHUMMA note:** HI-02 is now properly represented at 7 courses (primarily Explainable AI Design, Advanced ML for Trustworthy AI, and Intro to Human-Centered AI). HI-01 (human-centered design) has solid Engineering coverage. The genuine gap is HI-03: the augmentation vs. replacement question is conceptually central to every Human-Centered AI program (Stanford HAI, UW, CMU HCII) yet barely appears as a *learnable analytical skill* in the JHU catalog. It tends to be treated as a design philosophy rather than something students are assessed on. AIHUMMA could make it a first-class outcome.
+**AIHUMMA note:** HI-02 is now properly represented at 7 courses (primarily Explainable AI Design, Advanced ML for Trustworthy AI, and Intro to Human-Centered AI). HI-01 (human-centered design) has solid Engineering coverage. The genuine gap is HI-03: the augmentation vs. replacement question is conceptually central to every Human-Centered AI program (Stanford HAI, UW, CMU HCII) yet barely appears as a *learnable analytical skill* in the existing catalog. It tends to be treated as a design philosophy rather than something students are assessed on. AIHUMMA could make it a first-class outcome.
 
 ---
 
@@ -155,21 +155,21 @@ The **strategic implication for AIHUMMA** inverts the intuition: outcomes *well-
 
 | Code | Description | Courses | % | Assessment |
 |------|-------------|---------|---|------------|
-| SD-07 | Analyze AI in business and marketing | 11 | 17% | ✅ Well-covered (Carey courses) |
-| SD-02 | Analyze AI in national security contexts | 8 | 12% | ⚠️ Moderate (SAIS-concentrated) |
-| SD-01 | Evaluate AI applications in healthcare | 10 | 15% | ✅ Moderate-good (Bloomberg/Carey) |
+| SD-07 | Analyze AI in business and marketing | 11 | 17% | ✅ Well-covered |
+| SD-02 | Analyze AI in national security contexts | 8 | 12% | ⚠️ Moderate (concentrated in policy/IR programs) |
+| SD-01 | Evaluate AI applications in healthcare | 10 | 15% | ✅ Moderate-good |
 | SD-04 | Examine AI in democracy and political discourse | 7 | 11% | ⚠️ Moderate |
-| SD-05 | Apply AI in creative domains | 6 | 9% | ⚠️ Sparse (Peabody, Film, Theatre) |
+| SD-05 | Apply AI in creative domains | 6 | 9% | ⚠️ Sparse (film, theatre, media studies) |
 | SD-03 | Assess AI impact on labor/migration/inequality | 5 | 8% | ⚠️ Sparse |
 | SD-06 | Evaluate AI in educational settings | 4 | 6% | 🔴 Sparse |
 
-**AIHUMMA note:** Domain coverage is now realistic across all seven subcodes. Healthcare (SD-01) and business (SD-07) are appropriately strong given Bloomberg and Carey. Democracy and political discourse (SD-04) is moderate at 7 courses, though most are concentrated in SAIS and Krieger social science. Labor and inequality (SD-03) is underrepresented given the scale of discourse around AI and work — only 5 courses address this seriously, and most are at the humanistic end of the catalog.
+**AIHUMMA note:** Domain coverage is now realistic across all seven subcodes. Healthcare (SD-01) and business (SD-07) are appropriately strong. Democracy and political discourse (SD-04) is moderate at 7 courses, though most are concentrated in policy and social science programs. Labor and inequality (SD-03) is underrepresented given the scale of discourse around AI and work — only 5 courses address this seriously, and most are at the humanistic end of the catalog.
 
 ---
 
 ## Summary: The AIHUMMA Opportunity Map
 
-Outcomes where AIHUMMA has the most **distinctive opportunity** — where the existing JHU catalog is thinnest and professional demand is highest:
+Outcomes where AIHUMMA has the most **distinctive opportunity** — where the existing catalog is thinnest and professional demand is highest:
 
 | Priority | Code | Outcome | Gap Level | AIHUMMA Course |
 |----------|------|---------|-----------|----------------|
@@ -185,5 +185,5 @@ Outcomes where AIHUMMA has the most **distinctive opportunity** — where the ex
 | ⭐ | HI-03 | Analyze augmentation vs. replacement analytically | 1 course | F1 or F3 (signature framing) |
 | ⭐ | EV-06 | Assess privacy/consent/data rights implications | 5 courses | F3: Ethics, Values, and AI |
 
-Outcomes **well-covered** in existing JHU courses — potential elective pool for AIHUMMA students:
+Outcomes **well-covered** in existing courses — potential elective pool for AIHUMMA students:
 TL-01 (ML concepts), TL-03/04/06 (technical implementation), CH-05 (AI consciousness debates), EV-01 (ethical frameworks), GP-01 (regulatory frameworks overview), SD-01 (healthcare AI), SD-07 (business AI)
