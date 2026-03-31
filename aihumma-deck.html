@@ -453,6 +453,40 @@
       margin-top: 2rem;
     }
 
+    /* ── Outcome chip tooltips ───────────────────────────────────────────── */
+    #chip-tooltip {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      background: #1a1a18;
+      border: 1px solid #3a3a38;
+      border-top: 2px solid var(--red);
+      padding: 9px 13px;
+      max-width: 280px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+      opacity: 0;
+      transition: opacity 0.12s ease;
+    }
+    #chip-tooltip.visible { opacity: 1; }
+    #chip-tooltip .tt-code {
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 3px;
+    }
+    #chip-tooltip .tt-cat {
+      font-size: 0.62rem;
+      color: #777;
+      margin-bottom: 6px;
+    }
+    #chip-tooltip .tt-desc {
+      font-size: 0.7rem;
+      color: #dddbd7;
+      line-height: 1.5;
+    }
+
     /* ── Reveal chrome ────────────────────────────────────────────────────── */
     .reveal .progress { color: var(--red); }
     .reveal .controls { color: var(--red); }
@@ -588,7 +622,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  SLIDE 5 · FOUNDATION                                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section>
+<section style="padding-top: 30px; padding-bottom: 30px;">
   <div class="label">Stage 1</div>
   <div class="slide-h2">Foundation — four required courses</div>
   <div class="slide-rule"></div>
@@ -925,5 +959,124 @@
   });
 </script>
 <script src="watermark.js" data-color="rgba(255,255,255,0.10)"></script>
+
+<div id="chip-tooltip">
+  <div class="tt-code"></div>
+  <div class="tt-cat"></div>
+  <div class="tt-desc"></div>
+</div>
+
+<script>
+(function () {
+  const CATEGORIES = {
+    TL: 'Technical Literacy',
+    CH: 'Critical & Humanistic Analysis',
+    EV: 'Ethics & Values',
+    GP: 'Governance & Policy',
+    RM: 'Research & Analytical Methods',
+    CW: 'Communication & Writing',
+    HI: 'Human–AI Interaction & Design',
+    SD: 'Societal & Domain Applications',
+  };
+
+  const OUTCOMES = {
+    'TL-01': 'Explain how core ML model types (classification, regression, clustering, deep learning, generative models) work at a conceptual level',
+    'TL-02': 'Interpret technical AI documentation (model cards, capability evaluations, technical specs) as arguments rather than facts',
+    'TL-03': 'Implement basic ML workflows using Python and standard libraries (scikit-learn, PyTorch, TensorFlow)',
+    'TL-04': 'Explain LLM architecture and training processes (attention mechanisms, transformers, RLHF, fine-tuning, prompt engineering)',
+    'TL-05': 'Apply mathematical foundations (linear algebra, probability, calculus, optimization) to understand ML system design',
+    'TL-06': 'Distinguish among AI paradigms (rule-based systems, narrow ML, LLMs, generative AI, agentic AI) and their capabilities and limits',
+    'TL-07': 'Evaluate AI system performance, failure modes, and deployment constraints using appropriate frameworks',
+
+    'CH-01': 'Situate AI development within its intellectual and political history (from 1940s to present)',
+    'CH-02': 'Analyze AI discourse, artifacts, and promotional claims as ideologically and rhetorically constructed texts',
+    'CH-03': 'Apply humanistic methods (close reading, ethnography, cultural analysis, oral history) to study AI phenomena',
+    'CH-04': 'Critique AI representations in cultural forms (film, theatre, fiction, media) and what they reveal about social anxieties',
+    'CH-05': 'Evaluate AI claims about consciousness, intelligence, and agency using philosophical and cognitive science frameworks',
+    'CH-06': 'Analyze AI through feminist, postcolonial, critical race, or disability frameworks to reveal differential impacts',
+
+    'EV-01': 'Apply major ethical frameworks (consequentialism, rights-based, virtue ethics, care ethics) to AI deployment decisions',
+    'EV-02': 'Identify and analyze sources of algorithmic bias and unfairness across different social domains',
+    'EV-03': 'Evaluate responsible AI instruments (ethics guidelines, model cards, impact assessments, audit frameworks) for their scope and limits',
+    'EV-04': 'Analyze the ethics of AI in high-stakes domains (healthcare, criminal justice, hiring, surveillance, warfare)',
+    'EV-05': 'Distinguish procedural ethics from structural/systemic critique and recognize when ethics discourse substitutes for governance',
+    'EV-06': 'Assess privacy, consent, and data rights implications of AI systems and their deployment contexts',
+
+    'GP-01': 'Compare AI regulatory frameworks across jurisdictions (EU AI Act, US, UK, China, Global South)',
+    'GP-02': 'Apply institutional design and political economy analysis to AI governance challenges',
+    'GP-03': 'Draw on historical analogies (nuclear, pharma, aviation, finance) to analyze AI governance options and their limitations',
+    'GP-04': 'Evaluate AI in public sector, national security, and government contexts, including autonomous systems and intelligence analysis',
+    'GP-05': 'Assess technical AI safety proposals (RLHF, red-teaming, evals, constitutional AI) from a policy and governance standpoint',
+    'GP-06': 'Analyze international AI competition and cooperation, including US-China dynamics and global governance institutions',
+
+    'RM-01': 'Design and conduct qualitative research (ethnographic fieldwork, elite interviewing, document analysis, discourse analysis)',
+    'RM-02': 'Design and conduct computational or quantitative research on AI-related phenomena',
+    'RM-03': 'Critically evaluate academic and policy research, distinguishing strong evidence from weak claims',
+    'RM-04': 'Synthesize evidence across multiple sources to construct well-supported analytical arguments',
+    'RM-05': 'Use AI tools as research instruments (for literature synthesis, data analysis, drafting, and ideation) with critical awareness',
+
+    'CW-01': 'Produce policy genre writing (memos, briefs, white papers, testimony) calibrated to non-specialist decision-makers',
+    'CW-02': 'Write data-driven narratives for general audiences (journalism, public essays, science writing)',
+    'CW-03': 'Translate technical AI concepts clearly for lay or policy audiences in written and oral form',
+    'CW-04': 'Produce persuasive arguments in multiple genres calibrated to specific audiences and institutional contexts',
+    'CW-05': 'Use generative AI tools to enhance and accelerate writing, summarization, and communication workflows',
+    'CW-06': 'Direct and evaluate AI-assisted writing for policy quality — applying expert judgment, evaluating output against professional standards, and maintaining author accountability',
+
+    'HI-01': 'Apply human-centered design principles to evaluate or build AI-enabled systems and interfaces',
+    'HI-02': 'Design for AI explainability, user trust, and appropriate human oversight in AI deployments',
+    'HI-03': 'Analyze augmentation vs. replacement dynamics in human-AI collaborative systems',
+    'HI-04': 'Evaluate human-AI teaming structures, their effects on agency, accountability, and decision quality',
+    'HI-05': 'Assess emerging human-AI modalities (brain-computer interfaces, wearable biometrics, agentic AI) and their social implications',
+
+    'SD-01': 'Evaluate AI applications in healthcare (diagnostics, clinical decision support, equity in access, regulatory approval)',
+    'SD-02': 'Analyze AI in national security contexts (autonomous weapons, intelligence analysis, cyber operations, disinformation)',
+    'SD-03': "Assess AI's impact on labor markets, employment structures, migration, and economic inequality",
+    'SD-04': "Examine AI's role in democracy, political discourse, media ecosystems, and institutional stability",
+    'SD-05': 'Apply AI methods and tools in creative domains (music, film, performance, interactive media)',
+    'SD-06': 'Evaluate AI in educational settings (pedagogy design, learning analytics, curriculum development, academic integrity)',
+    'SD-07': 'Analyze AI applications in business and marketing contexts (strategy, customer analytics, operations)',
+  };
+
+  const tip   = document.getElementById('chip-tooltip');
+  const ttCode = tip.querySelector('.tt-code');
+  const ttCat  = tip.querySelector('.tt-cat');
+  const ttDesc = tip.querySelector('.tt-desc');
+
+  const OFFSET = 14; // px from cursor
+
+  function show(e) {
+    const code = this.textContent.trim();
+    const desc = OUTCOMES[code];
+    if (!desc) return;
+    const prefix = code.split('-')[0];
+    ttCode.textContent = code;
+    ttCat.textContent  = CATEGORIES[prefix] || prefix;
+    ttDesc.textContent = desc;
+    position(e);
+    tip.classList.add('visible');
+  }
+
+  function move(e) { position(e); }
+
+  function hide() { tip.classList.remove('visible'); }
+
+  function position(e) {
+    const tw = tip.offsetWidth  || 280;
+    const th = tip.offsetHeight || 80;
+    let x = e.clientX + OFFSET;
+    let y = e.clientY + OFFSET;
+    if (x + tw > window.innerWidth  - 8) x = e.clientX - tw - OFFSET;
+    if (y + th > window.innerHeight - 8) y = e.clientY - th - OFFSET;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+
+  document.querySelectorAll('.chip').forEach(el => {
+    el.addEventListener('mouseenter', show);
+    el.addEventListener('mousemove',  move);
+    el.addEventListener('mouseleave', hide);
+  });
+})();
+</script>
 </body>
 </html>
