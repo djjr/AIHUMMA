@@ -39,7 +39,7 @@ _Targets: GovAI Research Track, AI Now, CSET Research Analyst, PAI policy roles_
 
 ![[Course Notes/A2 Research Methods for AI Governance]]
 
-![[Course Notes/A3 Seminar: Frontier AI Risk and Governance]]
+![[A3 Seminar Frontier AI Risk and Governance]]
 ### Track B: Operations, Programs, and Communications
 _Targets: GovAI Applied Track, CAIS Program Manager, PAI program operations, AI safety org communications_
 
