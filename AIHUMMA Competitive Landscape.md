@@ -65,6 +65,28 @@ See also, perhaps, [Rand AI Technology Policy](https://www.rand.edu/programs/mas
 The **AI Governance Professional (AIGP)** certification from IAPP launched in 2024. It's 100 multiple-choice questions focused on EU AI Act compliance, NIST frameworks, risk management. It's aimed at privacy lawyers, compliance officers, and corporate governance professionals who need a credential fast.
 
 **The gap it leaves:** It's a compliance credential, not a governance/research/advocacy credential. The AIGP will get you a job in a corporate legal department auditing AI vendors. It won't get you to AI Now or GovAI. And it has no intellectual community, no cohort, no writing portfolio.
+## Regional Landscape: Maryland
+
+*Research conducted April 2026*
+
+No Maryland institution occupies the same white space as AIHUMMA. There is no Maryland program that (a) takes humanities and social science graduates as its primary population, (b) builds intellectual community and portfolio around AI's meaning and governance, and (c) targets the civil society/NGO/research sector rather than technical roles or federal/diplomatic careers.
+
+**Programs with partial overlap:**
+
+**Johns Hopkins SAIS — Technology and Innovation Concentration** (within the MA in International Relations) is the closest structural neighbor in Maryland. The MAIR's Technology and Innovation concentration addresses AI governance, cyber, and synthetic biology through a policy-and-society lens, and an Emerging Technologies Initiative (launched 2023) brings together JHU and D.C.-area experts for AI governance programming. But the MAIR is a broad international relations degree training future diplomats and IR generalists — not specialist humanists. AI governance is one theme within a wider international affairs education, and the student population, career arc, and price point differ substantially.
+
+**UMD School of Public Policy — MPP with Science & Technology Policy Track** offers a generalist 48-credit policy degree with S&T policy as one of several concentrations. UMD has also been building AI-adjacent programming including an "AI in Government" curriculum initiative and a STEP (Science, Technology, Ethics and Policy) interdisciplinary minor co-sponsored with the College of Information Studies and the Clark School of Engineering. But the MPP trains public administrators broadly — no dedicated humanities framing, no specialist AI governance depth, and no particular orientation toward civil society or NGO careers. The STEP minor is undergraduate/cross-listed and currently oversubscribed.
+
+**UMBC — MS in Human-Centered Computing** is the most intellectually adjacent program at a non-flagship Maryland institution. HCC addresses technology design through a social and ethical lens, drawing on HCI, usability, and accessibility frameworks. But it's housed in Information Systems, admission assumes technical fluency, and career outputs are UX directors and HCI researchers — not governance or policy professionals.
+
+**Programs that sound similar but aren't:** UMD's MSAI requires calculus, linear algebra, and programming fluency — it's an engineering-adjacent degree with some humanities-inflected offerings, precisely the "technically-anchored degree disguised as a policy program" that AIHUMMA's positioning contrasts against. Capitol Technology University's MPhil in AI is a research degree for people with existing technical backgrounds. The University of Baltimore's MS in Interaction Design has no governance or policy orientation.
+
+Towson, Loyola Maryland, Hood College, Morgan State, and MICA have no relevant graduate programming in this space.
+
+**Implication:** SAIS's Technology and Innovation track is the only Maryland program a prospective student might compare to AIHUMMA, but it serves a genuinely different student type. The Maryland regional landscape confirms the white-space argument made from the national scan.
+
+---
+
 ## The White Space
 
 When you map these alternatives, a genuine gap becomes visible:

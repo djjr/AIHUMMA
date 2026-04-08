@@ -1,0 +1,3 @@
+**3 credits | Track B: Operations, Programs, and Communications**
+
+The unsexy course that makes everything else possible. How do AI safety and governance organizations get funded? (Open Philanthropy, Survival and Flourishing Fund, Longview Philanthropy, EA-adjacent funders, plus foundations like MacArthur and Hewlett.) How do you write a grant proposal? How do you design an operations infrastructure for a small, mission-driven org? This is the course that trains CAIS Operations Associates and PAI program staff — people who know how the field's institutional infrastructure works and can build more of it.

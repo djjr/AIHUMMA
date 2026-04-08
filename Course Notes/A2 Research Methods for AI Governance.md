@@ -1,0 +1,3 @@
+**3 credits | Track A: Policy and Governance Research**
+
+The craft of producing the kind of research GovAI and CSET actually publish. Qualitative methods: elite interviewing, document analysis, process tracing. Quantitative literacy: reading empirical papers, understanding what datasets can and can't show, basic descriptive statistics without requiring stats prerequisite. How to write a research proposal. How to go from a policy question to an answerable research question. This course treats Miles Brundage's career arc as a case study — how do you produce policy-relevant research that practitioners actually use?

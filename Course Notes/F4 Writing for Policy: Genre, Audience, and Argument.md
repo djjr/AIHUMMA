@@ -1,0 +1,3 @@
+**3 credits | Semester 1**
+
+Policy writing, understood broadly, is a distinct craft with conventions that humanities students don't automatically have, even if they write beautifully in academic modes. Policy writing is writing that wants to make things happen: short, structured, claim-forward, audience-calibrated, action-oriented. A policy memo is not an essay. A white paper is not a journal article. A congressional brief is not a blog post. An op-ed is not a think piece. Each has a form, a function, and a reader who is busy, skeptical, and consequential. In this course students learn to extend their rhetorical instincts by reading real policy artifacts and producing and workshopping their own across a wide range of genres.

@@ -2,7 +2,21 @@
 
 *On the rationale for a new master's program, what we learned from mapping 65 existing courses, and how institutional resources might be recruited to support something genuinely new.*
 
----
+Our brief is "do something in the AI+humanities/human sciences space at the masters level." The impetus is two-sided: our school should have something to offer at this intersection; we likely have pedagogical resources that could generate revenue to support the institution if arranged and coordinated smartly.
+
+The immediate question we are grappling with is what kind of graduate degree does the world need at the intersection of artificial intelligence and the humanities and social sciences? 
+
+But this sets us to thinking more generally about this intersection in the context of education writ large.
+
+AI at the doorstep of the humanities and social scientists creates at least three "moments" of possibility. AI provides new tools for pursuit of disciplinary knowledge. The "age of AI" changes the context in which a liberal arts, humanities, or social science education is generically valuable for students. There is an immediate concrete need to get the humanists that we teach into the rooms where decisions about how AI will be steered and governed.
+
+**Moment 1.** Consider humanities and social sciences as intellectual endeavors. In many fields the tools of artificial intelligence make possible kinds and levels of work heretofore unimaginable. At least some of the scholars in these fields need cross-training that will enable them to take advantage of new tools to keep pushing forward the frontiers of human knowledge. At least some of our students will become those scholars. For the sake of our disciplines we owe them well built onramps. This is a conversation that's germane to a subset of all of us.
+
+**Moment 2.** Most students of the humanities, arts, and social sciences will not become disciplinary practitioners; they take their degrees into adulthood and the workplace on the promise that habits of mind like critical thinking, understanding human nature and human cultures and history, the capacity to see and think analogically and aesthetically represent durable, transferable skills. This promise has always carried a double charge: personal and civic. We hope to produce successful economic actors as well as competent stewards of a free society, people equipped to function as journalists, museum curators, municipal officials, entrepreneurs, and citizens.
+
+It is always incumbent on us to examine our assumptions, but especially now: the imagined future for which we think we are preparing our students is already out of date. Artificially intelligent agency will challenge every assumption of what an educated person is and does. This is not the first time structural disruption has forced such a reckoning. The industrial revolution provoked the Victorian debate among the likes of Matthew Arnold, Newman, and T.H. Huxley about what being educated meant in the modern world. The Harvard "Red Book" after WWII was a high-stakes attempt to rethink liberal education when it was no longer the province of a small elite but the potential inheritance of an entire democratic citizenry. So the second moment of AI and education is the general one - how should we rethink the project if the world we are preparing students for has changed? This is a conversation the whole school needs to be having.
+
+**Moment 3.** Artificial intelligence ***is*** changing the world and society and its institutions are not prepared.  The challenge of ensuring that AI is humanly beneficial and safe is not merely a technical problem and technology experts are not equipped to meet it. The mindsets, sensibilities, and toolkits of humanists and social scientists are needed but few have the knowledge and fluency to do more than contribute from the sidelines or be hankering naysayers.  This program responds directly to that need: an intensive curriculum that gives people already educated in the humanities, arts, and social sciences the knowledge and fluency to be in the rooms where decisions about AI's human future are made -and to have an impact as effective critics, policy makers, and communicators.
 
 ## Two Reasons to Build This Program
 

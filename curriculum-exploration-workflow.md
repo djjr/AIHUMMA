@@ -74,6 +74,16 @@ At the end of this process, you have four things that most curriculum design eff
 
 ---
 
+## Phase 5: Course Development Stubs
+
+With the analytical scaffolding in place, the next step was moving from program design to course development. Each of the 12 proposed AIHUMMA courses needed a working file — a place to accumulate course-level thinking that is linked to but distinct from the curriculum mapping document.
+
+We created a stub file in `Course Notes/` for each course, named by code and title (e.g., `F3 Ethics, Values, and AI: From Philosophy to Policy.md`). Each stub opens with a backlink to `[[AIHUMMA Curriculum Idea]]`, followed by the course description drawn from that document. The stubs for F1 and F2 had already been started and were left in place; stubs for the remaining ten courses — F3, F4, A1–A3, B1–B3, and P1–P3 — were created from the curriculum idea descriptions.
+
+Each course title heading in `AIHUMMA Curriculum Idea.md` was simultaneously converted to a wiki link pointing to its stub, so the curriculum idea document now serves as a navigable index into the course development layer. The stubs are intentionally minimal: a description and nothing else. They are placeholders for pedagogy, readings, assignments, and sequencing decisions that come later.
+
+---
+
 ## A Note on the Role of AI
 
 This workflow was developed collaboratively with an AI assistant. The human partner provided domain expertise, judgment about which outcomes mattered, and decisions about program design. The AI partner handled the substantial data-processing work — building the course database, writing the generation and scanning scripts, constructing the interactive tools — and acted as a thinking partner for structural decisions.

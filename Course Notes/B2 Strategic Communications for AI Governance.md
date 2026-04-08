@@ -1,0 +1,3 @@
+**3 credits | Track B: Operations, Programs, and Communications**
+
+Not PR — strategic communication. How do you translate between technical communities and policy communities? How do you build an organization's public presence and narrative? What makes a communications strategy in this space different from corporate comms? Students study real cases: how CAIS has positioned itself, how GovAI builds its public profile, how AI Now uses media strategically as part of advocacy. Assignments include a communications audit of a real org, and a strategic communications plan for a fictional new AI governance nonprofit.

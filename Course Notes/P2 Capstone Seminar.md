@@ -1,0 +1,3 @@
+**3 credits | Practicum and Capstone**
+
+Students develop their capstone project with peer critique and faculty mentorship across a semester. The seminar meets weekly to workshop drafts and hear from practitioners. Every session includes one practitioner guest — someone actually working in one of the target orgs — who responds to student work in progress. This creates a network effect: students leave having had real intellectual exchanges with people who might later hire them.

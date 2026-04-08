@@ -21,7 +21,7 @@
  *   network_role   — "foundational" (high out-degree, prerequisite for many),
  *                    "middle" (both receives and enables),
  *                    "integrative" (high in-degree, requires many prior outcomes)
- *   jhu_coverage   — how many of the 65 JHU AI courses address this outcome
+ *   jhu_coverage   — how many of the 65 existing AI courses address this outcome
  *   aihumma_owns   — whether AIHUMMA must build this (true) or can rely on electives (false)
  *
  * EDGE DIRECTION:
@@ -865,7 +865,7 @@ window.TAXONOMY_EDGES = [
  *   primary_codes   — outcomes that are central assessment targets
  *   secondary_codes — outcomes that are addressed but not the core focus
  *   signature_code  — the single most distinctive outcome this course owns
- *   gap_analysis    — whether this course fills a JHU gap or overlaps with existing electives
+ *   gap_analysis    — whether this course fills a curriculum gap or overlaps with existing electives
  */
 window.AIHUMMA_COURSES = [
 
@@ -881,7 +881,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["CH-02", "RM-03", "GP-05"],
     signature_code: "TL-02",
     gap_level: "fills_gap",
-    gap_note: "TL-02 has only 11 courses in JHU catalog, none approaching it as a *policy reading skill*. This is the F1 differentiator.",
+    gap_note: "TL-02 has only 11 courses in the existing catalog, none approaching it as a *policy reading skill*. This is the F1 differentiator.",
     overlap_with_electives: ["TL-01", "TL-04", "TL-06"],
     description_note: "Unique pedagogy: technical concepts learned through governance artifacts (model cards, capability evaluations, RSPs) rather than textbooks. The implicit lesson is that reading these documents critically is itself a skill."
   },
@@ -895,7 +895,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["CH-01", "EV-01", "GP-04", "SD-02"],
     signature_code: "GP-03",
     gap_level: "fills_gap",
-    gap_note: "GP-03 appears in only 2 JHU courses. GP-02 (institutional design) in only 5. F2 owns historical governance analogies almost exclusively across JHU.",
+    gap_note: "GP-03 appears in only 2 existing courses. GP-02 (institutional design) in only 5. F2 owns historical governance analogies almost exclusively across the existing catalog.",
     overlap_with_electives: ["GP-01", "GP-04"],
     description_note: "Uses nuclear/pharma/aviation/finance/biosafety as analytical lenses. Students arrive at GovAI already knowing the language of the IAEA inspection regime and 737 MAX accountability failure."
   },
@@ -939,7 +939,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["GP-04", "CH-02", "EV-03", "SD-04"],
     signature_code: "GP-06",
     gap_level: "fills_gap",
-    gap_note: "GP-06 (international competition/cooperation) appears in only 2 JHU courses. GP-01 has moderate coverage (15 courses) but A1 takes a deeper institutional analysis approach than survey courses.",
+    gap_note: "GP-06 (international competition/cooperation) appears in only 2 existing courses. GP-01 has moderate coverage (15 courses) but A1 takes a deeper institutional analysis approach than survey courses.",
     overlap_with_electives: ["GP-01"],
     description_note: "Deep dive into EU AI Act, UK, US EO, China regulations, Global South. Not doctrinal comparison — comparative *institutional* analysis of why different political economies produced different regulatory forms."
   },
@@ -952,7 +952,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["RM-02", "RM-03", "RM-05", "CW-01"],
     signature_code: "RM-01",
     gap_level: "fills_gap",
-    gap_note: "RM-01 (qualitative research) has only 1 course in JHU catalog. CH-03 (humanistic methods applied to AI) has only 4. A2 fills an almost empty methodological niche for policy-relevant qualitative work.",
+    gap_note: "RM-01 (qualitative research) has only 1 course in the existing catalog. CH-03 (humanistic methods applied to AI) has only 4. A2 fills an almost empty methodological niche for policy-relevant qualitative work.",
     overlap_with_electives: ["RM-02", "RM-03"],
     description_note: "The craft of research GovAI and CSET actually publish: elite interviewing, document analysis, process tracing. Miles Brundage's career arc as a case study in producing policy-relevant research."
   },
@@ -981,7 +981,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["EV-03", "HI-01", "SD-03", "GP-02"],
     signature_code: "RM-04",
     gap_level: "partial_gap",
-    gap_note: "No JHU course teaches fellowship design or workshop convening as intellectual craft. RM-04 and CW-04 are the closest taxonomy codes but B1 is more operational than the taxonomy fully captures.",
+    gap_note: "No existing course teaches fellowship design or workshop convening as intellectual craft. RM-04 and CW-04 are the closest taxonomy codes but B1 is more operational than the taxonomy fully captures.",
     overlap_with_electives: [],
     description_note: "Program design as intellectual craft: fellowships, workshops, field-building initiatives. Draws on org sociology, adult learning theory, and history of institutions like Asilomar and Santa Fe Institute."
   },
@@ -994,7 +994,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["CH-02", "RM-03", "CW-05", "CW-06", "GP-01"],
     signature_code: "CW-03",
     gap_level: "fills_gap",
-    gap_note: "CW-03 and CW-04 nearly absent from JHU catalog. Strategic (not corporate) communications for policy translation — the specific skill of building organizational narrative in the AI governance space.",
+    gap_note: "CW-03 and CW-04 nearly absent from the existing catalog. Strategic (not corporate) communications for policy translation — the specific skill of building organizational narrative in the AI governance space.",
     overlap_with_electives: [],
     description_note: "Studies real cases: how CAIS has positioned itself, how GovAI builds its public profile, how AI Now uses media as part of advocacy. Includes a communications audit and strategic plan for a fictional AI governance nonprofit."
   },
@@ -1007,7 +1007,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["GP-02", "EV-03", "RM-04"],
     signature_code: "CW-04",
     gap_level: "fills_gap",
-    gap_note: "Grant writing and operations for mission-driven orgs taught nowhere in the JHU AI catalog. Trains for CAIS Operations Associate and PAI program staff roles that nobody else is specifically targeting.",
+    gap_note: "Grant writing and operations for mission-driven orgs taught nowhere in the existing AI catalog. Trains for CAIS Operations Associate and PAI program staff roles that nobody else is specifically targeting.",
     overlap_with_electives: [],
     description_note: "The 'unsexy course that makes everything else possible.' Open Philanthropy, SFF, Longview, MacArthur, Hewlett. How to write a grant proposal. How to design operations infrastructure for a small mission-driven org."
   },
@@ -1036,7 +1036,7 @@ window.AIHUMMA_COURSES = [
     secondary_codes: ["RM-03", "CW-03", "CW-04"],
     signature_code: "RM-04",
     gap_level: "fills_gap",
-    gap_note: "Weekly practitioner guests who respond to work-in-progress creates direct network effect. Not replicated anywhere in JHU AI curriculum.",
+    gap_note: "Weekly practitioner guests who respond to work-in-progress creates direct network effect. Not replicated anywhere in the existing AI curriculum.",
     overlap_with_electives: [],
     description_note: "Faculty-mentored development of capstone project with peer critique. Every session includes a practitioner from a target org — creating real intellectual exchanges that may lead to hiring."
   },

@@ -44,10 +44,10 @@ The unusual pedagogy is the point: by teaching technical concepts *through* mode
 **F2 · Institutions, Governance, and the Regulation of Risky Technologies**
 *The comparative governance course: nuclear, pharma, aviation, finance, biosafety as AI lenses*
 
-| Role | Codes |
-|------|-------|
-| Primary | GP-01, GP-02, GP-03 |
-| Secondary | CH-01, EV-01, GP-04, SD-02 |
+| Role      | Codes                                                  |
+| --------- | ------------------------------------------------------ |
+| Primary   | GP-01, GP-02, GP-03                                    |
+| Secondary | CH-01, EV-01, GP-04, SD-02                             |
 | Signature | **GP-03** — using historical tech governance analogies |
 
 [[outcomes/GP-03|GP-03]] appears in only 2 of the 65 existing courses; F2 owns it almost exclusively. The course's comparative case method also develops [[outcomes/GP-01|GP-01]] (regulatory frameworks overview) more deeply than the survey courses that currently provide 15-course coverage — F2's [[outcomes/GP-01|GP-01]] is about *institutional design logic*, not just what each law says.

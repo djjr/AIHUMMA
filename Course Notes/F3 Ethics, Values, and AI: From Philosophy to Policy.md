@@ -1,0 +1,3 @@
+**3 credits | Semester 1**
+
+This is the course that most AI ethics offerings get wrong in two directions: either too abstract (a philosophy survey disconnected from practice) or too applied (case studies without theoretical foundations). F3 starts with actual moral philosophy and works toward governance — because students who can't articulate what makes a consequentialist argument different from a deontological one can't evaluate ethics arguments, they can only react to them.

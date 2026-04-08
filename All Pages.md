@@ -6,7 +6,7 @@ LIST from  #AIHUMMA
 [[HOME]]
 [[AIHUMMA Competitive Landscape]]
 [[Existing Courses]]
-[[AIHUMMA Curriculum Idea 01]]
+[[AIHUMMA Curriculum Idea]]
 Programs
 	[[Lindenwood University Certificate in Human Centered AI]]
 	[[Stanford Human Centered Generative AI]]

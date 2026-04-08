@@ -13,7 +13,7 @@ const NAV = [
     section: 'AIHUMMA',
     pages: [
       { label: 'Competitive Landscape', slug: 'AIHUMMA Competitive Landscape' },
-      { label: 'Curriculum Idea 01',    slug: 'AIHUMMA Curriculum Idea 01' },
+      { label: 'Curriculum Idea',        slug: 'AIHUMMA Curriculum Idea' },
       { label: 'Why This Program',        slug: 'aihumma-pgm-positioning' },
       { label: 'Curriculum Mapping',    slug: 'aihumma-curriculum-mapping' },
       { label: 'Taxonomy Visualization',      slug: 'AIHUMMA Taxonomy Network' },
@@ -40,6 +40,7 @@ const NAV = [
       { label: 'Lindenwood Certificate', slug: 'Lindenwood University Certificate in Human Centered AI' },
       { label: 'UW Certificate',   slug: 'UW Certificate in Human Centered AI' },
       { label: 'SJSU HCAI',        slug: 'SJSU Human Centered AI' },
+      { label: 'Maryland Programs', slug: 'maryland-competitive-landscape' },
     ]
   },
   {
@@ -89,13 +90,47 @@ function encodePathSlug(s) {
 
 // ── Markdown pre-processing ───────────────────────────────────────────────────
 
-function preprocess(md) {
-  // Strip Obsidian frontmatter tags like #AIHUMMA at line start
-  // (leave them as-is; they'll just appear as text — harmless)
+// Resolve ![[path/to/file]] transclusions by fetching the referenced .md file.
+// Returns a promise that resolves to the expanded markdown string.
+async function resolveTransclusions(md) {
+  const pattern = /!\[\[([^\]]+)\]\]/g;
+  const matches = [...md.matchAll(pattern)];
+  for (const match of matches) {
+    const slug = match[1];  // e.g. "Course Notes/F1 How AI Systems Work"
+    try {
+      const resp  = await fetch(encodePathSlug(slug + '.md'), { cache: 'no-cache' });
+      const title = slug.split('/').pop();
+      let   body  = resp.ok ? await resp.text() : `*(could not load: ${slug})*`;
 
+      // Rewrite bare wiki links in transcluded content (links with no '/' in the
+      // target have no path context once spliced into the parent page).
+      // Outcome codes (XX-00 pattern) → outcomes/; everything else → source dir.
+      const dir = slug.includes('/') ? slug.slice(0, slug.lastIndexOf('/') + 1) : '';
+      if (dir) {
+        body = body.replace(/\[\[([^\]|\/]+)(\|[^\]]+)?\]\]/g, (m, target, alias) => {
+          const prefix = /^[A-Z]{2}-\d{2}$/.test(target) ? 'outcomes/' : dir;
+          return alias ? `[[${prefix}${target}${alias}]]` : `[[${prefix}${target}]]`;
+        });
+      }
+
+      md = md.replace(match[0], `### ${title}\n\n${body}`);
+    } catch {
+      md = md.replace(match[0], `*(could not load: ${slug})*`);
+    }
+  }
+  return md;
+}
+
+async function preprocess(md) {
   // Dataview blocks → friendly note
+  md = md.replace(/```dataviewjs[\s\S]*?```/g,
+    '<span class="dataview-note">Dataview query (not rendered in web view)</span>');
   md = md.replace(/```dataview[\s\S]*?```/g,
     '<span class="dataview-note">Dataview query (not rendered in web view)</span>');
+
+  // Resolve transclusions before wiki-link substitution so included content
+  // gets its own wiki links processed in the pass below.
+  md = await resolveTransclusions(md);
 
   // [[Wiki Link|Alias]] → [Alias](#path/slug)
   md = md.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, target, alias) =>
@@ -125,10 +160,10 @@ async function loadPage(slug) {
   const filename = slug + '.md';
 
   try {
-    const resp = await fetch(encodePathSlug(filename));
+    const resp = await fetch(encodePathSlug(filename), { cache: 'no-cache' });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const raw = await resp.text();
-    const processed = preprocess(raw);
+    const processed = await preprocess(raw);
     main.innerHTML = marked.parse(processed);
   } catch (err) {
     main.innerHTML = `<p class="error">Could not load <strong>${filename}</strong>: ${err.message}</p>`;
@@ -170,7 +205,7 @@ function scheduleHide() {
   clearTimeout(hoverTimer);
   hoverTimer = setTimeout(() => {
     if (!previewActive) previewEl.style.display = 'none';
-  }, 150);
+  }, 400);
 }
 
 // Place the panel near the cursor, but flip left or up if we'd overflow the viewport.
@@ -206,7 +241,7 @@ function showPreviewForSlug(slug, pageLabel, x, y) {
     previewEl.style.display = 'block';
 
     try {
-      const resp = await fetch(encodePathSlug(slug + '.md'));
+      const resp = await fetch(encodePathSlug(slug + '.md'), { cache: 'no-cache' });
       if (!resp.ok) throw new Error('not found');
       const raw = await resp.text();
 
@@ -214,7 +249,7 @@ function showPreviewForSlug(slug, pageLabel, x, y) {
       // fast to parse, and stops before huge tables / matrices.
       const snippet = raw.split('\n').slice(0, 55).join('\n');
       const html    = `<div class="preview-title">${pageLabel}</div>` +
-                      marked.parse(preprocess(snippet));
+                      marked.parse(await preprocess(snippet));
       previewCache.set(slug, html);
       previewEl.innerHTML     = html;
       previewEl.style.display = 'block';
